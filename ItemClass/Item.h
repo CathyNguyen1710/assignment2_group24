@@ -15,9 +15,14 @@ private:
 	int noRented;
 
 public:
+	//Constructor
 	Item();
 	Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
+	//Destructor
+	~Item() {};
+
+	//Getter
 	string getId();
 	string getTitle();
 	string getRentalType();
@@ -26,7 +31,7 @@ public:
 	double getFee();
 	int getNoRented();
 
-
+	//Setter
 	void setId(string id);
 	void setTitle(string title);
 	void setRentalType(string rentalType);
@@ -35,6 +40,7 @@ public:
 	void setFee(double fee);
 	void setNoRented(int noRented);
 
+	//Other function
 	void print();
 };
 

@@ -140,21 +140,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountManager.cpp" />
     <ClCompile Include="assignment2_group24.cpp" />
     <ClCompile Include="DVD.cpp" />
     <ClCompile Include="Games.cpp" />
     <ClCompile Include="GuestAccount.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="Record.cpp" />
     <ClCompile Include="RegularAccount.cpp" />
     <ClCompile Include="VIPAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountManager.h" />
     <ClInclude Include="DVD.h" />
     <ClInclude Include="Games.h" />
     <ClInclude Include="GuestAccount.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemManager.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="RegularAccount.h" />
     <ClInclude Include="VIPAccount.h" />
