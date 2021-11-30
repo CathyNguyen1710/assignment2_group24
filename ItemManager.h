@@ -7,5 +7,9 @@
 
 class ItemManager
 {
+private:
+
+public:
+
 };
 

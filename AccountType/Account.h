@@ -17,10 +17,14 @@ protected:
 	vector<string> listOfRentals;
 
 public:
+	//Constructor
 	Account();
 	Account(string id, string name, string address, string phone, int noOfRentals);
-	~Account();
+	
+	//Destructor
+	~Account() {};
 
+	//Getter
 	string getId();
 	string getName();
 	string getAddress();
@@ -28,11 +32,15 @@ public:
 	int getNoOfRentals();
 	vector<string> getNoOfRentals();
 
+	//Setter
 	void setId(string id);
 	void setName(string name);
 	void setAddress(string address);
 	void setPhone(string phone);
 	void setNoOfRentals(int noOfRentals);
 	void setListOfRentals(vector<string>& listOfRentals);
+
+	//Other function
+	void print();
 };
 

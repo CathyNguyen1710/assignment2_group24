@@ -8,5 +8,9 @@
 
 class AccountManager
 {
+private:
+
+public:
+
 };
 
