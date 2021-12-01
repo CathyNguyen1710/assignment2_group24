@@ -16,7 +16,7 @@ private:
 
 public:
 	//Constructor
-	Item();
+	Item(); //default constructor
 	Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
 	//Destructor

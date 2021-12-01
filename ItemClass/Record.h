@@ -5,20 +5,20 @@
 class Record :public Item
 {
 private:
-	string genres;
+	string genre;
 public:
 	//Constructor
 	Record();
-	Record(string id, string title, string rentType, string loanType, int noOfCopies, double fee, string genres);
+	Record(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre;
 
 	//Destructor
 	~Record() {};
 
 	//Getter
-	string getGenres();
+	string getGenre();
 
 	//Setter
-	void setGenres(string genres);
+	void setGenre(string genre);
 
 	//Other function
 	void print();

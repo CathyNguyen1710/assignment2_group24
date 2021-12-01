@@ -2,12 +2,12 @@
 
 #include "Item.h"
 
-class Games:public Item
+class Game:public Item
 {
 public:
 	//Constructor
 	Game();
-	Game(string id, string title, string rentType, string loanType, int noOfCopies, double fee);
+	Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
 
 	//Destructor
 	~Game() {};
