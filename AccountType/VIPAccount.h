@@ -10,6 +10,7 @@ public:
 	//Constructor
 	VIPAccount();
 	VIPAccount(string id, string name, string address, string phone, int noOfRentals);
+	VIPAccount(Account* account);//Constructor used for promote from Regular acc to VIP acc
 
 	//Destructor
 	~VIPAccount() {};

@@ -24,7 +24,7 @@ public:
 	void setTotalReturnItem(int totalReturnItem);
 
 	//Other function
-	bool promote();
+	bool promoteable(); //Use to promote from Guest acc to Regular acc when meet condition
 
 	void print();
 };
