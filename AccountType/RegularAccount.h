@@ -24,6 +24,8 @@ public:
 	void setTotalReturnItem(int totalReturnItem);
 
 	//Other function
+	bool promote();
+
 	void print();
 };
 
