@@ -11,6 +11,7 @@ public:
 	//Constructor
 	RegularAccount();
 	RegularAccount(string id, string name, string address, string phone, int noOfRentals);
+	RegularAccount(Account* account);//Constructor used for promote from Guest acc to Regular acc
 
 	//Destructor
 	~RegularAccount() {};
