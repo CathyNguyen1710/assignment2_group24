@@ -30,7 +30,7 @@ public:
 	string getAddress();
 	string getPhone();
 	int getNoOfRentals();
-	vector<string> getNoOfRentals();
+	vector<string> getListOfRentals();
 
 	//Setter
 	void setId(string id);
