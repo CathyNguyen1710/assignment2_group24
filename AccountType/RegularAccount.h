@@ -25,7 +25,7 @@ public:
 	void setTotalReturnItem(int totalReturnItem);
 
 	//Other function
-	bool promote();
+	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition
 
 	void print();
 };
