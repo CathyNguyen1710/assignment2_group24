@@ -41,6 +41,11 @@ public:
 	void setListOfRentals(vector<string>& listOfRentals);
 
 	//Other function
+	bool rentItem(string id);
+	bool returnItem(string id);
+	void addRentalList(string item);
+	//
 	void print();
+	string toString();
 };
 

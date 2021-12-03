@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <sstream>
 
 class ItemManager
 {
@@ -30,6 +31,18 @@ public:
 	void setItemFile(string itemFile);
 
 	//Other function
+	bool addItem();
+	bool updateItem(string id);
+	bool deleteItem(string id);
+	bool returnItem(string id);
+	bool savrToFile();
+	void displaySortedItemTitle();
+	void displaySortedItemID();
+	void getAllNoStock();
+	void searchItem(string title);
+	void searchItem(char* id);
+
+	//
 	void print();
 };
 
