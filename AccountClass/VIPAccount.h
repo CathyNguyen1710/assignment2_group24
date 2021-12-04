@@ -22,5 +22,9 @@ public:
 	void setRewardPoint(int rewardPoint);
 
 	//Other function
+
+	//
+	void print();
+	string toString();
 };
 

@@ -139,29 +139,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountClass\Account.cpp" />
+    <ClCompile Include="AccountClass\GuestAccount.cpp" />
+    <ClCompile Include="AccountClass\RegularAccount.cpp" />
+    <ClCompile Include="AccountClass\VIPAccount.cpp" />
     <ClCompile Include="AccountManager.cpp" />
     <ClCompile Include="assignment2_group24.cpp" />
-    <ClCompile Include="DVD.cpp" />
-    <ClCompile Include="Games.cpp" />
-    <ClCompile Include="GuestAccount.cpp" />
-    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemClass\DVD.cpp" />
+    <ClCompile Include="ItemClass\Game.cpp" />
+    <ClCompile Include="ItemClass\Item.cpp" />
+    <ClCompile Include="ItemClass\Record.cpp" />
     <ClCompile Include="ItemManager.cpp" />
-    <ClCompile Include="Record.cpp" />
-    <ClCompile Include="RegularAccount.cpp" />
-    <ClCompile Include="VIPAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountClass\Account.h" />
+    <ClInclude Include="AccountClass\GuestAccount.h" />
+    <ClInclude Include="AccountClass\RegularAccount.h" />
+    <ClInclude Include="AccountClass\VIPAccount.h" />
     <ClInclude Include="AccountManager.h" />
-    <ClInclude Include="DVD.h" />
-    <ClInclude Include="Games.h" />
-    <ClInclude Include="GuestAccount.h" />
-    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemClass\DVD.h" />
+    <ClInclude Include="ItemClass\Game.h" />
+    <ClInclude Include="ItemClass\Item.h" />
+    <ClInclude Include="ItemClass\Record.h" />
     <ClInclude Include="ItemManager.h" />
-    <ClInclude Include="Record.h" />
-    <ClInclude Include="RegularAccount.h" />
-    <ClInclude Include="VIPAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

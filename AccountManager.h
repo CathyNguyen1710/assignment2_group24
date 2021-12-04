@@ -37,8 +37,8 @@ public:
 	void displaySortedAccountName();
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
-	void searchItem(string name);
-	void searchItem(char* id);
+	void searchAccount(string name);
+	void searchAccount(char* id);
 
 	//
 	void print();

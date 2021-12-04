@@ -23,7 +23,11 @@ public:
 	void setTotalBorrowItem(int totalBorrowItem);
 	void setTotalReturnItem(int totalReturnItem);
 
-	/*//Other function
-	bool promoteable(); //Use to promote from Guest acc to Regular acc when meet condition*/
+	//Other function
+	bool promoteable(); //Use to promote from Guest acc to Regular acc when meet condition*
+
+	//
+	void print();
+	string toString();
 };
 

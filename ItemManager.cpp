@@ -42,3 +42,41 @@ void ItemManager::setNoOfItem(int noOfItem) {
 void ItemManager::setItemFile(string itemFile) {
 	this->itemFile = itemFile;
 }
+
+
+//Other function
+bool ItemManager::addItem() {
+	return true;
+}
+bool ItemManager::updateItem(string id) {
+	return true;
+}
+bool ItemManager::deleteItem(string id) {
+	return true;
+}
+bool ItemManager::returnItem(string id) {
+	return true;
+}
+bool ItemManager::savrToFile() {
+	return true;
+}
+void ItemManager::displaySortedItemTitle() {
+	cout << "sort by title" << endl;
+}
+void ItemManager::displaySortedItemID() {
+	cout << "sort by id" << endl;
+}
+void ItemManager::getAllNoStock() {
+	cout << "sort by no of stock = 0" << endl;
+}
+void ItemManager::searchItem(string title) {
+	cout << "search by title" << endl;
+}
+void ItemManager::searchItem(char* id) {
+	cout << "search by id" << endl;
+}
+
+//
+void ItemManager::print() {
+	cout << "print item manager" << endl;
+}
