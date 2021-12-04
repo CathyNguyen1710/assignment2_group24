@@ -1,4 +1,4 @@
-#pragma once
+#include "AccountClass/Account.h"
 
 #include <iostream>
 #include <string>
@@ -33,7 +33,6 @@ public:
 	//Other function
 	bool addAccount();
 	bool updateAccount(string id);
-	bool deleteAccount(string id);
 	bool saveToFile();
 	void displaySortedAccountName();
 	void displaySortedAccountID();
