@@ -11,7 +11,7 @@ using namespace std;
 
 //Constructor
 ItemManager::ItemManager() {
-
+	
 }
 ItemManager::ItemManager(string itemFile) {
 

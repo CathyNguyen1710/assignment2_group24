@@ -42,6 +42,5 @@ public:
 
 	//Other function
 	void print();
-	string toString();
+	string toStringt();
 };
-

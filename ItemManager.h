@@ -1,4 +1,4 @@
-#pragma once
+#include "ItemClass/Item.h"
 
 #include <string>
 #include <iostream>
@@ -30,7 +30,7 @@ public:
 	void setNoOfItem(int noOfItem);
 	void setItemFile(string itemFile);
 
-	//Other function
+	/*//Other function
 	bool addItem();
 	bool updateItem(string id);
 	bool deleteItem(string id);
@@ -43,6 +43,6 @@ public:
 	void searchItem(char* id);
 
 	//
-	void print();
+	void print();*/
 };
 
