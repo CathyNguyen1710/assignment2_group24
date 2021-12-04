@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -11,18 +12,18 @@ int main(int argc, char* argv[])
     cout << "Welcome to Genie’s video store" << "\n\n";
     string input;
 
-    string option = "Please choose from an option below:\n"; +
-        "1/ Add a new item, update or delete an existing item\n"; +
-        "2/ Add new customer or update an existing customer\n"; +
-        "3/ Promote an existing customer\n"; +
-        "4/ Rent an item\n"; +
-        "5/ Return an item\n"; +
-        "6/ Display all item(s)\n"; +
-        "7/ Display out of stock item(s)\n"; +
-        "8/ Display all customers(s)\n"; +
-        "9/ Display a group of customer(s)\n"; +
-        "10/ Search item(s)"; +
-        "11/ Search customer(s)"; +
+    string option = "Please choose from an option below:\n"
+        "1/ Add a new item, update or delete an existing item\n"
+        "2/ Add new customer or update an existing customer\n"
+        "3/ Promote an existing customer\n"
+        "4/ Rent an item\n"
+        "5/ Return an item\n"
+        "6/ Display all item(s)\n"
+        "7/ Display out of stock item(s)\n"
+        "8/ Display all customers(s)\n"
+        "9/ Display a group of customer(s)\n"
+        "10/ Search item(s)"
+        "11/ Search customer(s)"
         "Exit.";
 
     while (true) {
@@ -67,7 +68,7 @@ int main(int argc, char* argv[])
             cout << "Call function 11" << endl;
         }
         else if (input == "Exit") {
-            cout << "Call function Exit" << endl;
+            cout << "Exit" << endl;
 
             //Printout team member
             cout << "\n\nASSIGNMENT 2 GROUP 2" << endl;

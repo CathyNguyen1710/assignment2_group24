@@ -1,5 +1,286 @@
 ﻿  Account.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Account.cpp': No such file or directory
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,9): error C3646: 'name': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,9): error C3646: 'address': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,9): error C3646: 'phone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,30): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,10): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,9): error C2535: 'Account::Account(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(19): message : see declaration of 'Account::Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,9): error C3646: 'getName': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,16): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,18): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,9): error C3646: 'getAddress': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,19): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,9): error C3646: 'getPhone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,15): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(39,24): error C2061: syntax error: identifier 'vector'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(42,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(43,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(44,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(9,89): error C2511: 'Account::Account(std::string,std::string,std::string,std::string,int)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(10,5): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(11,5): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(12,5): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(13,5): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(14,5): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(18,17): error C2039: 'getId': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(19,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(21,17): error C2039: 'getName': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(22,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(24,17): error C2039: 'getAddress': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(25,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(27,17): error C2039: 'getPhone': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(28,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(33,25): error C2039: 'getListOfRentals': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(34,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(38,32): error C2511: 'void Account::setId(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(39,5): error C2671: 'Account::setId': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(41,36): error C2511: 'void Account::setName(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(42,5): error C2671: 'Account::setName': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(44,42): error C2511: 'void Account::setAddress(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(45,5): error C2671: 'Account::setAddress': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(47,38): error C2511: 'void Account::setPhone(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(48,5): error C2671: 'Account::setPhone': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(53,63): error C2511: 'void Account::setListOfRentals(std::vector<std::string,std::allocator<std::string>> &)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(54,5): error C2671: 'Account::setListOfRentals': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(58,35): error C2511: 'bool Account::rentItem(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(61,37): error C2511: 'bool Account::returnItem(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(64,42): error C2511: 'void Account::addRentalList(std::string)': overloaded member function not found in 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.cpp(72,17): error C2039: 'toString': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+  GuestAccount.cpp
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,9): error C3646: 'name': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,9): error C3646: 'address': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,9): error C3646: 'phone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,30): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,10): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,9): error C2535: 'Account::Account(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(19): message : see declaration of 'Account::Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,9): error C3646: 'getName': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,16): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,18): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,9): error C3646: 'getAddress': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,19): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,9): error C3646: 'getPhone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,15): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(39,24): error C2061: syntax error: identifier 'vector'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(42,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(43,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(44,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(13,15): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(13,14): error C2535: 'GuestAccount::GuestAccount(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(12): message : see declaration of 'GuestAccount::GuestAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(31,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(31,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(31,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.cpp(13,99): error C2511: 'GuestAccount::GuestAccount(std::string,std::string,std::string,std::string,int)': overloaded member function not found in 'GuestAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(5): message : see declaration of 'GuestAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.cpp(14,49): error C2550: 'GuestAccount::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.cpp(15,2): error C2671: 'GuestAccount::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.cpp(16,2): error C2671: 'GuestAccount::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.cpp(44,22): error C2039: 'toString': is not a member of 'GuestAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(5): message : see declaration of 'GuestAccount'
+  RegularAccount.cpp
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,9): error C3646: 'name': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,9): error C3646: 'address': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,9): error C3646: 'phone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,30): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,10): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,9): error C2535: 'Account::Account(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(19): message : see declaration of 'Account::Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,9): error C3646: 'getName': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,16): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,18): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,9): error C3646: 'getAddress': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,19): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,9): error C3646: 'getPhone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,15): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(39,24): error C2061: syntax error: identifier 'vector'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(42,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(43,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(44,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(13,17): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(13,16): error C2535: 'RegularAccount::RegularAccount(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(12): message : see declaration of 'RegularAccount::RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(32,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(32,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(32,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(13,103): error C2511: 'RegularAccount::RegularAccount(std::string,std::string,std::string,std::string,int)': overloaded member function not found in 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(5): message : see declaration of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(14,49): error C2550: 'RegularAccount::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(15,2): error C2671: 'RegularAccount::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(16,2): error C2671: 'RegularAccount::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(20,23): error C2039: 'getId': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(20,30): error C2660: 'Account::setId': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,7): message : see declaration of 'Account::setId'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(21,25): error C2039: 'getName': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(21,34): error C2660: 'Account::setName': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,7): message : see declaration of 'Account::setName'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(22,28): error C2039: 'getAddress': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(22,40): error C2660: 'Account::setAddress': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,7): message : see declaration of 'Account::setAddress'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(23,26): error C2039: 'getPhone': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(23,36): error C2660: 'Account::setPhone': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,7): message : see declaration of 'Account::setPhone'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(25,8): error C2039: 'totalBorrowed': is not a member of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(5): message : see declaration of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(26,8): error C2039: 'totalReturned': is not a member of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(5): message : see declaration of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.cpp(54,24): error C2039: 'toString': is not a member of 'RegularAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(5): message : see declaration of 'RegularAccount'
+  VIPAccount.cpp
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,9): error C3646: 'name': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,9): error C3646: 'address': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,9): error C3646: 'phone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(11,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(15,30): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,10): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(20,9): error C2535: 'Account::Account(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(19): message : see declaration of 'Account::Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,9): error C3646: 'getName': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,16): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(27,18): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,9): error C3646: 'getAddress': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,19): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(28,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,9): error C3646: 'getPhone': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(29,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C2143: syntax error: missing ';' before '<'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(31,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,15): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(39,24): error C2061: syntax error: identifier 'vector'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(42,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(43,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(44,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(12,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(12,12): error C2535: 'VIPAccount::VIPAccount(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(11): message : see declaration of 'VIPAccount::VIPAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(28,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(28,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(28,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(13,95): error C2511: 'VIPAccount::VIPAccount(std::string,std::string,std::string,std::string,int)': overloaded member function not found in 'VIPAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(5): message : see declaration of 'VIPAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(14,49): error C2550: 'VIPAccount::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(15,2): error C2671: 'VIPAccount::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(19,23): error C2039: 'getId': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(19,30): error C2660: 'Account::setId': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(34,7): message : see declaration of 'Account::setId'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(20,25): error C2039: 'getName': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(20,34): error C2660: 'Account::setName': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,7): message : see declaration of 'Account::setName'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(21,28): error C2039: 'getAddress': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(21,40): error C2660: 'Account::setAddress': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,7): message : see declaration of 'Account::setAddress'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(22,26): error C2039: 'getPhone': is not a member of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(5): message : see declaration of 'Account'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(22,36): error C2660: 'Account::setPhone': function does not take 1 arguments
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,7): message : see declaration of 'Account::setPhone'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.cpp(41,20): error C2039: 'toString': is not a member of 'VIPAccount'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(5): message : see declaration of 'VIPAccount'
   AccountManager.cpp
 C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,9): error C3646: 'id': unknown override specifier
 C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(8,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -35,6 +316,12 @@ C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(35,15): error C
 C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(36,18): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(37,16): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(39,24): error C2061: syntax error: identifier 'vector'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(42,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(43,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(44,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(48,19): error C2238: unexpected token(s) preceding ';'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(12,8): error C2143: syntax error: missing ';' before '<'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(12,31): error C2238: unexpected token(s) preceding ';'
@@ -53,7 +340,7 @@ C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(29,22): error C2061: 
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(31,23): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(35,21): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(39,25): error C2061: syntax error: identifier 'string'
-C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(40,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(40,21): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(16,53): error C2511: 'AccountManager::AccountManager(std::string)': overloaded member function not found in 'AccountManager'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(9): message : see declaration of 'AccountManager'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(21,35): error C2084: function 'AccountManager::~AccountManager(void)' already has a body
@@ -70,14 +357,234 @@ C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(37,2): error C2671:
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(42,59): error C2511: 'void AccountManager::setCustomerFile(std::string)': overloaded member function not found in 'AccountManager'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(9): message : see declaration of 'AccountManager'
 C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(43,2): error C2671: 'AccountManager::setCustomerFile': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(50,47): error C2511: 'bool AccountManager::updateAccount(std::string)': overloaded member function not found in 'AccountManager'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(9): message : see declaration of 'AccountManager'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(62,54): error C2511: 'void AccountManager::getAccountByLevel(std::string)': overloaded member function not found in 'AccountManager'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(9): message : see declaration of 'AccountManager'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.cpp(65,49): error C2511: 'void AccountManager::searchAccount(std::string)': overloaded member function not found in 'AccountManager'
+C:\Users\DELL\Desktop\assignment2_group24\AccountManager.h(9): message : see declaration of 'AccountManager'
   DVD.cpp
-c1xx : fatal error C1083: Cannot open source file: 'DVD.cpp': No such file or directory
-  Games.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Games.cpp': No such file or directory
-  GuestAccount.cpp
-c1xx : fatal error C1083: Cannot open source file: 'GuestAccount.cpp': No such file or directory
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,9): error C3646: 'title': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,9): error C3646: 'rentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,9): error C3646: 'loadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,7): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,6): error C2535: 'Item::Item(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(19): message : see declaration of 'Item::Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,9): error C3646: 'getTitle': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,9): error C3646: 'getRentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,22): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,9): error C3646: 'getLoadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,20): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(35,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(36,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(37,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(38,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,9): error C3646: 'toStringt': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,18): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,20): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(8,9): error C3646: 'genre': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(8,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(12,6): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(12,5): error C2535: 'DVD::DVD(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(11): message : see declaration of 'DVD::DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(18,9): error C3646: 'getGenre': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(18,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(18,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(21,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(25,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(25,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(25,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(13,110): error C2511: 'DVD::DVD(std::string,std::string,std::string,std::string,int,double,std::string)': overloaded member function not found in 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(5): message : see declaration of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(14,55): error C2550: 'DVD::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(15,2): error C2671: 'DVD::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(19,13): error C2039: 'getGenre': is not a member of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(5): message : see declaration of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(20,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(24,11): error C2039: 'setGenres': is not a member of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(5): message : see declaration of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(25,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.cpp(32,13): error C2039: 'toString': is not a member of 'DVD'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\DVD.h(5): message : see declaration of 'DVD'
+  Game.cpp
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,9): error C3646: 'title': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,9): error C3646: 'rentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,9): error C3646: 'loadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,7): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,6): error C2535: 'Item::Item(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(19): message : see declaration of 'Item::Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,9): error C3646: 'getTitle': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,9): error C3646: 'getRentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,22): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,9): error C3646: 'getLoadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,20): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(35,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(36,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(37,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(38,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,9): error C3646: 'toStringt': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,18): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,20): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(10,7): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(10,6): error C2535: 'Game::Game(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(9): message : see declaration of 'Game::Game'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(17,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(17,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(17,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.cpp(13,113): error C2511: 'Game::Game(std::string,std::string,std::string,std::string,int,double,std::string)': overloaded member function not found in 'Game'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(5): message : see declaration of 'Game'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.cpp(14,55): error C2550: 'Game::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.cpp(21,14): error C2039: 'toString': is not a member of 'Game'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Game.h(5): message : see declaration of 'Game'
   Item.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Item.cpp': No such file or directory
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,9): error C3646: 'title': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,9): error C3646: 'rentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,9): error C3646: 'loadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,7): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,6): error C2535: 'Item::Item(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(19): message : see declaration of 'Item::Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,9): error C3646: 'getTitle': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,9): error C3646: 'getRentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,22): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,9): error C3646: 'getLoadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,20): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(35,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(36,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(37,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(38,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,9): error C3646: 'toStringt': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,18): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,20): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(14,99): error C2511: 'Item::Item(std::string,std::string,std::string,std::string,int,double)': overloaded member function not found in 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(15,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(16,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(17,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(18,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(19,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(20,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(21,2): error C2671: 'Item::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(25,14): error C2039: 'getId': is not a member of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(26,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(28,14): error C2039: 'getTitle': is not a member of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(29,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(31,14): error C2039: 'getRentalType': is not a member of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(32,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(34,14): error C2039: 'getLoadType': is not a member of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(35,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(48,29): error C2511: 'void Item::setId(std::string)': overloaded member function not found in 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(49,2): error C2671: 'Item::setId': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(51,35): error C2511: 'void Item::setTitle(std::string)': overloaded member function not found in 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(52,2): error C2671: 'Item::setTitle': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(52,9): error C2059: syntax error: '='
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(54,45): error C2511: 'void Item::setRentalType(std::string)': overloaded member function not found in 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(55,2): error C2671: 'Item::setRentalType': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(55,16): error C2065: 'title': undeclared identifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(57,41): error C2511: 'void Item::setLoadType(std::string)': overloaded member function not found in 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(58,2): error C2671: 'Item::setLoadType': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.cpp(74,14): error C2039: 'toStringt': is not a member of 'Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(6): message : see declaration of 'Item'
+  Record.cpp
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,9): error C3646: 'id': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,9): error C3646: 'title': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(10,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,9): error C3646: 'rentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(11,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,9): error C3646: 'loadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(12,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,7): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(20,6): error C2535: 'Item::Item(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(19): message : see declaration of 'Item::Item'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,9): error C3646: 'getId': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,14): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(26,16): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,9): error C3646: 'getTitle': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(27,19): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,9): error C3646: 'getRentalType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,22): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(28,24): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,9): error C3646: 'getLoadType': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,20): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(29,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(35,13): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(36,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(37,21): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(38,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,9): error C3646: 'toStringt': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,18): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,20): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(8,9): error C3646: 'genre': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(8,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,9): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2143: syntax error: missing ')' before ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2535: 'Record::Record(void)': member function already defined or declared
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(11): message : see declaration of 'Record::Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(18,9): error C3646: 'getGenre': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(18,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2238: unexpected token(s) preceding ';'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(21,16): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(25,9): error C3646: 'toString': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(25,17): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12): message : see reference to class template instantiation 'std::basic_stringbuf<_Elem,_Traits,_Alloc>' being compiled
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2511: 'Record::Record(std::string,std::string,std::string,std::string,int,double,std::string)': overloaded member function not found in 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(5): message : see declaration of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2550: 'Record::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(12,8): error C2671: 'Record::{ctor}': static member functions do not have 'this' pointers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.cpp(19,16): error C2039: 'getGenre': is not a member of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(5): message : see declaration of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.cpp(20,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.cpp(24,14): error C2039: 'setGenres': is not a member of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(5): message : see declaration of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.cpp(25,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.cpp(32,16): error C2039: 'toString': is not a member of 'Record'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Record.h(5): message : see declaration of 'Record'
   ItemManager.cpp
 C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,9): error C3646: 'id': unknown override specifier
 C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(9,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -106,6 +613,9 @@ C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(35,13): error C2061: 
 C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(36,16): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(37,21): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(38,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,9): error C3646: 'toStringt': unknown override specifier
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,18): error C2059: syntax error: '('
+C:\Users\DELL\Desktop\assignment2_group24\ItemClass\Item.h(45,20): error C2238: unexpected token(s) preceding ';'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(12,8): error C2143: syntax error: missing ';' before '<'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(12,24): error C2238: unexpected token(s) preceding ';'
@@ -122,6 +632,10 @@ C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(26,20): error C2059: syn
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(26,22): error C2238: unexpected token(s) preceding ';'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(29,19): error C2061: syntax error: identifier 'vector'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(31,19): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(35,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(36,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(37,18): error C2061: syntax error: identifier 'string'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(42,18): error C2061: syntax error: identifier 'string'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(16,43): error C2511: 'ItemManager::ItemManager(std::string)': overloaded member function not found in 'ItemManager'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(21,29): error C2084: function 'ItemManager::~ItemManager(void)' already has a body
@@ -138,10 +652,12 @@ C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(37,2): error C2671: 'I
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(42,48): error C2511: 'void ItemManager::setItemFile(std::string)': overloaded member function not found in 'ItemManager'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
 C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(43,2): error C2671: 'ItemManager::setItemFile': static member functions do not have 'this' pointers
-  Record.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Record.cpp': No such file or directory
-  RegularAccount.cpp
-c1xx : fatal error C1083: Cannot open source file: 'RegularAccount.cpp': No such file or directory
-  VIPAccount.cpp
-c1xx : fatal error C1083: Cannot open source file: 'VIPAccount.cpp': No such file or directory
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(51,41): error C2511: 'bool ItemManager::updateItem(std::string)': overloaded member function not found in 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(54,41): error C2511: 'bool ItemManager::deleteItem(std::string)': overloaded member function not found in 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(57,41): error C2511: 'bool ItemManager::returnItem(std::string)': overloaded member function not found in 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.cpp(72,44): error C2511: 'void ItemManager::searchItem(std::string)': overloaded member function not found in 'ItemManager'
+C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(9): message : see declaration of 'ItemManager'
   Generating Code...

@@ -53,3 +53,22 @@ void Account::setNoOfRentals(int noOfRentals) {
 void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->getListOfRentals = listOfRentals;
 }
+
+//Other function
+bool Account::rentItem(string id) {
+    return true;
+}
+bool Account::returnItem(string id) {
+    return true;
+}
+void Account::addRentalList(string item) {
+    cout << "added sucessfully" << endl;
+}
+
+//
+void Account::print() {
+    cout << "print Account" << endl;
+}
+string Account::toString() {
+    return "Account to Database";
+}

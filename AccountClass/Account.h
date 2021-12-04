@@ -38,12 +38,13 @@ public:
 	void setNoOfRentals(int noOfRentals);
 	void setListOfRentals(vector<string>& listOfRentals);
 
-	/*//Other function
+	//Other function
 	bool rentItem(string id);
 	bool returnItem(string id);
 	void addRentalList(string item);
+	
 	//
 	void print();
-	string toString();*/
+	string toString();
 };
 

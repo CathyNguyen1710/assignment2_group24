@@ -24,7 +24,11 @@ public:
 	void setTotalBorrowItem(int totalBorrowItem);
 	void setTotalReturnItem(int totalReturnItem);
 
-	/*//Other function
-	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition*/
+	//Other function
+	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition
+
+	//
+	void print();
+	string toString();
 };
 

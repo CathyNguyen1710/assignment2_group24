@@ -42,3 +42,34 @@ void AccountManager::setNoOfAccount(int noOfAccount) {
 void AccountManager::setCustomerFile(string customerFile) {
 	this->customerFile = customerFile;
 }
+
+//Other function
+bool AccountManager::addAccount() {
+	return true;
+}
+bool AccountManager::updateAccount(string id) {
+	return true;
+}
+bool AccountManager::saveToFile() {
+	return true;
+}
+void AccountManager::displaySortedAccountName() {
+	cout << "sort by name" << endl;
+}
+void AccountManager::displaySortedAccountID() {
+	cout << "sort by id" << endl;
+}
+void AccountManager::getAccountByLevel(string level) {
+	cout << "find by level" << endl;
+}
+void AccountManager::searchAccount(string name) {
+	cout << "search by name" << endl;
+}
+void AccountManager::searchAccount(char* id) {
+	cout << "search by id" << endl;
+}
+
+//
+void AccountManager::print() {
+	cout << "print acc manager" << endl;
+}

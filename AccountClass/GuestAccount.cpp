@@ -31,3 +31,16 @@ void GuestAccount::setTotalBorrowItem(int totalBorrowItem) {
 void GuestAccount::setTotalReturnItem(int totalReturnItem) {
 	this->totalReturnItem = totalReturnItem;
 }
+
+//Other function
+bool GuestAccount::promoteable() {
+	return true;
+}
+
+//
+void GuestAccount::print() {
+	cout << "Guest print" << endl;
+}
+string GuestAccount::toString() {
+	return "Guest to Database";
+}
