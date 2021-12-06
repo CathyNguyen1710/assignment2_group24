@@ -44,7 +44,12 @@ void RegularAccount::setTotalReturnItem(int totalReturnItem) {
 
 //Other function
 bool RegularAccount::promoteable() {
-	return true;
+	if (this->getTotalReturnItem() >= 3) {
+		cout << "You have meet the requirement to promote into VIP Account"<< endl;
+		return true;
+	}
+	cout << "You have not meet the requirement to promote your account" << endl;
+	return false;
 }
 
 //

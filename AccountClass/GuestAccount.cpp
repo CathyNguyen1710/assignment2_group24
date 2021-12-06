@@ -34,7 +34,12 @@ void GuestAccount::setTotalReturnItem(int totalReturnItem) {
 
 //Other function
 bool GuestAccount::promoteable() {
-	return true;
+	if (this->getTotalReturnItem() >= 3) {
+		cout << "You have meet the requirement to promote into Regular Account" << endl;
+		return true;
+	}
+	cout << "You have not meet the requirement to promote your account" << endl;
+	return false;
 }
 
 //
