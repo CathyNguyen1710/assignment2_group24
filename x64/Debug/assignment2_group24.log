@@ -3,17 +3,8 @@
   RegularAccount.cpp
   VIPAccount.cpp
   AccountManager.cpp
-C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(15,1): error C2011: 'ItemManager': 'class' type redefinition
-C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(14): message : see declaration of 'ItemManager'
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,1): error C2011: 'Account': 'class' type redefinition
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9): message : see declaration of 'Account'
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\GuestAccount.h(12,1): error C2504: 'Account': base class undefined
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\RegularAccount.h(12,1): error C2504: 'Account': base class undefined
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\VIPAccount.h(12,1): error C2504: 'Account': base class undefined
   assignment2_group24.cpp
-C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(15,1): error C2011: 'ItemManager': 'class' type redefinition
-C:\Users\DELL\Desktop\assignment2_group24\ItemManager.h(14): message : see declaration of 'ItemManager'
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(10,1): error C2011: 'Account': 'class' type redefinition
-C:\Users\DELL\Desktop\assignment2_group24\AccountClass\Account.h(9): message : see declaration of 'Account'
+  DVD.cpp
   ItemManager.cpp
   Generating Code...
+  assignment2_group24.vcxproj -> C:\Users\DELL\Desktop\assignment2_group24\x64\Debug\assignment2_group24.exe

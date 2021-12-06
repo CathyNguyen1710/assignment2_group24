@@ -1,4 +1,5 @@
-#pragma once
+#ifndef A2_GUESTACCOUNT_H
+#define A2_GUESTACCOUNT_H
 
 #include "Account.h"
 
@@ -37,3 +38,4 @@ public:
 	string toString();
 };
 
+#endif
