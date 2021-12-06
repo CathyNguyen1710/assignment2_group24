@@ -2,6 +2,11 @@
 
 #include "Item.h"
 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class DVD :public Item
 {
 private:

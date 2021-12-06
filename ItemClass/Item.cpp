@@ -31,7 +31,7 @@ string Item::getTitle() {
 string Item::getRentalType() {
 	return this->rentalType;
 }
-string Item::getLoadType() {
+string Item::getLoanType() {
 	return this->loanType;
 }
 int Item::getNoOfCopy() {
@@ -49,13 +49,13 @@ void Item::setId(string id) {
 	this->id = id;
 }
 void Item::setTitle(string title) {
-	this-> = ;
-}
-void Item::setRentalType(string rentalType) {
 	this->title = title;
 }
-void Item::setLoadType(string loadType) {
-	this->loadType = loadType;
+void Item::setRentalType(string rentalType) {
+	this->rentalType = rentalType;
+}
+void Item::setLoanType(string loadType) {
+	this->loanType = loadType;
 }
 void Item::setNoOfCopy(int noOfCopy) {
 	this->noOfCopy = noOfCopy;

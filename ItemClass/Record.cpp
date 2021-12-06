@@ -21,7 +21,7 @@ string Record::getGenre() {
 }
 
 //Setter
-void Record::setGenres(string genre) {
+void Record::setGenre(string genre) {
 	this->genre = genre;
 }
 

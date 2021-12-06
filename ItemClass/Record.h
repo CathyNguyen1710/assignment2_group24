@@ -2,6 +2,11 @@
 
 #include "Item.h"
 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class Record :public Item
 {
 private:
@@ -9,7 +14,7 @@ private:
 public:
 	//Constructor
 	Record();
-	Record(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre;
+	Record(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
 
 	//Destructor
 	~Record() {};

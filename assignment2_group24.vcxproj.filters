@@ -18,13 +18,10 @@
     <ClCompile Include="assignment2_group24.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItemManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AccountClass\Account.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountClass\GuestAccount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AccountClass\RegularAccount.cpp">
@@ -45,26 +42,14 @@
     <ClCompile Include="ItemClass\Record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AccountClass\GuestAccount.cpp">
+    <ClCompile Include="AccountManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ItemManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountClass\Account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountClass\RegularAccount.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountClass\VIPAccount.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ItemClass\DVD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -77,7 +62,22 @@
     <ClInclude Include="ItemClass\Record.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AccountClass\Account.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="AccountClass\GuestAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountClass\RegularAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountClass\VIPAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

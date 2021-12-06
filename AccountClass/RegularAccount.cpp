@@ -22,8 +22,8 @@ RegularAccount::RegularAccount(Account* account) {
 	this->setAddress(account->getAddress());
 	this->setPhone(account->getPhone());
 	this->setNoOfRentals(account->getNoOfRentals());
-	this->totalBorrowed = 0;
-	this->totalReturned = 0;
+	this->totalBorrowItem = 0;
+	this->totalReturnItem = 0;
 }
 
 //Getter

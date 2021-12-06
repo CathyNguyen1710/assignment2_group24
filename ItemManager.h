@@ -1,10 +1,15 @@
 #include "ItemClass/Item.h"
+#include "ItemClass/DVD.h"
+#include "ItemClass/Game.h"
+#include "ItemClass/Record.h"
 
 #include <string>
 #include <iostream>
 #include <vector>
 #include <fstream>
 #include <sstream>
+
+using namespace std;
 
 class ItemManager
 {
