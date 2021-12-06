@@ -17,10 +17,6 @@ ItemManager::ItemManager(string itemFile) {
 
 }
 
-//Destructor
-ItemManager::~ItemManager() {
-}
-
 //Getter
 vector<Item*> ItemManager::getItemList() {
 	return this->itemList;

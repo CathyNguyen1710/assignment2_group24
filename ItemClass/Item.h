@@ -3,13 +3,15 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Item
 {
 private:
 	string id;
 	string title;
 	string rentalType;
-	string loadType;
+	string loanType;
 	int noOfCopy;
 	double fee;
 	int noRented;
@@ -26,7 +28,7 @@ public:
 	string getId();
 	string getTitle();
 	string getRentalType();
-	string getLoadType();
+	string getLoanType();
 	int getNoOfCopy();
 	double getFee();
 	int getNoRented();
@@ -35,7 +37,7 @@ public:
 	void setId(string id);
 	void setTitle(string title);
 	void setRentalType(string rentalType);
-	void setLoadType(string loadType);
+	void setLoanType(string loadType);
 	void setNoOfCopy(int noOfCopy);
 	void setFee(double fee);
 	void setNoRented(int noRented);

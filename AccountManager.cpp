@@ -1,4 +1,8 @@
 #include "AccountManager.h"
+#include "AccountClass/Account.h"
+#include "AccountClass/GuestAccount.h"
+#include "AccountClass/RegularAccount.h"
+#include "AccountClass/VIPAccount.h"
 
 #include <iostream>
 #include <string>
@@ -15,10 +19,6 @@ AccountManager::AccountManager() {
 }
 AccountManager::AccountManager(string customerFile) {
 
-}
-
-//Destructor
-AccountManager::~AccountManager() {
 }
 
 //Getter

@@ -1,8 +1,8 @@
-// assignment2_group24.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <string>
+#include "AccountManager.h"
+#include "ItemManager.h"
+#include "AccountClass/Account.h"
 
 
 using namespace std;

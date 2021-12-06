@@ -21,7 +21,7 @@ string DVD::getGenre() {
 }
 
 //Setter
-void DVD::setGenres(string genre) {
+void DVD::setGenre(string genre) {
 	this->genre = genre;
 }
 
