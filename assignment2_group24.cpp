@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     cout << "Welcome to Genie’s video store" << "\n\n";
     string input;
 
-    string option = "Please choose from an option below:\n"
+    string option = "\nPlease choose from an option below:\n"
         "1/ Add a new item, update or delete an existing item\n"
         "2/ Add new customer or update an existing customer\n"
         "3/ Promote an existing customer\n"
@@ -22,9 +22,9 @@ int main(int argc, char* argv[])
         "7/ Display out of stock item(s)\n"
         "8/ Display all customers(s)\n"
         "9/ Display a group of customer(s)\n"
-        "10/ Search item(s)"
-        "11/ Search customer(s)"
-        "Exit.";
+        "10/ Search item(s)\n"
+        "11/ Search customer(s)\n"
+        "Exit.\n";
 
     while (true) {
         cout << option << endl;
@@ -68,10 +68,10 @@ int main(int argc, char* argv[])
             cout << "Call function 11" << endl;
         }
         else if (input == "Exit") {
-            cout << "Exit" << endl;
+            //cout << "Exit" << endl;
 
             //Printout team member
-            cout << "\n\nASSIGNMENT 2 GROUP 2" << endl;
+            cout << "\n\nASSIGNMENT 2 GROUP 24" << endl;
             cout << "s3819293, s3819293@rmit.edu.vn, Thi Nha Uyen, Nguyen" << endl;
             cout << "s3818221, s3818221@rmit.edu.vn, Khoi Nguyen, Truong" << endl;
             cout << "s3877256, s3877256@rmit.edu.vn, Phuong Nam, Nguyen" << endl;
