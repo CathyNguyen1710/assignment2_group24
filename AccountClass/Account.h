@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "../ItemManager.h"
+
 class Account
 {
 private:

@@ -57,7 +57,7 @@ bool ItemManager::deleteItem(string id) {
 bool ItemManager::returnItem(string id) {
 	return true;
 }
-bool ItemManager::savrToFile() {
+bool ItemManager::saveToFile() {
 	return true;
 }
 void ItemManager::displaySortedItemTitle() {

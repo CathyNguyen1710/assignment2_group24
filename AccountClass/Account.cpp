@@ -51,7 +51,7 @@ void Account::setNoOfRentals(int noOfRentals) {
     this->noOfRentals = noOfRentals;
 }
 void Account::setListOfRentals(vector<string>& listOfRentals) {
-    this->getListOfRentals = listOfRentals;
+    this->listOfRentals = listOfRentals;
 }
 
 //Other function

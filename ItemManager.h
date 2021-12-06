@@ -35,7 +35,7 @@ public:
 	bool updateItem(string id);
 	bool deleteItem(string id);
 	bool returnItem(string id);
-	bool savrToFile();
+	bool saveToFile();
 	void displaySortedItemTitle();
 	void displaySortedItemID();
 	void getAllNoStock();
