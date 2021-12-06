@@ -15,10 +15,116 @@ using namespace std;
 
 //Constructor
 AccountManager::AccountManager() {
+	this->customerFile = "customers.txt";
+	this->noOfAccount = 0;
 
+	ifstream inStream(customerFile);
+
+	if (!inStream()) {
+		cerr << "Error" << endl;
+	}
+
+	string line;
+	vector<string> customerListData;
+
+	while (getline(inStream, line)) {
+		istringstream stream(line);
+		string fields;
+		while (getline(stream, fields, ',')) {
+			customerListData.push_back(fields);
+		}
+
+		if (customerListData.size == 6) {
+			this->noOfAccount++;
+
+			if (customerListData[5] == "Guest") {
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+			else if (customerListData[5] == "Regular") {
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+			else if (customerListData[5] == "VIP") {
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+			else {
+				cout << "error" << endl;
+			}
+		}
+		else if (customerListData.size == 1) {
+			this->accountList.back()->addRentalList(customerListData[0]);
+		}
+		else {
+			cout << "error" << endl;
+		}
+
+		customerListData.clear();
+	}
+
+	inStream.close();
 }
 AccountManager::AccountManager(string customerFile) {
+	this->customerFile = customerFile;
+	this->noOfAccount = 0;
 
+	ifstream inStream(customerFile);
+
+	if (!inStream()) {
+		cerr << "Error" << endl;
+	}
+
+	string line;
+	vector<string> customerListData;
+
+	while (getline(inStream, line)) {
+		istringstream stream(line);
+		string fields;
+		while (getline(stream, fields, ',')) {
+			customerListData.push_back(fields);
+		}
+
+		if (customerListData.size == 6) {
+			this->noOfAccount++;
+
+			if (customerListData[5] == "Guest") {
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+			else if (customerListData[5] == "Regular") {
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+			else if (customerListData[5] == "VIP") {
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+
+				this->accountList.push_back(newAccount);
+			}
+		}
+		else if (customerListData.size == 1) {
+			this->accountList.back()->addRentalList(customerListData[0]);
+		}
+		else {
+			cout << "error" << endl;
+		}
+
+		customerListData.clear();
+	}
+
+	inStream.close();
+}
+
+//Destructor
+AccountManager::~AccountManager() {
+	for (Account* account : this->accountList) {
+		delete account;
+	}
 }
 
 //Getter

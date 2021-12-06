@@ -51,6 +51,13 @@ bool RegularAccount::promoteable() {
 	cout << "You have not meet the requirement to promote your account" << endl;
 	return false;
 }
+void RegularAccount::addRentalList(string item) {
+	this->listOfRentals.push_back(item);
+
+	this->setTotalBorrowItem(this->totalBorrowItem + 1);
+
+	this->setNoOfRentals(this->listOfRentals.size);
+}
 
 //
 void RegularAccount::print() {

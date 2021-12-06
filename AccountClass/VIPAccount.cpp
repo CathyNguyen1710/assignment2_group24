@@ -34,6 +34,15 @@ void VIPAccount::setRewardPoint(int rewardPoint) {
 	this->rewardPoint = rewardPoint;
 }
 
+//Other function
+void VIPAccount::addRentalList(string item) {
+	this->listOfRentals.push_back(item);
+
+	this->setRewardPoint(this->rewardPoint + 10);
+
+	this->setNoOfRentals(this->listOfRentals.size);
+}
+
 //
 void VIPAccount::print() {
 	cout << "VIP print";
