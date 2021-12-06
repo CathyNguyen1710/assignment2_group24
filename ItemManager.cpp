@@ -11,10 +11,82 @@ using namespace std;
 
 //Constructor
 ItemManager::ItemManager() {
-	
+	this->itemFile = "items.txt";
+	this->noOfItem = 0;
+
+	ifstream inStream(itemFile);
+
+	if (!inStream()) {
+		cerr << "Error" << endl;
+	}
+
+	string line;
+	vector<string> itemListData;
+
+	while (getline(inStream, line)) {
+		istringstream stream(line);
+		string fields;
+
+		while (getline(stream, fields, ',')) {
+			itemListData.push_back(fields);
+		}
+
+		if (itemListData[2] == "Game") {
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5]);
+		}
+		else if (itemListData[2] == "Record") {
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+		}
+		else if (itemListData[2] == "DVD") {
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+		}
+		else {
+			cout << "error" << endl;
+		}
+
+		itemListData.clear;
+	}
+
+	inStream.close();
 }
 ItemManager::ItemManager(string itemFile) {
+	this->itemFile = itemFile;
+	this->noOfItem = 0;
 
+	ifstream inStream(itemFile);
+
+	if (!inStream()) {
+		cerr << "Error" << endl;
+	}
+
+	string line;
+	vector<string> itemListData;
+
+	while (getline(inStream, line)) {
+		istringstream stream(line);
+		string fields;
+
+		while (getline(stream, fields, ',')) {
+			itemListData.push_back(fields);
+		}
+
+		if (itemListData[2] == "Game") {
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5]);
+		}
+		else if (itemListData[2] == "Record") {
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+		}
+		else if (itemListData[2] == "DVD") {
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+		}
+		else {
+			cout << "error" << endl;
+		}
+
+		itemListData.clear;
+	}
+
+	inStream.close();
 }
 
 //Getter

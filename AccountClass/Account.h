@@ -46,8 +46,8 @@ public:
 	void setListOfRentals(vector<string>& listOfRentals);
 
 	//Other function
-	bool rentItem(string id);
-	bool returnItem(string id);
+	bool rentItem(string id, ItemManager* itemList);
+	bool returnItem(string id, ItemManager* itemList);
 	void addRentalList(string item);
 	
 	//

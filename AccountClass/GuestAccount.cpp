@@ -34,9 +34,20 @@ void GuestAccount::setTotalReturnItem(int totalReturnItem) {
 
 //Other function
 bool GuestAccount::promoteable() {
-	return true;
+	if (this->getTotalReturnItem() >= 3) {
+		cout << "You have meet the requirement to promote into Regular Account" << endl;
+		return true;
+	}
+	cout << "You have not meet the requirement to promote your account" << endl;
+	return false;
 }
+void GuestAccount::addRentalList(string item) {
+	this->listOfRentals.push_back(item);
 
+	this->setTotalBorrowItem(this->totalBorrowItem + 1);
+
+	this->setNoOfRentals(this->listOfRentals.size);
+}
 //
 void GuestAccount::print() {
 	cout << "Guest print" << endl;
