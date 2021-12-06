@@ -1,4 +1,5 @@
-#pragma once
+#ifndef A2_ITEM_H
+#define A2_ITEM_H
 
 #include <iostream>
 #include <string>
@@ -46,3 +47,5 @@ public:
 	void print();
 	string toStringt();
 };
+
+#endif

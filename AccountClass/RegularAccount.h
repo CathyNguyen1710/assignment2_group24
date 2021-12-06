@@ -1,4 +1,5 @@
-#pragma once
+#ifndef A2_REGULARACCOUNT_H
+#define A2_REGULARACCOUNT_H
 
 #include "Account.h"
 
@@ -38,3 +39,4 @@ public:
 	string toString();
 };
 
+#endif

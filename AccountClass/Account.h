@@ -1,3 +1,6 @@
+#ifndef A2_ACCOUNT_H
+#define A2_ACCOUNT_H
+
 #include "../ItemManager.h"
 
 #include <iostream>
@@ -52,3 +55,4 @@ public:
 	string toString();
 };
 
+#endif

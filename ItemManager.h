@@ -1,3 +1,6 @@
+#ifndef A2_ITEMMANAGER_H
+#define A2_ITEMMANAGER_H
+
 #include "ItemClass/Item.h"
 #include "ItemClass/DVD.h"
 #include "ItemClass/Game.h"
@@ -51,3 +54,4 @@ public:
 	void print();
 };
 
+#endif

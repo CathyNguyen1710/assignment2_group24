@@ -1,4 +1,5 @@
-#pragma once
+#ifndef A2_VIPACCOUNT_H
+#define A2_VIPACCOUNT_H
 
 #include "Account.h"
 
@@ -34,3 +35,4 @@ public:
 	string toString();
 };
 
+#endif
