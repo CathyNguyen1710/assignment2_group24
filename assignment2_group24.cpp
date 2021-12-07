@@ -6,6 +6,97 @@
 
 using namespace std;
 
+bool checkItemID(string input) {
+    if (input.length() == 9) {
+        for (int i = 0; i < input.length(); i++) {
+            if (i == 0) {
+                if (input[i] != 'I') {
+                    cerr << "Id is not in the right format (Ixxx-xxxx). Please try again (missing I): " << endl;
+                    return false;
+                }
+            }
+            else if (i == 4) {
+                if (input[i] != '-') {
+                    cerr << "Id is not in the right format (Ixxx-xxxx). Please try again (missing -):" << endl;
+                    return false;
+                }
+            }
+            else {
+                if (input[i] > '9' || input[i] < '0') {
+                    cerr << "Id is not in the right format (Ixxx-xxxx). Please try again: " << endl;
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    else {
+        cerr << "item id should has 9 characters (Ixxx-xxxx)" << endl;
+        return false;
+    }
+}
+
+bool checkAccountID(string input) {
+    if (input.length() == 4) {
+        for (int i = 0; i < input.length(); i++) {
+            if (i == 0) {
+                if (input[i] != 'C') {
+                    cerr << "Id is not in the right format (Cxxx). Please try again (missing C): " << endl;
+                    return false;
+                }
+            }
+            else {
+                if (input[i] > '9' || input[i] < '0') {
+                    cerr << "Id is not in the right format (Cxxx). Please try again: " << endl;
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    else {
+        cerr << "customer id should has 4 characters (Cxxx)" << endl;
+        return false;
+    }
+}
+
+string getItemID() {
+    string input;
+    string ask = "Please enter the item id: ";
+
+    while (true) {
+        cout << ask;
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (checkItemID(input) == true) {
+            return input;
+        }
+    }
+}
+
+string getAccountID() {
+    string input;
+    string ask = "Please enter the account id: ";
+
+    while (true) {
+        cout << ask;
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (checkAccountID(input) == true) {
+            return input;
+        }
+    }
+}
+
+
 int main(int argc, char* argv[])
 {
     cout << "Welcome to Genie’s video store" << "\n\n";
