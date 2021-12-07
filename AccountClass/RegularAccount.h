@@ -15,7 +15,7 @@ private:
 	int totalVideoReturn;
 public:
 	//Constructor
-	RegularAccount() {};
+	RegularAccount();
 	RegularAccount(string id, string name, string address, string phone, int noOfRentals);
 	RegularAccount(Account* account);//Constructor used for promote from Guest acc to Regular acc
 
@@ -32,6 +32,7 @@ public:
 	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
+	void addRentalList(string id);
 	void addRentalList(string id, ItemManager* itemList);
 
 	//

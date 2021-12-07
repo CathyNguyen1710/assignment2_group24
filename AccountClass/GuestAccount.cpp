@@ -7,7 +7,7 @@
 using namespace std;
 
 //Constructor
-GuestAccount::GuestAccount() {
+GuestAccount::GuestAccount() :Account() {
 
 }
 GuestAccount::GuestAccount(string id, string name, string address, string phone, int noOfRentals) :
@@ -42,10 +42,17 @@ void GuestAccount::addRentalList(string id, ItemManager* itemList) {
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
 	for (Item* item : itemList->getItemList()) {
-		if (item->getLoanType() == "Video") {
+		if (item->getId() == id && item->getLoanType() == "Video") {
 			this->setTotalVideoReturn(this->totalVideoReturn + 1);
 		}
 	}
+
+	this->setNoOfRentals(this->listOfRentals.size());
+}
+void GuestAccount::addRentalList(string id) {
+	this->listOfRentals.push_back(id);
+
+	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
 	this->setNoOfRentals(this->listOfRentals.size());
 }

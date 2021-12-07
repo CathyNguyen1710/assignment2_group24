@@ -3,7 +3,6 @@
 using namespace std;
 
 Account::Account() {
-
 }
 
 Account::Account(string id, string name, string address, string phone, int noOfRentals) {

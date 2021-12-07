@@ -1,2 +1,13 @@
-﻿AccountManager.obj : error LNK2019: unresolved external symbol "public: void __cdecl Account::addRentalList(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?addRentalList@Account@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: __cdecl AccountManager::AccountManager(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0AccountManager@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-D:\RMIT\Courses\c++\assignment2_group24\x64\Debug\assignment2_group24.exe : fatal error LNK1120: 1 unresolved externals
+﻿  Account.cpp
+  GuestAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(57,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  RegularAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.cpp(61,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.cpp(68,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  VIPAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.cpp(49,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  AccountManager.cpp
+  assignment2_group24.cpp
+  Generating Code...
+  assignment2_group24.vcxproj -> D:\RMIT\Courses\c++\assignment2_group24\x64\Debug\assignment2_group24.exe

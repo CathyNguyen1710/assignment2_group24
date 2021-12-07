@@ -4,7 +4,6 @@
 #include "ItemManager.h"
 #include "AccountClass/Account.h"
 
-
 using namespace std;
 
 int main(int argc, char* argv[])

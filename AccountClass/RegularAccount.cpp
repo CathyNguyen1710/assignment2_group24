@@ -7,7 +7,7 @@
 using namespace std;
 
 //Constructor
-RegularAccount::RegularAccount() {
+RegularAccount::RegularAccount() :Account() {
 
 }
 RegularAccount::RegularAccount(string id, string name, string address, string phone, int noOfRentals) :
@@ -57,6 +57,13 @@ void RegularAccount::addRentalList(string id, ItemManager* itemList) {
 			this->setTotalVideoReturn(this->totalVideoReturn + 1);
 		}
 	}
+
+	this->setNoOfRentals(this->listOfRentals.size());
+}
+void RegularAccount::addRentalList(string id) {
+	this->listOfRentals.push_back(id);
+
+	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
 	this->setNoOfRentals(this->listOfRentals.size());
 }
