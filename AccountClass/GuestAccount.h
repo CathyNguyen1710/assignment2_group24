@@ -15,7 +15,7 @@ private:
 	int totalVideoReturn;
 public:
 	//Constructor
-	GuestAccount();
+	GuestAccount() {};
 	GuestAccount(string id, string name, string address, string phone, int noOfRentals);
 
 	//Destructor

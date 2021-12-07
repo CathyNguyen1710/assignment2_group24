@@ -50,14 +50,14 @@ void VIPAccount::addRentalList(string id) {
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 	for (string rentItem : this->getListOfRentals()) {
-		if (strcmp(rentItem, id) == 0) {
+		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
 	}
 
-	for (Item* item : itemList) {
-		if (strcmp(item->getId(), id) == 0) {
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
 			if (item->getNoOfCopy() == 0) {
 				cerr << "Item is out of stock" << endl;
 				return false;

@@ -52,7 +52,7 @@ void RegularAccount::addRentalList(string id, ItemManager* itemList) {
 
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
-	for (Item* item : itemList) {
+	for (Item* item : itemList->getItemList()) {
 		if (item->getLoanType() == "Video") {
 			this->setTotalVideoReturn(this->totalVideoReturn + 1);
 		}
@@ -62,14 +62,14 @@ void RegularAccount::addRentalList(string id, ItemManager* itemList) {
 }
 bool RegularAccount::rentItem(string id, ItemManager* itemList) {
 	for (string rentItem : this->getListOfRentals()) {
-		if (strcmp(rentItem, id) == 0) {
+		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
 	}
 	
-	for (Item* item : itemList) {
-		if (strcmp(item->getId(), id) == 0) {
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
 			if (item->getNoOfCopy() == 0) {
 				cerr << "Item is out of stock" << endl;
 				return false;
@@ -82,7 +82,6 @@ bool RegularAccount::rentItem(string id, ItemManager* itemList) {
 			}
 		}
 	}
-
 
 	cerr << "There is no item with matching id" << endl;
 	return false;
