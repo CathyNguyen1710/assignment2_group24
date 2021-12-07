@@ -26,7 +26,7 @@ public:
 	ItemManager(string itemFile); //Use to read from item file
 
 	//Destructor
-	~ItemManager() {};
+	~ItemManager();
 
 	//Getter
 	vector<Item*> getItemList();

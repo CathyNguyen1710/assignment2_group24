@@ -17,6 +17,8 @@ private:
 	string address;
 	string phone;
 	int noOfRentals;
+	int totalBorrowItem;
+	int totalReturnItem;
 
 protected:
 	vector<string> listOfRentals;
@@ -35,6 +37,8 @@ public:
 	string getAddress();
 	string getPhone();
 	int getNoOfRentals();
+	int getTotalBorrowItem();
+	int getTotalReturnItem();
 	vector<string> getListOfRentals();
 
 	//Setter
@@ -43,12 +47,15 @@ public:
 	void setAddress(string address);
 	void setPhone(string phone);
 	void setNoOfRentals(int noOfRentals);
+	void setTotalBorrowItem(int totalBorrowItem);
+	void setTotalReturnItem(int totalReturnItem);
 	void setListOfRentals(vector<string>& listOfRentals);
 
 	//Other function
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
-	void addRentalList(string item);
+	void addRentalList(string id);
+	void addRentalList(string id, ItemManager* itemList);
 	
 	//
 	void print();

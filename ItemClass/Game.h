@@ -12,7 +12,7 @@ class Game:public Item
 public:
 	//Constructor
 	Game();
-	Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
+	Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
 	//Destructor
 	~Game() {};

@@ -20,7 +20,7 @@ public:
 	AccountManager(string customerFile); //Use to read from customer file
 
 	//Destructor
-	~AccountManager() {};
+	~AccountManager();
 
 	//Getter
 	vector<Account*> getAccountList();

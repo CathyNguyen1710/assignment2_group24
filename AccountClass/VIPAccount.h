@@ -29,6 +29,9 @@ public:
 	void setRewardPoint(int rewardPoint);
 
 	//Other function
+	bool rentItem(string id, ItemManager* itemList);
+	bool returnItem(string id, ItemManager* itemList);
+	void addRentalList(string id);
 
 	//
 	void print();

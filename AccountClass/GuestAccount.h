@@ -12,8 +12,7 @@ using namespace std;
 class GuestAccount :public Account
 {
 private:
-	int totalBorrowItem;
-	int totalReturnItem;
+	int totalVideoReturn;
 public:
 	//Constructor
 	GuestAccount();
@@ -23,15 +22,16 @@ public:
 	~GuestAccount() {};
 
 	//Getter
-	int getTotalBorrowItem();
-	int getTotalReturnItem();
+	int getTotalVideoReturn();
 
 	//Setter
-	void setTotalBorrowItem(int totalBorrowItem);
-	void setTotalReturnItem(int totalReturnItem);
+	void setTotalVideoReturn(int totalVideoReturn);
 
 	//Other function
 	bool promoteable(); //Use to promote from Guest acc to Regular acc when meet condition*
+	bool rentItem(string id, ItemManager* itemList);
+	bool returnItem(string id, ItemManager* itemList);
+	void addRentalList(string id, ItemManager* itemList);
 
 	//
 	void print();

@@ -20,7 +20,7 @@ AccountManager::AccountManager() {
 
 	ifstream inStream(customerFile);
 
-	if (!inStream()) {
+	if (!inStream) {
 		cerr << "Error" << endl;
 	}
 
@@ -34,21 +34,21 @@ AccountManager::AccountManager() {
 			customerListData.push_back(fields);
 		}
 
-		if (customerListData.size == 6) {
+		if (customerListData.size() == 6) {
 			this->noOfAccount++;
 
 			if (customerListData[5] == "Guest") {
-				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
-				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
-				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
@@ -56,7 +56,7 @@ AccountManager::AccountManager() {
 				cout << "error" << endl;
 			}
 		}
-		else if (customerListData.size == 1) {
+		else if (customerListData.size() == 1) {
 			this->accountList.back()->addRentalList(customerListData[0]);
 		}
 		else {
@@ -74,7 +74,7 @@ AccountManager::AccountManager(string customerFile) {
 
 	ifstream inStream(customerFile);
 
-	if (!inStream()) {
+	if (!inStream) {
 		cerr << "Error" << endl;
 	}
 
@@ -88,26 +88,26 @@ AccountManager::AccountManager(string customerFile) {
 			customerListData.push_back(fields);
 		}
 
-		if (customerListData.size == 6) {
+		if (customerListData.size() == 6) {
 			this->noOfAccount++;
 
 			if (customerListData[5] == "Guest") {
-				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
-				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
-				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], customerListData[4]);
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
 
 				this->accountList.push_back(newAccount);
 			}
 		}
-		else if (customerListData.size == 1) {
+		else if (customerListData.size() == 1) {
 			this->accountList.back()->addRentalList(customerListData[0]);
 		}
 		else {
