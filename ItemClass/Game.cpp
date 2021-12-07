@@ -10,7 +10,7 @@ using namespace std;
 Game::Game() {
 
 }
-Game::Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre) :
+Game::Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee) :
 	Item(id, title, rentalType, loanType, noOfCopy, fee) {
 }
 

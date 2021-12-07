@@ -16,7 +16,7 @@ ItemManager::ItemManager() {
 
 	ifstream inStream(itemFile);
 
-	if (!inStream()) {
+	if (!inStream) {
 		cerr << "Error" << endl;
 	}
 
@@ -32,19 +32,19 @@ ItemManager::ItemManager() {
 		}
 
 		if (itemListData[2] == "Game") {
-			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5]);
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
 		}
 		else if (itemListData[2] == "Record") {
-			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 		}
 		else if (itemListData[2] == "DVD") {
-			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 		}
 		else {
 			cout << "error" << endl;
 		}
 
-		itemListData.clear;
+		itemListData.clear();
 	}
 
 	inStream.close();
@@ -55,7 +55,7 @@ ItemManager::ItemManager(string itemFile) {
 
 	ifstream inStream(itemFile);
 
-	if (!inStream()) {
+	if (!inStream) {
 		cerr << "Error" << endl;
 	}
 
@@ -71,22 +71,30 @@ ItemManager::ItemManager(string itemFile) {
 		}
 
 		if (itemListData[2] == "Game") {
-			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5]);
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
 		}
 		else if (itemListData[2] == "Record") {
-			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 		}
 		else if (itemListData[2] == "DVD") {
-			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], itemListData[4], itemListData[5], itemListData[6]);
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 		}
 		else {
 			cout << "error" << endl;
 		}
 
-		itemListData.clear;
+		itemListData.clear();
 	}
 
 	inStream.close();
+}
+
+//destructor
+ItemManager::~ItemManager() {
+	for (Item* item : this->itemList) {
+		//remove all dynamically allocated memory for item pointers
+		delete item;
+	}
 }
 
 //Getter

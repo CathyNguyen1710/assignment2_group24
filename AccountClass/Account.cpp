@@ -30,6 +30,12 @@ string Account::getPhone() {
 int Account::getNoOfRentals() {
     return this->noOfRentals;
 }
+int Account::getTotalBorrowItem() {
+    return this->totalBorrowItem;
+}
+int Account::getTotalReturnItem() {
+    return this->totalReturnItem;
+}
 vector<string> Account::getListOfRentals() {
     return this->listOfRentals;
 }
@@ -49,6 +55,12 @@ void Account::setPhone(string phone) {
 }
 void Account::setNoOfRentals(int noOfRentals) {
     this->noOfRentals = noOfRentals;
+}
+void Account::setTotalBorrowItem(int totalBorrowItem) {
+    this->totalBorrowItem = totalBorrowItem;
+}
+void Account::setTotalReturnItem(int totalReturnItem) {
+    this->totalReturnItem = totalReturnItem;
 }
 void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->listOfRentals = listOfRentals;

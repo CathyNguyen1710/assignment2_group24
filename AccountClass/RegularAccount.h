@@ -12,8 +12,7 @@ using namespace std;
 class RegularAccount :public Account
 {
 private:
-	int totalBorrowItem;
-	int totalReturnItem;
+	int totalVideoReturn;
 public:
 	//Constructor
 	RegularAccount();
@@ -24,15 +23,15 @@ public:
 	~RegularAccount() {};
 
 	//Getter
-	int getTotalBorrowItem();
-	int getTotalReturnItem();
+	int getTotalVideoReturn();
 
 	//Setter
-	void setTotalBorrowItem(int totalBorrowItem);
-	void setTotalReturnItem(int totalReturnItem);
+	void setTotalVideoReturn(int totalVideoReturn);
 
 	//Other function
 	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition
+	bool rentItem(string id, ItemManager* itemList);
+	void addRentalList(string id, ItemManager* itemList);
 
 	//
 	void print();
