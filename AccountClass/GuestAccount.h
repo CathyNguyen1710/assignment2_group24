@@ -15,7 +15,7 @@ private:
 	int totalVideoReturn;
 public:
 	//Constructor
-	GuestAccount() {};
+	GuestAccount();
 	GuestAccount(string id, string name, string address, string phone, int noOfRentals);
 
 	//Destructor
@@ -31,6 +31,7 @@ public:
 	bool promoteable(); //Use to promote from Guest acc to Regular acc when meet condition*
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
+	void addRentalList(string id);
 	void addRentalList(string id, ItemManager* itemList);
 
 	//

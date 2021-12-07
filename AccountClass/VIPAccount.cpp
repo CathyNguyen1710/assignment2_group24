@@ -7,7 +7,7 @@
 using namespace std;
 
 //Constructor
-VIPAccount::VIPAccount() {
+VIPAccount::VIPAccount() :Account() {
 
 }
 VIPAccount::VIPAccount(string id, string name, string address, string phone, int noOfRentals) :

@@ -52,10 +52,9 @@ public:
 	void setListOfRentals(vector<string>& listOfRentals);
 
 	//Other function
-	bool rentItem(string id, ItemManager* itemList);
-	bool returnItem(string id, ItemManager* itemList);
-	void addRentalList(string id);
-	void addRentalList(string id, ItemManager* itemList);
+	virtual bool rentItem(string id, ItemManager* itemList) = 0;
+	virtual bool returnItem(string id, ItemManager* itemList) = 0;
+	virtual void addRentalList(string id) = 0;
 	
 	//
 	void print();
