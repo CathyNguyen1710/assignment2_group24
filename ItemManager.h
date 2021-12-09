@@ -50,6 +50,7 @@ public:
 	void searchItem(string title);
 	void searchItem(char* id);
 
+
 	//
 	void print();
 };

@@ -17,6 +17,7 @@ private:
 	string address;
 	string phone;
 	int noOfRentals;
+	string type;
 	int totalBorrowItem;
 	int totalReturnItem;
 
@@ -26,7 +27,7 @@ protected:
 public:
 	//Constructor
 	Account();
-	Account(string id, string name, string address, string phone, int noOfRentals);
+	Account(string id, string name, string address, string phone, int noOfRentals, string type);
 	
 	//Destructor
 	~Account() {};
@@ -37,6 +38,7 @@ public:
 	string getAddress();
 	string getPhone();
 	int getNoOfRentals();
+	string getType();
 	int getTotalBorrowItem();
 	int getTotalReturnItem();
 	vector<string> getListOfRentals();
@@ -47,6 +49,7 @@ public:
 	void setAddress(string address);
 	void setPhone(string phone);
 	void setNoOfRentals(int noOfRentals);
+	void setType(string type);
 	void setTotalBorrowItem(int totalBorrowItem);
 	void setTotalReturnItem(int totalReturnItem);
 	void setListOfRentals(vector<string>& listOfRentals);
@@ -55,10 +58,11 @@ public:
 	virtual bool rentItem(string id, ItemManager* itemList) = 0;
 	virtual bool returnItem(string id, ItemManager* itemList) = 0;
 	virtual void addRentalList(string id) = 0;
+	virtual bool promoteable() = 0;
 	
 	//
-	void print();
-	string toString();
+	virtual void print() = 0;
+	virtual string toString() = 0;
 };
 
 #endif

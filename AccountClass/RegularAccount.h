@@ -16,7 +16,7 @@ private:
 public:
 	//Constructor
 	RegularAccount();
-	RegularAccount(string id, string name, string address, string phone, int noOfRentals);
+	RegularAccount(string id, string name, string address, string phone, int noOfRentals, string type);
 	RegularAccount(Account* account);//Constructor used for promote from Guest acc to Regular acc
 
 	//Destructor
@@ -33,7 +33,6 @@ public:
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
 	void addRentalList(string id);
-	void addRentalList(string id, ItemManager* itemList);
 
 	//
 	void print();

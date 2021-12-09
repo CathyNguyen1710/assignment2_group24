@@ -119,7 +119,6 @@ void ItemManager::setItemFile(string itemFile) {
 	this->itemFile = itemFile;
 }
 
-
 //Other function
 bool ItemManager::addItem() {
 	return true;
@@ -131,7 +130,15 @@ bool ItemManager::deleteItem(string id) {
 	return true;
 }
 bool ItemManager::returnItem(string id) {
-	return true;
+	for (Item* item : this->getItemList()) {
+		if (item->getId() == id) {
+			item->setNoOfCopy(item->getNoOfCopy() + 1);
+			item->setNoRented(item->getNoRented() - 1);
+			return true;
+		}
+	}
+
+	return false;
 }
 bool ItemManager::saveToFile() {
 	return true;
