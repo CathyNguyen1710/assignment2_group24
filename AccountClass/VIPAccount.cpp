@@ -10,8 +10,8 @@ using namespace std;
 VIPAccount::VIPAccount() :Account() {
 
 }
-VIPAccount::VIPAccount(string id, string name, string address, string phone, int noOfRentals) :
-	Account(id, name, address, phone, noOfRentals) {
+VIPAccount::VIPAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
+	Account(id, name, address, phone, noOfRentals, type) {
 	this->setTotalBorrowItem(0);
 	this->setTotalReturnItem(0);
 	this->rewardPoint = 0;
@@ -23,6 +23,7 @@ VIPAccount::VIPAccount(Account* account) {
 	this->setAddress(account->getAddress());
 	this->setPhone(account->getPhone());
 	this->setNoOfRentals(account->getNoOfRentals());
+	this->setType("VIP");
 	this->setTotalBorrowItem(account->getTotalBorrowItem());
 	this->setTotalReturnItem(account->getTotalReturnItem());
 	this->rewardPoint = 0;
@@ -39,14 +40,18 @@ void VIPAccount::setRewardPoint(int rewardPoint) {
 }
 
 //Other function
+bool VIPAccount::promoteable() {
+	cout << "You cannot promote your account any further" << endl;
+	return false;
+}
 void VIPAccount::addRentalList(string id) {
-	this->listOfRentals.push_back(id);
+	this->getListOfRentals().push_back(id);
 
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
-	this->setRewardPoint(this->rewardPoint + 10);
+	this->setNoOfRentals(this->getListOfRentals().size());
 
-	this->setNoOfRentals(this->listOfRentals.size());
+	this->setRewardPoint(this->rewardPoint + 10);
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 	for (string rentItem : this->getListOfRentals()) {
@@ -65,6 +70,7 @@ bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 			else {
 				item->setNoRented(item->getNoRented() + 1);
 				item->setNoOfCopy(item->getNoOfCopy() - 1);
+				this->setNoOfRentals(this->getNoOfRentals() + 1);
 				this->addRentalList(id);
 
 				bool free = false;
@@ -111,7 +117,20 @@ bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 	return false;
 }
 bool VIPAccount::returnItem(string id, ItemManager* itemList) {
-	return true;
+	int pos = 0;
+	for (string item: this->getListOfRentals()) {
+		if (item == id) {
+			if (itemList->returnItem(item) == true) {
+				this->setNoOfRentals(this->getNoOfRentals() - 1);
+				this->getListOfRentals().erase(this->getListOfRentals().begin() + pos);
+				return true;
+			}
+		}
+		pos++;
+	}
+
+	cerr << "The item specified was not rented" << endl;
+	return false;
 }
 
 //

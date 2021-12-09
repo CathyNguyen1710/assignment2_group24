@@ -1,4 +1,10 @@
+#ifndef A2_ACCOUNTMANAGER_H
+#define A2_ITEMMANAGER_H
+
 #include "AccountClass/Account.h"
+#include "AccountClass/GuestAccount.h"
+#include "AccountClass/RegularAccount.h"
+#include "AccountClass/VIPAccount.h"
 
 #include <iostream>
 #include <string>
@@ -41,8 +47,10 @@ public:
 	void getAccountByLevel(string level);
 	void searchAccount(string name);
 	void searchAccount(char* id);
+	void promoteAccount(string id);
 
 	//
 	void print();
 };
 
+#endif

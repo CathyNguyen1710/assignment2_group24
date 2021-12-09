@@ -16,7 +16,7 @@ private:
 public:
 	//Constructor
 	GuestAccount();
-	GuestAccount(string id, string name, string address, string phone, int noOfRentals);
+	GuestAccount(string id, string name, string address, string phone, int noOfRentals, string type);
 
 	//Destructor
 	~GuestAccount() {};
@@ -32,7 +32,6 @@ public:
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
 	void addRentalList(string id);
-	void addRentalList(string id, ItemManager* itemList);
 
 	//
 	void print();

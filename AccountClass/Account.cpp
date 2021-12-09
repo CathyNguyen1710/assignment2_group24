@@ -5,12 +5,13 @@ using namespace std;
 Account::Account() {
 }
 
-Account::Account(string id, string name, string address, string phone, int noOfRentals) {
+Account::Account(string id, string name, string address, string phone, int noOfRentals, string type) {
     this->id = id;
     this->name = name;
     this->address = address;
     this->phone = phone;
     this->noOfRentals = noOfRentals;
+    this->type = type;
 }
 
 //Getter
@@ -28,6 +29,9 @@ string Account::getPhone() {
 }
 int Account::getNoOfRentals() {
     return this->noOfRentals;
+}
+string Account::getType() {
+    return this->type;
 }
 int Account::getTotalBorrowItem() {
     return this->totalBorrowItem;
@@ -55,6 +59,9 @@ void Account::setPhone(string phone) {
 void Account::setNoOfRentals(int noOfRentals) {
     this->noOfRentals = noOfRentals;
 }
+void Account::setType(string type) {
+    this->type = type;
+}
 void Account::setTotalBorrowItem(int totalBorrowItem) {
     this->totalBorrowItem = totalBorrowItem;
 }
@@ -63,12 +70,4 @@ void Account::setTotalReturnItem(int totalReturnItem) {
 }
 void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->listOfRentals = listOfRentals;
-}
-
-//
-void Account::print() {
-    cout << "print Account" << endl;
-}
-string Account::toString() {
-    return "Account to Database";
 }

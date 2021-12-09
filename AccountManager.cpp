@@ -1,8 +1,4 @@
 #include "AccountManager.h"
-#include "AccountClass/Account.h"
-#include "AccountClass/GuestAccount.h"
-#include "AccountClass/RegularAccount.h"
-#include "AccountClass/VIPAccount.h"
 
 #include <iostream>
 #include <string>
@@ -38,17 +34,17 @@ AccountManager::AccountManager() {
 			this->noOfAccount++;
 
 			if (customerListData[5] == "Guest") {
-				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
-				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
-				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
@@ -92,17 +88,17 @@ AccountManager::AccountManager(string customerFile) {
 			this->noOfAccount++;
 
 			if (customerListData[5] == "Guest") {
-				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
-				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
-				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]));
+				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
 
 				this->accountList.push_back(newAccount);
 			}
@@ -173,6 +169,35 @@ void AccountManager::searchAccount(string name) {
 }
 void AccountManager::searchAccount(char* id) {
 	cout << "search by id" << endl;
+}
+void AccountManager::promoteAccount(string id) {
+	int pos = 0;
+	for (Account* account : this->getAccountList()) {
+		if (account->getId() == id) {
+			if (account->promoteable() == true && account->getType() == "Guest") {
+				RegularAccount* promoteAcc = new RegularAccount(account);
+
+				delete this->getAccountList()[pos];
+
+				this->getAccountList()[pos] = promoteAcc;
+
+				cout << "Account with id " << id << " is successfully promoted to Regular Account" << endl;
+			}
+			else if (account->promoteable() == true && account->getType() == "Regular") {
+				VIPAccount* promoteAcc = new VIPAccount(account);
+
+				delete this->getAccountList()[pos];
+
+				this->getAccountList()[pos] = promoteAcc;
+
+				cout << "Account with id " << id << " is successfully promoted to VIP Account" << endl;
+			}
+		}
+		pos++;
+	}
+	
+	cerr << "There is no account with matching id" << endl;
+
 }
 
 //

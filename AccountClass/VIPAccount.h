@@ -16,7 +16,7 @@ private:
 public:
 	//Constructor
 	VIPAccount();
-	VIPAccount(string id, string name, string address, string phone, int noOfRentals);
+	VIPAccount(string id, string name, string address, string phone, int noOfRentals, string type);
 	VIPAccount(Account* account);//Constructor used for promote from Regular acc to VIP acc
 
 	//Destructor
@@ -32,6 +32,7 @@ public:
 	bool rentItem(string id, ItemManager* itemList);
 	bool returnItem(string id, ItemManager* itemList);
 	void addRentalList(string id);
+	bool promoteable();
 
 	//
 	void print();
