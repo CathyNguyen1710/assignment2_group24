@@ -33,12 +33,15 @@ ItemManager::ItemManager() {
 
 		if (itemListData[2] == "Game") {
 			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+			this->itemList.push_back(newItem);
 		}
 		else if (itemListData[2] == "Record") {
 			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+			this->itemList.push_back(newItem);
 		}
 		else if (itemListData[2] == "DVD") {
 			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+			this->itemList.push_back(newItem);
 		}
 		else {
 			cout << "error" << endl;
@@ -72,12 +75,15 @@ ItemManager::ItemManager(string itemFile) {
 
 		if (itemListData[2] == "Game") {
 			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+			this->itemList.push_back(newItem);
 		}
 		else if (itemListData[2] == "Record") {
 			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+			this->itemList.push_back(newItem);
 		}
 		else if (itemListData[2] == "DVD") {
 			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+			this->itemList.push_back(newItem);
 		}
 		else {
 			cout << "error" << endl;
@@ -120,15 +126,6 @@ void ItemManager::setItemFile(string itemFile) {
 }
 
 //Other function
-bool ItemManager::addItem() {
-	return true;
-}
-bool ItemManager::updateItem(string id) {
-	return true;
-}
-bool ItemManager::deleteItem(string id) {
-	return true;
-}
 bool ItemManager::returnItem(string id) {
 	for (Item* item : this->getItemList()) {
 		if (item->getId() == id) {
@@ -140,9 +137,17 @@ bool ItemManager::returnItem(string id) {
 
 	return false;
 }
-bool ItemManager::saveToFile() {
+
+bool ItemManager::addItem() {
 	return true;
 }
+bool ItemManager::updateItem(string id) {
+	return true;
+}
+bool ItemManager::deleteItem(string id) {
+	return true;
+}
+
 void ItemManager::displaySortedItemTitle() {
 	cout << "sort by title" << endl;
 }
@@ -157,6 +162,21 @@ void ItemManager::searchItem(string title) {
 }
 void ItemManager::searchItem(char* id) {
 	cout << "search by id" << endl;
+}
+
+bool ItemManager::saveToFile() {
+	ofstream outStream(this->itemFile);
+
+	for (Item* item : this->itemList) {
+		outStream << item->toString() << endl;
+	}
+	return true;
+}
+
+void ItemManager::displayAll() {
+	for (Item* item : this->getItemList()) {
+		item->print();
+	}
 }
 
 //

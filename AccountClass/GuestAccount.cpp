@@ -13,23 +13,22 @@ GuestAccount::GuestAccount() :Account() {
 GuestAccount::GuestAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
 	this->setTotalBorrowItem(0);
-	this->setTotalReturnItem(0);
-	this->totalVideoReturn = 0;
+	this->totalReturnItem = 0;
 }
 
 //Getter
-int GuestAccount::getTotalVideoReturn() {
-	return this->totalVideoReturn;
+int GuestAccount::getTotalReturnItem() {
+	return this->totalReturnItem;
 }
 
 //Setter
-void GuestAccount::setTotalVideoReturn(int totalVideoReturn) {
-	this->totalVideoReturn = totalVideoReturn;
+void GuestAccount::setTotalReturnItem(int totalReturnItem) {
+	this->totalReturnItem = totalReturnItem;
 }
 
 //Other function
 bool GuestAccount::promoteable() {
-	if (this->getTotalVideoReturn() >= 3) {
+	if (this->getTotalReturnItem() >= 3) {
 		cout << "You have meet the requirement to promote into Regular Account" << endl;
 		return true;
 	}
@@ -37,9 +36,11 @@ bool GuestAccount::promoteable() {
 	return false;
 }
 void GuestAccount::addRentalList(string id) {
-	this->getListOfRentals().push_back(id);
+	this->listOfRentals.push_back(id);
 
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+
+	this->setTotalReturnItem(this->getTotalReturnItem() + 1);
 
 	this->setNoOfRentals(this->getListOfRentals().size());
 }
@@ -80,20 +81,16 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 }
 bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 	int pos = 0;
-	for (string itemID : this->getListOfRentals()) {
+	for (string itemID : this->listOfRentals) {
 		if (itemID == id) {
 			if (itemList->returnItem(itemID) == true) {
 				this->setNoOfRentals(this->getNoOfRentals() - 1);
-				this->getListOfRentals().erase(this->getListOfRentals().begin() + pos);
+				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
 				return true;
 			}
 		}
-		pos++;
-	}
-
-	for (Item* item : itemList->getItemList()) {
-		if (item->getRentalType() == "Video") {
-			this->setTotalVideoReturn(this->getTotalVideoReturn() + 1);
+		else {
+			pos++;
 		}
 	}
 
@@ -103,8 +100,9 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 
 //
 void GuestAccount::print() {
-	cout << "Guest print" << endl;
+	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 string GuestAccount::toString() {
-	return "Guest to Database";
+	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
+	return toDB;
 }

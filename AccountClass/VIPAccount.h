@@ -13,6 +13,7 @@ class VIPAccount :public Account
 {
 private:
 	int rewardPoint;
+
 public:
 	//Constructor
 	VIPAccount();

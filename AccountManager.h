@@ -1,5 +1,5 @@
 #ifndef A2_ACCOUNTMANAGER_H
-#define A2_ITEMMANAGER_H
+#define A2_ACCOUNTMANAGER_H
 
 #include "AccountClass/Account.h"
 #include "AccountClass/GuestAccount.h"
@@ -39,17 +39,22 @@ public:
 	void setCustomerFile(string customerFile);
 
 	//Other function
+	bool promoteAccount(string id);
+
 	bool addAccount();
 	bool updateAccount(string id);
-	bool saveToFile();
+
 	void displaySortedAccountName();
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
 	void searchAccount(string name);
 	void searchAccount(char* id);
-	void promoteAccount(string id);
 
-	//
+	bool saveToFile();
+
+	void displayAll();
+	void displayAllRental();
+
 	void print();
 };
 

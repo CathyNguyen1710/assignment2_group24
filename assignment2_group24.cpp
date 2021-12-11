@@ -3,7 +3,13 @@
 #include "AccountClass/Account.h"
 
 #include <iostream>
+#include <sstream>
+#include <fstream>
 #include <string>
+#include <vector>
+#include <iomanip>
+
+#include <utility>
 
 using namespace std;
 
@@ -97,9 +103,288 @@ string getAccountID() {
     }
 }
 
+void itemSubMenu(ItemManager* itemList) {
+    string input;
 
-int main(int argc, char* argv[])
+    string option = "Choose one of the options below\n"
+        "1. Add an item\n"
+        "2. Update an item\n"
+        "3. Delete an item\n"
+        "4. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Add an item" << endl;
+        }
+        else if (input == "2") {
+            cout << "Update an item" << endl;
+        }
+        else if (input == "3") {
+            cout << "Delete an item" << endl;
+        }
+        else if (input == "4") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void customerSubMenu(AccountManager* accountList) {
+    string input;
+
+    string option = "Choose one of the options below\n"
+        "1. Add a customer\n"
+        "2. Update a customer\n"
+        "3. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Add a customer" << endl;
+        }
+        else if (input == "2") {
+            cout << "Update a customer" << endl;
+        }
+        else if (input == "3") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void promoteCustomer(AccountManager* accountList) {
+    string id = getAccountID();
+    accountList->promoteAccount(id);
+}
+
+void rentItem(AccountManager* accountList, ItemManager* itemList) {
+    accountList->displayAll();
+    string accountID = getAccountID();
+
+    itemList->displayAll();
+    string itemID = getItemID();
+
+    for (Account* account : accountList->getAccountList()) {
+        if (account->getId() == accountID) {
+            account->rentItem(itemID, itemList);
+        }
+    }
+}
+
+void returnItem(AccountManager* accountList, ItemManager* itemList) {
+    accountList->displayAll();
+    string accountID = getAccountID();
+
+    itemList->displayAll();
+    string itemID = getItemID();
+
+    for (Account* account : accountList->getAccountList()) {
+        if (account->getId() == accountID) {
+            account->returnItem(itemID, itemList);
+        }
+    }
+}
+
+void displayItemSubMenu(ItemManager* itemList) {
+    string input;
+
+    string option = "Choose one of the options below\n"
+        "1. Sorted item by id\n"
+        "2. Sorted item by title\n"
+        "3. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Sorted item by id" << endl;
+        }
+        else if (input == "2") {
+            cout << "Sorted item by title" << endl;
+        }
+        else if (input == "3") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void displayItemOutOfStock(ItemManager* itemList) {
+    cout << "7" << endl;
+}
+
+void displayCustomerSubMenu(AccountManager* accountList) {
+    string input;
+
+    string option = "Choose one of the options below\n"
+        "1. Sorted customer by id\n"
+        "2. Sorted customer by name\n"
+        "3. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Sorted customer by id" << endl;
+        }
+        else if (input == "2") {
+            cout << "Sorted customer by name" << endl;
+        }
+        else if (input == "3") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void displayCustomerByGroupSubMenu(AccountManager* accountList) {
+    string input;
+
+    string option = "Choose one of the option below\n"
+        "1. Guest Accounts\n"
+        "2. Regular Accounts\n"
+        "3. VIP Accounts\n"
+        "4. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Guest Accounts" << endl;
+        }
+        else if (input == "2") {
+            cout << "Regular Accounts" << endl;
+        }
+        else if (input == "3") {
+            cout << "VIP Accounts" << endl;
+        }
+        else if (input == "4") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void searchItemSubMenu(ItemManager* itemList) {
+    string input;
+
+    string option = "Choose one of the options below\n"
+        "1. Search item by title\n"
+        "2. Search item by id\n"
+        "3. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Search item by title" << endl;
+        }
+        else if (input == "2") {
+            cout << "Search item by id" << endl;
+        }
+        else if (input == "3") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+void searchCustomerSubMenu(AccountManager* accountList) {
+    string input;
+
+    string option = "Choose one of the options below\n"
+        "1. Search customer by name\n"
+        "2. Search customer by id\n"
+        "3. Exit\n";
+
+    while (true) {
+        cout << option << endl;
+
+        getline(cin, input);
+
+        //trim string
+        input.erase(input.find_last_not_of(" ") + 1);
+        input.erase(0, input.find_first_not_of(" "));
+
+        if (input == "1") {
+            cout << "Search customer by name" << endl;
+        }
+        else if (input == "2") {
+            cout << "Search customer by id" << endl;
+        }
+        else if (input == "3") {
+            cout << "Exit" << endl;
+            break;
+        }
+        else {
+            cerr << "Error message" << endl;
+        }
+    }
+}
+
+int main()
 {
+    ItemManager* itemList = new ItemManager();
+
+    AccountManager* accountList = new AccountManager();
+
     cout << "Welcome to Genie’s video store" << "\n\n";
     string input;
 
@@ -126,37 +411,38 @@ int main(int argc, char* argv[])
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-            cout << "Call function 1" << endl;
+            itemSubMenu(itemList);
         }
         else if (input == "2") {
-            cout << "Call function 2" << endl;
+            customerSubMenu(accountList);
         }
         else if (input == "3") {
-            cout << "Call function 3" << endl;
+            accountList->displayAllRental();
+            promoteCustomer(accountList);
         }
         else if (input == "4") {
-            cout << "Call function 4" << endl;
+            rentItem(accountList, itemList);
         }
         else if (input == "5") {
-            cout << "Call function 5" << endl;
+            returnItem(accountList, itemList);
         }
         else if (input == "6") {
-            cout << "Call function 6" << endl;
+            displayItemSubMenu(itemList);
         }
         else if (input == "7") {
-            cout << "Call function 7" << endl;
+            displayItemOutOfStock(itemList);
         }
         else if (input == "8") {
-            cout << "Call function 8" << endl;
+            displayCustomerSubMenu(accountList);
         }
         else if (input == "9") {
-            cout << "Call function 9" << endl;
+            displayCustomerByGroupSubMenu(accountList);
         }
         else if (input == "10") {
-            cout << "Call function 10" << endl;
+            searchItemSubMenu(itemList);
         }
         else if (input == "11") {
-            cout << "Call function 11" << endl;
+            searchCustomerSubMenu(accountList);
         }
         else if (input == "Exit") {
             //cout << "Exit" << endl;
@@ -177,5 +463,5 @@ int main(int argc, char* argv[])
     }
 
     return 0;
-}
 
+}

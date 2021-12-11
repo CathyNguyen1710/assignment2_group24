@@ -13,8 +13,7 @@ RegularAccount::RegularAccount() :Account() {
 RegularAccount::RegularAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
 	this->setTotalBorrowItem(0);
-	this->setTotalReturnItem(0);
-	this->totalVideoReturn = 0;
+	this->totalReturnItem = 0;
 }
 RegularAccount::RegularAccount(Account* account) {
 	//constructor used when promoting an account
@@ -25,23 +24,22 @@ RegularAccount::RegularAccount(Account* account) {
 	this->setNoOfRentals(account->getNoOfRentals());
 	this->setType("Regular");
 	this->setTotalBorrowItem(account->getTotalBorrowItem());
-	this->setTotalReturnItem(account->getTotalReturnItem());
-	this->totalVideoReturn = 0;
+	this->totalReturnItem = 0;
 }
 
 //Getter
-int RegularAccount::getTotalVideoReturn() {
-	return this->totalVideoReturn;
+int RegularAccount::getTotalReturnItem() {
+	return this->totalReturnItem;
 }
 
 //Setter
-void RegularAccount::setTotalVideoReturn(int totalVideoReturn) {
-	this->totalVideoReturn = totalVideoReturn;
+void RegularAccount::setTotalReturnItem(int totalReturnItem) {
+	this->totalReturnItem = totalReturnItem;
 }
 
 //Other function
 bool RegularAccount::promoteable() {
-	if (this->getTotalVideoReturn() >= 3) {
+	if (this->getTotalReturnItem() >= 3) {
 		cout << "You have meet the requirement to promote into VIP Account"<< endl;
 		return true;
 	}
@@ -49,9 +47,11 @@ bool RegularAccount::promoteable() {
 	return false;
 }
 void RegularAccount::addRentalList(string id) {
-	this->getListOfRentals().push_back(id);
+	this->listOfRentals.push_back(id);
 
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+
+	this->setTotalReturnItem(this->getTotalReturnItem() + 1);
 
 	this->setNoOfRentals(this->getListOfRentals().size());
 }
@@ -83,20 +83,16 @@ bool RegularAccount::rentItem(string id, ItemManager* itemList) {
 }
 bool RegularAccount::returnItem(string id, ItemManager* itemList) {
 	int pos = 0;
-	for (string itemID : this->getListOfRentals()) {
+	for (string itemID : this->listOfRentals) {
 		if (itemID == id) {
 			if (itemList->returnItem(itemID) == true) {
 				this->setNoOfRentals(this->getNoOfRentals() - 1);
-				this->getListOfRentals().erase(this->getListOfRentals().begin() + pos);
+				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
 				return true;
 			}
 		}
-		pos++;
-	}
-
-	for (Item* item : itemList->getItemList()) {
-		if (item->getRentalType() == "Video") {
-			this->setTotalVideoReturn(this->getTotalVideoReturn() + 1);
+		else {
+			pos++;
 		}
 	}
 
@@ -106,8 +102,9 @@ bool RegularAccount::returnItem(string id, ItemManager* itemList) {
 
 //
 void RegularAccount::print() {
-	cout << "Regular print" << endl;
+	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 string RegularAccount::toString() {
-	return "Regular to Database";
+	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
+	return toDB;
 }

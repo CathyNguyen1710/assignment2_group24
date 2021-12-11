@@ -19,7 +19,6 @@ private:
 	int noOfRentals;
 	string type;
 	int totalBorrowItem;
-	int totalReturnItem;
 
 protected:
 	vector<string> listOfRentals;
@@ -40,7 +39,6 @@ public:
 	int getNoOfRentals();
 	string getType();
 	int getTotalBorrowItem();
-	int getTotalReturnItem();
 	vector<string> getListOfRentals();
 
 	//Setter
@@ -51,7 +49,6 @@ public:
 	void setNoOfRentals(int noOfRentals);
 	void setType(string type);
 	void setTotalBorrowItem(int totalBorrowItem);
-	void setTotalReturnItem(int totalReturnItem);
 	void setListOfRentals(vector<string>& listOfRentals);
 
 	//Other function
