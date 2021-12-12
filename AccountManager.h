@@ -5,6 +5,7 @@
 #include "AccountClass/GuestAccount.h"
 #include "AccountClass/RegularAccount.h"
 #include "AccountClass/VIPAccount.h"
+#include "ItemManager.h"
 
 #include <iostream>
 #include <string>
@@ -53,7 +54,8 @@ public:
 	bool saveToFile();
 
 	void displayAll();
-	void displayAllRental();
+	void displayAllRental(string accountID, ItemManager* itemList);
+	void displayAllAvailable(string accountID, ItemManager* itemList);
 
 	void print();
 };

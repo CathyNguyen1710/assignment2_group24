@@ -225,15 +225,38 @@ void AccountManager::displayAll() {
 		account->print();
 	}
 }
-
-void AccountManager::displayAllRental() {
+void AccountManager::displayAllRental(string accountID, ItemManager* itemList) {
 	for (Account* account : this->accountList) {
-		account->print();
-		for (string str : account->getListOfRentals()) {
-			cout << str << endl;
+		if (account->getId() == accountID) {
+			for (string itemID : account->getListOfRentals()) {
+				itemList->getItemFromRental(itemID);
+			}
 		}
 	}
 }
+void AccountManager::displayAllAvailable(string accountID, ItemManager* itemList) {
+	vector<Item*> availableItem = itemList->getItemList();
+
+	for (Account* account : this->accountList) {
+		if (account->getId() == accountID) {
+			int pos = 0;
+			for (string itemID : account->getListOfRentals()) {
+				for (Item* item : availableItem) {
+					if (item->getId() == itemID) {
+						remove(availableItem.begin(), availableItem.end(), item);
+						availableItem.resize(availableItem.size() - 1);
+					}
+				}
+			}
+			break;
+		}
+	}
+
+	for (Item* item : availableItem) {
+		item->print();
+	}
+}
+
 void AccountManager::print() {
 	cout << "print acc manager" << endl;
 }

@@ -50,12 +50,12 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 		return false;
 	}
 
-	for (string rentItem: this->getListOfRentals()) {
+	/*for (string rentItem : this->listOfRentals) {
 		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
-	}
+	}*/
 
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {

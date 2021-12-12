@@ -179,6 +179,14 @@ void ItemManager::displayAll() {
 	}
 }
 
+void ItemManager::getItemFromRental(string itemID) {
+	for (Item* item : this->itemList) {
+		if (item->getId() == itemID) {
+			item->print();
+		}
+	}
+}
+
 //
 void ItemManager::print() {
 	cout << "print item manager" << endl;

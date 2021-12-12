@@ -56,12 +56,12 @@ void RegularAccount::addRentalList(string id) {
 	this->setNoOfRentals(this->getListOfRentals().size());
 }
 bool RegularAccount::rentItem(string id, ItemManager* itemList) {
-	for (string rentItem : this->getListOfRentals()) {
+	/*for (string rentItem : this->listOfRentals) {
 		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
-	}
+	}*/
 	
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {

@@ -182,7 +182,7 @@ void rentItem(AccountManager* accountList, ItemManager* itemList) {
     accountList->displayAll();
     string accountID = getAccountID();
 
-    itemList->displayAll();
+    accountList->displayAllAvailable(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -196,7 +196,7 @@ void returnItem(AccountManager* accountList, ItemManager* itemList) {
     accountList->displayAll();
     string accountID = getAccountID();
 
-    itemList->displayAll();
+    accountList->displayAllRental(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -417,7 +417,6 @@ int main()
             customerSubMenu(accountList);
         }
         else if (input == "3") {
-            accountList->displayAllRental();
             promoteCustomer(accountList);
         }
         else if (input == "4") {
