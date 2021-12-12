@@ -35,17 +35,14 @@ AccountManager::AccountManager() {
 
 			if (customerListData[5] == "Guest") {
 				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
 				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
 				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 			else {
@@ -54,6 +51,7 @@ AccountManager::AccountManager() {
 		}
 		else if (customerListData.size() == 1) {
 			this->accountList.back()->addRentalList(customerListData[0]);
+			//cout << customerListData[0] << endl;
 		}
 		else {
 			cout << "error" << endl;
@@ -89,22 +87,20 @@ AccountManager::AccountManager(string customerFile) {
 
 			if (customerListData[5] == "Guest") {
 				Account* newAccount = new GuestAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "Regular") {
 				Account* newAccount = new RegularAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 			else if (customerListData[5] == "VIP") {
 				Account* newAccount = new VIPAccount(customerListData[0], customerListData[1], customerListData[2], customerListData[3], stoi(customerListData[4]), customerListData[5]);
-
 				this->accountList.push_back(newAccount);
 			}
 		}
 		else if (customerListData.size() == 1) {
 			this->accountList.back()->addRentalList(customerListData[0]);
+			//cout << customerListData[0] << endl;
 		}
 		else {
 			cout << "error" << endl;
@@ -145,16 +141,60 @@ void AccountManager::setCustomerFile(string customerFile) {
 	this->customerFile = customerFile;
 }
 
-//Other function
+//Other Function
+bool AccountManager::promoteAccount(string id) {
+	int pos = 0;
+	bool matched = false;
+	for (Account* account : this->accountList) {
+		if (account->getId() == id) {
+			bool promotable = account->promoteable();
+			if (promotable == true && account->getType() == "Guest") {
+				RegularAccount* promoteAcc = new RegularAccount(account);
+
+				this->accountList.erase(this->accountList.begin() + pos);
+
+				this->accountList.insert(this->accountList.begin() + pos, promoteAcc);
+
+				cout << "Account with id " << id << " is successfully promoted to Regular Account" << endl;
+
+				matched = true;
+				return matched;
+
+				break;
+			}
+			else if (promotable == true && account->getType() == "Regular") {
+				VIPAccount* promoteAcc = new VIPAccount(account);
+
+				this->accountList.erase(this->accountList.begin() + pos);
+
+				this->accountList.insert(this->accountList.begin() + pos, promoteAcc);
+
+				cout << "Account with id " << id << " is successfully promoted to VIP Account" << endl;
+
+				matched = true;
+				return matched;
+
+				break;
+			}
+		}
+		else {
+			pos++;
+		}
+	}
+
+	if (matched == false) {
+		cerr << "There is no account with matching id" << endl;
+	}
+	return matched;
+}
+
 bool AccountManager::addAccount() {
 	return true;
 }
 bool AccountManager::updateAccount(string id) {
 	return true;
 }
-bool AccountManager::saveToFile() {
-	return true;
-}
+
 void AccountManager::displaySortedAccountName() {
 	cout << "sort by name" << endl;
 }
@@ -170,37 +210,53 @@ void AccountManager::searchAccount(string name) {
 void AccountManager::searchAccount(char* id) {
 	cout << "search by id" << endl;
 }
-void AccountManager::promoteAccount(string id) {
-	int pos = 0;
-	for (Account* account : this->getAccountList()) {
-		if (account->getId() == id) {
-			if (account->promoteable() == true && account->getType() == "Guest") {
-				RegularAccount* promoteAcc = new RegularAccount(account);
 
-				delete this->getAccountList()[pos];
+bool AccountManager::saveToFile() {
+	ofstream outStream(this->customerFile);
 
-				this->getAccountList()[pos] = promoteAcc;
-
-				cout << "Account with id " << id << " is successfully promoted to Regular Account" << endl;
-			}
-			else if (account->promoteable() == true && account->getType() == "Regular") {
-				VIPAccount* promoteAcc = new VIPAccount(account);
-
-				delete this->getAccountList()[pos];
-
-				this->getAccountList()[pos] = promoteAcc;
-
-				cout << "Account with id " << id << " is successfully promoted to VIP Account" << endl;
-			}
-		}
-		pos++;
+	for (Account* account : this->accountList) {
+		outStream << account->toString() << endl;
 	}
-	
-	cerr << "There is no account with matching id" << endl;
-
+	return true;
 }
 
-//
+void AccountManager::displayAll() {
+	for (Account* account : this->getAccountList()) {
+		account->print();
+	}
+}
+void AccountManager::displayAllRental(string accountID, ItemManager* itemList) {
+	for (Account* account : this->accountList) {
+		if (account->getId() == accountID) {
+			for (string itemID : account->getListOfRentals()) {
+				itemList->getItemFromRental(itemID);
+			}
+		}
+	}
+}
+void AccountManager::displayAllAvailable(string accountID, ItemManager* itemList) {
+	vector<Item*> availableItem = itemList->getItemList();
+
+	for (Account* account : this->accountList) {
+		if (account->getId() == accountID) {
+			int pos = 0;
+			for (string itemID : account->getListOfRentals()) {
+				for (Item* item : availableItem) {
+					if (item->getId() == itemID) {
+						remove(availableItem.begin(), availableItem.end(), item);
+						availableItem.resize(availableItem.size() - 1);
+					}
+				}
+			}
+			break;
+		}
+	}
+
+	for (Item* item : availableItem) {
+		item->print();
+	}
+}
+
 void AccountManager::print() {
 	cout << "print acc manager" << endl;
 }

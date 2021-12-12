@@ -1,31 +1,4 @@
-﻿  Account.cpp
-  GuestAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(44,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  RegularAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.cpp(56,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  VIPAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.cpp(52,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  AccountManager.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\Account.h(58,35): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\Account.h(59,37): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.h(32,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.h(33,29): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.h(33,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.h(34,29): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.h(32,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.h(33,29): error C2061: syntax error: identifier 'ItemManager'
+﻿  AccountManager.cpp
   assignment2_group24.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\Account.h(58,35): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\Account.h(59,37): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.h(32,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.h(33,29): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.h(33,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.h(34,29): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.h(32,27): error C2061: syntax error: identifier 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.h(33,29): error C2061: syntax error: identifier 'ItemManager'
-  DVD.cpp
-  Game.cpp
-  Item.cpp
-  Record.cpp
-  ItemManager.cpp
   Generating Code...
+  assignment2_group24.vcxproj -> D:\RMIT\Courses\c++\assignment2_group24\x64\Debug\assignment2_group24.exe

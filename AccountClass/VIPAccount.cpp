@@ -13,7 +13,6 @@ VIPAccount::VIPAccount() :Account() {
 VIPAccount::VIPAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
 	this->setTotalBorrowItem(0);
-	this->setTotalReturnItem(0);
 	this->rewardPoint = 0;
 }
 VIPAccount::VIPAccount(Account* account) {
@@ -25,7 +24,6 @@ VIPAccount::VIPAccount(Account* account) {
 	this->setNoOfRentals(account->getNoOfRentals());
 	this->setType("VIP");
 	this->setTotalBorrowItem(account->getTotalBorrowItem());
-	this->setTotalReturnItem(account->getTotalReturnItem());
 	this->rewardPoint = 0;
 }
 
@@ -45,21 +43,21 @@ bool VIPAccount::promoteable() {
 	return false;
 }
 void VIPAccount::addRentalList(string id) {
-	this->getListOfRentals().push_back(id);
+	this->listOfRentals.push_back(id);
 
 	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
-	this->setNoOfRentals(this->getListOfRentals().size());
-
 	this->setRewardPoint(this->rewardPoint + 10);
+
+	this->setNoOfRentals(this->getListOfRentals().size());
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
-	for (string rentItem : this->getListOfRentals()) {
+	/*for (string rentItem : this->listOfRentals) {
 		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
-	}
+	}*/
 
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {
@@ -118,15 +116,17 @@ bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 }
 bool VIPAccount::returnItem(string id, ItemManager* itemList) {
 	int pos = 0;
-	for (string item: this->getListOfRentals()) {
-		if (item == id) {
-			if (itemList->returnItem(item) == true) {
+	for (string itemID : this->listOfRentals) {
+		if (itemID == id) {
+			if (itemList->returnItem(itemID) == true) {
 				this->setNoOfRentals(this->getNoOfRentals() - 1);
-				this->getListOfRentals().erase(this->getListOfRentals().begin() + pos);
+				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
 				return true;
 			}
 		}
-		pos++;
+		else {
+			pos++;
+		}
 	}
 
 	cerr << "The item specified was not rented" << endl;
@@ -135,8 +135,9 @@ bool VIPAccount::returnItem(string id, ItemManager* itemList) {
 
 //
 void VIPAccount::print() {
-	cout << "VIP print";
+	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 string VIPAccount::toString() {
-	return "VIP to Database";
+	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
+	return toDB;
 }

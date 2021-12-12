@@ -1,5 +1,7 @@
 #include "Account.h"
 
+#include "../ItemManager.h"
+
 using namespace std;
 
 Account::Account() {
@@ -36,9 +38,6 @@ string Account::getType() {
 int Account::getTotalBorrowItem() {
     return this->totalBorrowItem;
 }
-int Account::getTotalReturnItem() {
-    return this->totalReturnItem;
-}
 vector<string> Account::getListOfRentals() {
     return this->listOfRentals;
 }
@@ -64,9 +63,6 @@ void Account::setType(string type) {
 }
 void Account::setTotalBorrowItem(int totalBorrowItem) {
     this->totalBorrowItem = totalBorrowItem;
-}
-void Account::setTotalReturnItem(int totalReturnItem) {
-    this->totalReturnItem = totalReturnItem;
 }
 void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->listOfRentals = listOfRentals;

@@ -1,10 +1,11 @@
 #ifndef A2_ACCOUNTMANAGER_H
-#define A2_ITEMMANAGER_H
+#define A2_ACCOUNTMANAGER_H
 
 #include "AccountClass/Account.h"
 #include "AccountClass/GuestAccount.h"
 #include "AccountClass/RegularAccount.h"
 #include "AccountClass/VIPAccount.h"
+#include "ItemManager.h"
 
 #include <iostream>
 #include <string>
@@ -39,17 +40,23 @@ public:
 	void setCustomerFile(string customerFile);
 
 	//Other function
+	bool promoteAccount(string id);
+
 	bool addAccount();
 	bool updateAccount(string id);
-	bool saveToFile();
+
 	void displaySortedAccountName();
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
 	void searchAccount(string name);
 	void searchAccount(char* id);
-	void promoteAccount(string id);
 
-	//
+	bool saveToFile();
+
+	void displayAll();
+	void displayAllRental(string accountID, ItemManager* itemList);
+	void displayAllAvailable(string accountID, ItemManager* itemList);
+
 	void print();
 };
 

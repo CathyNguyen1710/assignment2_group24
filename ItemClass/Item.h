@@ -44,8 +44,8 @@ public:
 	void setNoRented(int noRented);
 
 	//Other function
-	void print();
-	string toStringt();
+	virtual void print() = 0;
+	virtual string toString() = 0;
 };
 
 #endif

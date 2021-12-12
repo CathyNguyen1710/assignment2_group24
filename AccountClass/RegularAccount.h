@@ -12,7 +12,8 @@ using namespace std;
 class RegularAccount :public Account
 {
 private:
-	int totalVideoReturn;
+	int totalReturnItem;
+
 public:
 	//Constructor
 	RegularAccount();
@@ -23,10 +24,10 @@ public:
 	~RegularAccount() {};
 
 	//Getter
-	int getTotalVideoReturn();
+	int getTotalReturnItem();
 
 	//Setter
-	void setTotalVideoReturn(int totalVideoReturn);
+	void setTotalReturnItem(int totalReturnItem);
 
 	//Other function
 	bool promoteable(); //Use to promote from Regular acc to VIP acc when meet condition

@@ -39,19 +39,24 @@ public:
 	void setItemFile(string itemFile);
 
 	//Other function
+	bool returnItem(string id);
+
 	bool addItem();
 	bool updateItem(string id);
 	bool deleteItem(string id);
-	bool returnItem(string id);
-	bool saveToFile();
+
 	void displaySortedItemTitle();
 	void displaySortedItemID();
 	void getAllNoStock();
 	void searchItem(string title);
 	void searchItem(char* id);
 
+	bool saveToFile();
 
-	//
+	void displayAll();
+
+	void getItemFromRental(string itemID);
+	
 	void print();
 };
 

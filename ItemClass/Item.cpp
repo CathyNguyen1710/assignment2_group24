@@ -66,11 +66,3 @@ void Item::setFee(double fee) {
 void Item::setNoRented(int noRented) {
 	this->noRented = noRented;
 }
-
-//Other function
-void Item::print() {
-	cout << "print Item" << endl;
-}
-string Item::toStringt() {
-	return "Item to Database";
-}
