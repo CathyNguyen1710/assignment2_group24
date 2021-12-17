@@ -189,6 +189,91 @@ bool AccountManager::promoteAccount(string id) {
 }
 
 bool AccountManager::addAccount() {
+	string input;
+	string name, address, phone, type;
+	
+	this->noOfAccount++;
+
+	ostringstream streamID;
+	streamID << "C" << setw(3) << setfill('0') << this->noOfAccount;
+	string id = streamID.str();
+
+	while (true) {
+		cout << "Please enter your name: ";
+		getline(cin, input);
+		
+		//trim string
+		input.erase(input.find_last_not_of(" ") + 1);
+		input.erase(0, input.find_first_not_of(" "));
+
+		if (!input.empty()) {
+			name = input;
+			break;
+		}
+	}
+
+	while (true) {
+		cout << "Please enter your address: ";
+		getline(cin, input);
+		
+		//trim string
+		input.erase(input.find_last_not_of(" ") + 1);
+		input.erase(0, input.find_first_not_of(" "));
+
+		if (!input.empty()) {
+			address = input;
+			break;
+		}
+	}
+
+	while (true) {
+		cout << "Please enter your phone number: ";
+		getline(cin, input);
+
+		//trim string
+		input.erase(input.find_last_not_of(" ") + 1);
+		input.erase(0, input.find_first_not_of(" "));
+
+		bool matched = true;
+
+		if (!input.empty()) {
+			for (int i = 0; i < input.length(); i++) {
+				if (input[i] < 32 || input[i] > 57) {
+					matched = false;
+					break;
+				}
+				//cout << input[i];
+			}
+
+			if (matched == true) {
+				phone = input;
+				break;
+			}
+		}
+	}
+
+	Account* newAccount = new GuestAccount(id, name, address, phone, 0, "Guest");
+	this->accountList.push_back(newAccount);
+	newAccount->print();
+
+	/*if (type == "Guest") {
+		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
+		this->accountList.push_back(newAccount);
+		return true;
+	}
+	else if (type == "Regular") {
+		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
+		this->accountList.push_back(newAccount);
+		return true;
+	}
+	else if (type == "VIP") {
+		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
+		this->accountList.push_back(newAccount);
+		return true;
+	}
+	else {
+		cerr << "error message" << endl;
+	}*/
 	return true;
 }
 bool AccountManager::updateAccount(string id) {
@@ -216,6 +301,9 @@ bool AccountManager::saveToFile() {
 
 	for (Account* account : this->accountList) {
 		outStream << account->toString() << endl;
+		for (string itemID: account->getListOfRentals()) {
+			outStream << itemID << endl;
+		}
 	}
 	return true;
 }
@@ -242,7 +330,7 @@ void AccountManager::displayAllAvailable(string accountID, ItemManager* itemList
 			int pos = 0;
 			for (string itemID : account->getListOfRentals()) {
 				for (Item* item : availableItem) {
-					if (item->getId() == itemID) {
+					if (item->getId() == itemID || item->getNoOfCopy() == 0) {
 						remove(availableItem.begin(), availableItem.end(), item);
 						availableItem.resize(availableItem.size() - 1);
 					}
