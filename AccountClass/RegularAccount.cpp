@@ -12,7 +12,7 @@ RegularAccount::RegularAccount() :Account() {
 }
 RegularAccount::RegularAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
-	this->setTotalBorrowItem(0);
+	//this->setTotalBorrowItem(0);
 	this->totalReturnItem = 0;
 }
 RegularAccount::RegularAccount(Account* account) {
@@ -23,7 +23,7 @@ RegularAccount::RegularAccount(Account* account) {
 	this->setPhone(account->getPhone());
 	this->setNoOfRentals(account->getNoOfRentals());
 	this->setType("Regular");
-	this->setTotalBorrowItem(account->getTotalBorrowItem());
+	//this->setTotalBorrowItem(account->getTotalBorrowItem());
 	this->totalReturnItem = 0;
 }
 
@@ -49,19 +49,17 @@ bool RegularAccount::promoteable() {
 void RegularAccount::addRentalList(string id) {
 	this->listOfRentals.push_back(id);
 
-	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+	//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
-	this->setTotalReturnItem(this->getTotalReturnItem() + 1);
-
-	this->setNoOfRentals(this->getListOfRentals().size());
+	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool RegularAccount::rentItem(string id, ItemManager* itemList) {
-	/*for (string rentItem : this->listOfRentals) {
+	for (string rentItem : this->listOfRentals) {
 		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
-	}*/
+	}
 	
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {
@@ -87,6 +85,8 @@ bool RegularAccount::returnItem(string id, ItemManager* itemList) {
 		if (itemID == id) {
 			if (itemList->returnItem(itemID) == true) {
 				this->setNoOfRentals(this->getNoOfRentals() - 1);
+				//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+				this->setTotalReturnItem(this->getTotalReturnItem() + 1);
 				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
 				return true;
 			}

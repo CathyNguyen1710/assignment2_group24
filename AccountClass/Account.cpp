@@ -35,9 +35,9 @@ int Account::getNoOfRentals() {
 string Account::getType() {
     return this->type;
 }
-int Account::getTotalBorrowItem() {
+/*int Account::getTotalBorrowItem() {
     return this->totalBorrowItem;
-}
+}*/
 vector<string> Account::getListOfRentals() {
     return this->listOfRentals;
 }
@@ -61,9 +61,9 @@ void Account::setNoOfRentals(int noOfRentals) {
 void Account::setType(string type) {
     this->type = type;
 }
-void Account::setTotalBorrowItem(int totalBorrowItem) {
+/*void Account::setTotalBorrowItem(int totalBorrowItem) {
     this->totalBorrowItem = totalBorrowItem;
-}
+}*/
 void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->listOfRentals = listOfRentals;
 }
