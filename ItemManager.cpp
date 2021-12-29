@@ -243,7 +243,7 @@ bool ItemManager::addItem()
 		}
 	}
 
-	if (rentalType == = "Record" || rentalType == = "DVD")
+	if (rentalType == "Record" || rentalType == "DVD")
 	{
 		// get item genre
 		while (true)
@@ -317,8 +317,8 @@ bool ItemManager::updateItem(Item *&item, string id)
 		 << "Title: enter 'T'." << endl;
 	cout << "\t - "
 		 << "Loan Type: enter 'L'." << endl;
-	// cout << "\t - "
-	// 	 << "Rental Type: enter 'R'." << endl;
+	cout << "\t - "
+		 << "Rental Type: enter 'R'." << endl;
 	cout << "\t - "
 		 << "Genre: enter 'G' (Only applied for Record and DVD)." << endl;
 	cout << "\t - "
@@ -347,8 +347,10 @@ bool ItemManager::updateItem(Item *&item, string id)
 		case "c":
 		case "F":
 		case "f":
-			// case "R":
-			// case "r":
+		case "R":
+		case "r":
+		case "G":
+		case "g":
 			break;
 		case "E":
 		case "e":
@@ -358,7 +360,7 @@ bool ItemManager::updateItem(Item *&item, string id)
 			// cerr << "'I' to update ID." << endl;
 			cerr << "'T' to update Title." << endl;
 			cerr << "'L' to update Loan type." << endl;
-			// cerr << "'G' to update Genre." << endl;
+			cerr << "'G' to update Genre." << endl;
 			cerr << "'C' to update Copies in stock." << endl;
 			cerr << "'F' to update Rental fee. " << endl;
 			cerr << "'E' to Exit! " << endl;
@@ -397,21 +399,52 @@ bool ItemManager::updateItem(Item *&item, string id)
 		cin.ignore();
 		item->setFee(stod(newValue));
 		return true;
-	// case "R":
-	// case "r":
-	// 	cout << "\nEnter the new rental type: ";
-	// 	cin >> newValue;
-	// 	cin.ignore();
+	case "G":
+	case "g":
+		cout << "\nEnter the new genre: ";
+		cin >> newValue;
+		cin.ignore();
+		item->setGenre(newValue);
+		return true;
+	case "R":
+	case "r":
+		cout << "\nEnter the new rental type: ";
+		cin >> newValue;
+		cin.ignore();
 
-	// 	switch (newValue) {
-	// 		case "Game":
+		string newId = item->getId();
+		string newTitle = item->getTitle();
+		string newLoanType = item->getLoanType();
+		string newRentalType = newValue;
+		int newNoOfCopy = item->getNoOfCopy();
+		double newFee = item->getFee();
 
-	// 		case "Record":
-	// 		case "DVD":
-	// 		default:
-	// 			break;
-	// 	}
-	// 	return true;
+		switch (newValue)
+		{
+		case "Game":
+			deleteItem(itemList, newId);
+			Item *newItem = new Game(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee);
+			this->itemList.push_back(newItem);
+			newItem->print();
+			return true;
+		case "Record":
+			string newGenre = item->getGenre();
+			deleteItem(itemList, newId);
+			Item *newItem = new Record(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee, newGenre);
+			this->itemList.push_back(newItem);
+			newItem->print();
+			return true;
+		case "DVD":
+			string newGenre = item->getGenre();
+			deleteItem(itemList, newId);
+			Item *newItem = new DVD(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee, newGenre);
+			this->itemList.push_back(newItem);
+			newItem->print();
+			return true;
+		default:
+			break;
+		}
+		return true;
 	default:
 		return false;
 	}
