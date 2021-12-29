@@ -99,9 +99,9 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 }
 
 //
-void GuestAccount::print() {
+/*void GuestAccount::print() {
 	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}
+}*/
 string GuestAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;

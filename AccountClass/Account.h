@@ -58,7 +58,7 @@ public:
 	virtual bool promoteable() = 0;
 	
 	//
-	virtual void print() = 0;
+	void print();
 	virtual string toString() = 0;
 };
 
