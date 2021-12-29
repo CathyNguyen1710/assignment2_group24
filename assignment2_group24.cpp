@@ -158,10 +158,19 @@ void customerSubMenu(AccountManager* accountList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-            cout << "Add a customer" << endl;
+            accountList->addAccount();
+            accountList->saveToFile();
         }
         else if (input == "2") {
-            cout << "Update a customer" << endl;
+            accountList->displayAll();
+            string id = getAccountID();
+
+            //trim string
+            input.erase(input.find_last_not_of(" ") + 1);
+            input.erase(0, input.find_first_not_of(" "));
+
+            accountList->updateAccount(id);
+            accountList->saveToFile();
         }
         else if (input == "3") {
             cout << "Exit" << endl;

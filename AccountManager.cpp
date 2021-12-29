@@ -191,7 +191,7 @@ bool AccountManager::promoteAccount(string id) {
 bool AccountManager::addAccount() {
 	string input;
 	string name, address, phone, type;
-	
+
 	this->noOfAccount++;
 
 	ostringstream streamID;
@@ -201,7 +201,7 @@ bool AccountManager::addAccount() {
 	while (true) {
 		cout << "Please enter your name: ";
 		getline(cin, input);
-		
+
 		//trim string
 		input.erase(input.find_last_not_of(" ") + 1);
 		input.erase(0, input.find_first_not_of(" "));
@@ -215,7 +215,7 @@ bool AccountManager::addAccount() {
 	while (true) {
 		cout << "Please enter your address: ";
 		getline(cin, input);
-		
+
 		//trim string
 		input.erase(input.find_last_not_of(" ") + 1);
 		input.erase(0, input.find_first_not_of(" "));
@@ -242,7 +242,6 @@ bool AccountManager::addAccount() {
 					matched = false;
 					break;
 				}
-				//cout << input[i];
 			}
 
 			if (matched == true) {
@@ -256,30 +255,106 @@ bool AccountManager::addAccount() {
 	this->accountList.push_back(newAccount);
 	newAccount->print();
 
-	/*if (type == "Guest") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "Regular") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "VIP") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else {
-		cerr << "error message" << endl;
-	}*/
 	return true;
 }
 bool AccountManager::updateAccount(string id) {
+
+	Account* updateAcc = nullptr;
+	string input, field;
+
+	for (Account* acc : this->accountList) {
+		if (acc->getId() == id) {
+			updateAcc = acc;
+			break;
+		}
+		else {
+			cout << "The account does not exsist or have been deleted" << endl;
+			return false;
+		}
+	}
+
+	string requestField = "Which field you want to update on the Account " + updateAcc->getId()
+		+ "\n1. Name"
+		+ "\n2. Address"
+		+ "\n3. Phone"
+		+ "\n4. Exit";
+
+	while (true) {
+		cout << requestField << endl;
+
+		getline(cin, input);
+
+		//trim string
+		input.erase(input.find_last_not_of(" ") + 1);
+		input.erase(0, input.find_first_not_of(" "));
+
+		if (input == "1") {
+			while (true) {
+				cout << "Please enter the name you want to change to: ";
+				getline(cin, field);
+
+				//trim string
+				field.erase(field.find_last_not_of(" ") + 1);
+				field.erase(0, field.find_first_not_of(" "));
+
+				if (!field.empty()) {
+					updateAcc->setName(field);
+					break;
+				}
+			}
+		}
+		else if (input == "2") {
+			while (true) {
+				cout << "Please enter the address you want to change to: ";
+				getline(cin, field);
+
+				//trim string
+				field.erase(field.find_last_not_of(" ") + 1);
+				field.erase(0, field.find_first_not_of(" "));
+
+				if (!field.empty()) {
+					updateAcc->setAddress(field);
+					break;
+				}
+			}
+		}
+		else if (input == "3") {
+			while (true) {
+				cout << "Please enter the phone number you want to change to: ";
+				getline(cin, field);
+
+				//trim string
+				field.erase(field.find_last_not_of(" ") + 1);
+				field.erase(0, field.find_first_not_of(" "));
+
+				bool matched = true;
+
+				if (!field.empty()) {
+					for (int i = 0; i < field.length(); i++) {
+						if (field[i] < 32 || field[i] > 57) {
+							matched = false;
+							break;
+						}
+					}
+
+					if (matched == true) {
+						updateAcc->setPhone(field);
+						break;
+					}
+				}
+			}
+		}
+		else if (input == "4") {
+			cout << "break" << endl;
+			break;
+		}
+		else {
+			cerr << "Error message" << endl;
+		}
+	}
+
 	return true;
 }
-
 void AccountManager::displaySortedAccountName() {
 	cout << "sort by name" << endl;
 }
