@@ -35,7 +35,6 @@ public:
 	void addRentalList(string id);
 
 	//
-	void print();
 	string toString();
 };
 
