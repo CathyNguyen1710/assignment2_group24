@@ -12,7 +12,7 @@ GuestAccount::GuestAccount() :Account() {
 }
 GuestAccount::GuestAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
-	this->setTotalBorrowItem(0);
+	//this->setTotalBorrowItem(0);
 	this->totalReturnItem = 0;
 }
 
@@ -38,11 +38,9 @@ bool GuestAccount::promoteable() {
 void GuestAccount::addRentalList(string id) {
 	this->listOfRentals.push_back(id);
 
-	this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+	//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
 
-	this->setTotalReturnItem(this->getTotalReturnItem() + 1);
-
-	this->setNoOfRentals(this->getListOfRentals().size());
+	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 	if (this->getNoOfRentals() == 2) {
@@ -50,21 +48,21 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 		return false;
 	}
 
-	/*for (string rentItem : this->listOfRentals) {
+	for (string rentItem : this->listOfRentals) {
 		if (rentItem == id) {
 			cerr << "This account has already rented this item" << endl;
 			return false;
 		}
-	}*/
+	}
 
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {
 			if (item->getLoanType() == "2-day") {
-				cerr << "Guest account cannot borrow items with 2-day loan type" << endl;
+				cout << "Guest account cannot borrow items with 2-day loan type" << endl;
 				return false;
 			}
 			else if (item->getNoOfCopy() == 0) {
-				cerr << "Item is out of stock" << endl;
+				cout << "Item is out of stock" << endl;
 				return false;
 			}
 			else {
@@ -85,6 +83,8 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 		if (itemID == id) {
 			if (itemList->returnItem(itemID) == true) {
 				this->setNoOfRentals(this->getNoOfRentals() - 1);
+				//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+				this->setTotalReturnItem(this->getTotalReturnItem() + 1);
 				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
 				return true;
 			}
@@ -99,9 +99,9 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 }
 
 //
-void GuestAccount::print() {
+/*void GuestAccount::print() {
 	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}
+}*/
 string GuestAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;
