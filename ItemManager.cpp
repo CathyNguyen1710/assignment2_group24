@@ -13,6 +13,7 @@ using namespace std;
 ItemManager::ItemManager()
 {
 	this->itemFile = "items.txt";
+	this->noOfCopy++;
 	this->noOfItem = 0;
 
 	ifstream inStream(itemFile);
@@ -64,6 +65,7 @@ ItemManager::ItemManager(string itemFile)
 {
 	this->itemFile = itemFile;
 	this->noOfItem = 0;
+	this->noOfCopy++;
 
 	ifstream inStream(itemFile);
 
@@ -223,6 +225,7 @@ bool ItemManager::addItem()
 		cout << "\nEnter the item's title: ";
 		cin >> title;
 		cin.ignore();
+		break;
 	}
 
 	// get item rental type
@@ -251,6 +254,7 @@ bool ItemManager::addItem()
 			cout << "\nEnter the item's genre: ";
 			cin >> genre;
 			cin.ignore();
+			break;
 		}
 	}
 
@@ -260,6 +264,7 @@ bool ItemManager::addItem()
 		cout << "\nEnter the item's loan type: ";
 		cin >> loanType;
 		cin.ignore();
+		break;
 	}
 
 	// get item number of copy
@@ -286,6 +291,7 @@ bool ItemManager::addItem()
 		cout << "\nEnter the item's fee: ";
 		cin >> fee;
 		cin.ignore();
+		break;
 	}
 
 	switch (rentalType)
@@ -308,25 +314,34 @@ bool ItemManager::addItem()
 	}
 }
 
-bool ItemManager::updateItem(Item *&item, string id)
+bool ItemManager::updateItem(string id)
 {
 	char choice = 0;
+	Item *&item = new Item();
+	for (Item *i : this->getItemList())
+	{
+		if (i->getId() == id)
+		{
+			item = i;
+			break;
+		}
+	}
 	string newValue = "";
 	cout << "\nWhat do you want to update? (Note: you cannot change rental type!)" << endl;
 	cout << "\t - "
-		 << "Title: enter 'T'." << endl;
+		 << "Title: enter '1'." << endl;
 	cout << "\t - "
-		 << "Loan Type: enter 'L'." << endl;
+		 << "Loan Type: enter '2'." << endl;
 	cout << "\t - "
-		 << "Rental Type: enter 'R'." << endl;
+		 << "Rental Type: enter '3'." << endl;
 	cout << "\t - "
-		 << "Genre: enter 'G' (Only applied for Record and DVD)." << endl;
+		 << "Genre: enter '4' (Only applied for Record and DVD)." << endl;
 	cout << "\t - "
-		 << "Copies in stock: enter 'C'." << endl;
+		 << "Copies in stock: enter '5'." << endl;
 	cout << "\t - "
-		 << "Rental fee: enter 'F'." << endl;
+		 << "Rental fee: enter '6'." << endl;
 	cout << "\t - "
-		 << "Enter 'E' to exit!" << endl;
+		 << "Enter '7' to exit!" << endl;
 
 	// ask for user's choice, only break the loop if user enters correct letters
 	while (true)
@@ -337,23 +352,14 @@ bool ItemManager::updateItem(Item *&item, string id)
 
 		switch (choice)
 		{
-		case "I":
-		case "i":
-		case "T":
-		case "t":
-		case "L":
-		case "l":
-		case "C":
-		case "c":
-		case "F":
-		case "f":
-		case "R":
-		case "r":
-		case "G":
-		case "g":
+		case "1":
+		case "2":
+		case "3":
+		case "4":
+		case "5":
+		case "6":
 			break;
-		case "E":
-		case "e":
+		case "7":
 			return false;
 		default:
 			cerr << "Invalid input! Please only enter: " << endl;
@@ -371,43 +377,19 @@ bool ItemManager::updateItem(Item *&item, string id)
 
 	switch (choice)
 	{
-	case 'T':
-	case 't':
+	case '1':
 		cout << "Enter new title: ";
 		cin >> newValue;
 		cin.ignore();
 		item->setTitle(newValue);
 		return true;
-	case 'L':
-	case 'l':
+	case '2';
 		cout << "\nEnter the new loan type: ";
 		cin >> newValue;
 		cin.ignore();
 		item->setLoanType(newValue);
 		return true;
-	case 'C':
-	case 'c':
-		cout << "\nEnter the new number of copies in stock: ";
-		cin >> newValue;
-		cin.ignore();
-		item->setNoOfCopy(stoi(newValue));
-		return true;
-	case 'F':
-	case 'f':
-		cout << "\nEnter the new rental fee: ";
-		cin >> newValue;
-		cin.ignore();
-		item->setFee(stod(newValue));
-		return true;
-	case "G":
-	case "g":
-		cout << "\nEnter the new genre: ";
-		cin >> newValue;
-		cin.ignore();
-		item->setGenre(newValue);
-		return true;
-	case "R":
-	case "r":
+		case "3":
 		cout << "\nEnter the new rental type: ";
 		cin >> newValue;
 		cin.ignore();
@@ -444,13 +426,31 @@ bool ItemManager::updateItem(Item *&item, string id)
 		default:
 			break;
 		}
+	case "4":
+		cout << "\nEnter the new genre: ";
+		cin >> newValue;
+		cin.ignore();
+		item->setGenre(newValue);
+		return true;
+	case '5':
+		cout << "\nEnter the new number of copies in stock: ";
+		cin >> newValue;
+		cin.ignore();
+		item->setNoOfCopy(stoi(newValue));
+		return true;
+	case '6':
+		cout << "\nEnter the new rental fee: ";
+		cin >> newValue;
+		cin.ignore();
+		item->setFee(stod(newValue));
 		return true;
 	default:
 		return false;
 	}
 
-	return true;
+	return false;
 }
+
 bool ItemManager::deleteItem(vector<Item *> &list, string id)
 {
 	T search(const vector<T> &list, const string &id)
