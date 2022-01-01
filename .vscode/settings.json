@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "xlocale": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp",
+        "xutility": "cpp",
+        "vector": "cpp",
+        "string": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

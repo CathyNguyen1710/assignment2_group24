@@ -6,9 +6,8 @@
 #include <vector>
 #include <fstream>
 #include <iomanip>
-
+#include <algorithm>
 using namespace std;
-
 //Constructor
 AccountManager::AccountManager() {
 	this->customerFile = "customers.txt";
@@ -56,7 +55,7 @@ AccountManager::AccountManager() {
 		else {
 			cout << "error" << endl;
 		}
-
+		
 		customerListData.clear();
 	}
 
@@ -355,21 +354,63 @@ bool AccountManager::updateAccount(string id) {
 
 	return true;
 }
-void AccountManager::displaySortedAccountName() {
-	cout << "sort by name" << endl;
+
+void AccountManager::displaySortedAccountName()
+{
+	
+	for (Account *accounts : accountList)
+	{
+		sort(accounts->getName().begin(), accounts->getName().end());
+	}
+	for (Account *ac : accountList)
+	{
+		cout << ac->toString();
+	}
 }
-void AccountManager::displaySortedAccountID() {
-	cout << "sort by id" << endl;
+
+void AccountManager::displaySortedAccountID()
+{
+	
+	for (Account *accounts : accountList)
+	{
+		sort(accounts->getId().begin(), accounts->getId().end());
+	}
+	for (Account *ac : accountList)
+	{
+		cout << ac->toString();
+	}
 }
-void AccountManager::getAccountByLevel(string level) {
+void AccountManager::getAccountByLevel(string level)
+{
+
 	cout << "find by level" << endl;
 }
-void AccountManager::searchAccount(string name) {
-	cout << "search by name" << endl;
+void AccountManager::searchAccount(string name)
+{
+
+	for (Account *account : this->accountList)
+	{
+		if (account->getName() == name)
+		{
+			cout << account->toString();
+			break;
+		}
+	}
+	cout << "search by name" << name << endl;
 }
-void AccountManager::searchAccount(char* id) {
-	cout << "search by id" << endl;
+void AccountManager::searchAccount(char *id)
+{
+
+	for (Account *account : this->accountList)
+	{
+		if (account->getId() == id)
+		{
+			cout << account->toString();
+			break;
+		}
+	}
 }
+
 
 bool AccountManager::saveToFile() {
 	return true;
