@@ -175,7 +175,8 @@ bool ItemManager::addItem()
 	// generate item id - code part (3 digits)
 	ostringstream streamID;
 	streamID << "I" << setw(3) << setfill('0') << this->noOfItem;
-	string id = streamID.str();
+	int code = stoi((this->itemList.back())->getId().substr(1, 3));
+	string id = code.str();
 
 	id.append("-");
 
@@ -411,6 +412,13 @@ bool ItemManager::updateItem(string id)
 			return true;
 		case "Record":
 			string newGenre = item->getGenre();
+			if (!newGenre || newGenre.size() == 0)
+			{
+				cout << "\nEnter the new genre: ";
+				cin >> newGenre;
+				cin.ignore();
+				break;
+			}
 			deleteItem(itemList, newId);
 			Item *newItem = new Record(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee, newGenre);
 			this->itemList.push_back(newItem);
@@ -451,66 +459,22 @@ bool ItemManager::updateItem(string id)
 	return false;
 }
 
-bool ItemManager::deleteItem(vector<Item *> &list, string id)
+bool ItemManager::deleteItem(string id)
 {
-	T search(const vector<T> &list, const string &id)
+	for (Item *item : this->itemList)
 	{
-		vector<T> tempVector;
-		for (auto i : list)
+		if (item->getId() == id)
 		{
-			if (i->getID() == id)
-			{
-				tempVector.push_back(i);
-			}
-		}
-		size_t size = tempVector.size();
-		if (tempVector.empty())
-		{
-			return nullptr;
-		}
-		else if (size == 1)
-		{
-			return tempVector.front();
+			this->itemList.erase(find(this->itemList.begin(), this->itemList.end(), item));
+			delete item;
+			return true;
 		}
 		else
 		{
-			cout << size << " matching IDs found! Please choose one ID: " << endl;
-
-			for (size_t i = 0; i < size; i++)
-			{
-				cout << i + 1 << ". " << tempVector[i]->getDescription() << endl;
-			}
-			size_t choice = -1;
-			while (true)
-			{
-				cout << "Enter your choice: ";
-				cin >> choice;
-				cin.ignore();
-				if (choice > 0 && choice <= size)
-				{
-					return tempVector[choice - 1];
-				}
-				else
-				{
-					cerr << "Invalid input! Please only choose between 1 and " << size << "!" << endl;
-				}
-			}
+			cerr << "No matching ID found!" << endl;
+			return false;
 		}
 	}
-
-	Item *deletedItem = search(list, idOrName);
-	if (deletedItem == nullptr)
-	{
-		cerr << "No matching ID found!" << endl;
-		return false;
-	}
-	else
-	{
-		list.erase(find(list.begin(), list.end(), deletedItem));
-		delete deletedItem;
-		return true;
-	}
-	return false;
 }
 
 void ItemManager::displaySortedItemTitle()
