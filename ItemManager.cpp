@@ -127,14 +127,6 @@ void ItemManager::setItemFile(string itemFile) {
 
 //Other function
 bool ItemManager::returnItem(string id) {
-	for (Item* item : this->getItemList()) {
-		if (item->getId() == id) {
-			item->setNoOfCopy(item->getNoOfCopy() + 1);
-			item->setNoRented(item->getNoRented() - 1);
-			return true;
-		}
-	}
-
 	return false;
 }
 
@@ -165,11 +157,6 @@ void ItemManager::searchItem(char* id) {
 }
 
 bool ItemManager::saveToFile() {
-	ofstream outStream(this->itemFile);
-
-	for (Item* item : this->itemList) {
-		outStream << item->toString() << endl;
-	}
 	return true;
 }
 
@@ -180,11 +167,7 @@ void ItemManager::displayAll() {
 }
 
 void ItemManager::getItemFromRental(string itemID) {
-	for (Item* item : this->itemList) {
-		if (item->getId() == itemID) {
-			item->print();
-		}
-	}
+
 }
 
 //
