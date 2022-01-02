@@ -376,6 +376,13 @@ bool ItemManager::updateItem(string id)
 		}
 	}
 
+	string newId = item->getId();
+	string newTitle = item->getTitle();
+	string newLoanType = item->getLoanType();
+	string newRentalType = newValue;
+	int newNoOfCopy = item->getNoOfCopy();
+	double newFee = item->getFee();
+
 	switch (choice)
 	{
 	case '1':
@@ -384,23 +391,16 @@ bool ItemManager::updateItem(string id)
 		cin.ignore();
 		item->setTitle(newValue);
 		return true;
-	case '2';
+	case '2':
 		cout << "\nEnter the new loan type: ";
 		cin >> newValue;
 		cin.ignore();
 		item->setLoanType(newValue);
 		return true;
-		case "3":
+	case '3':
 		cout << "\nEnter the new rental type: ";
 		cin >> newValue;
 		cin.ignore();
-
-		string newId = item->getId();
-		string newTitle = item->getTitle();
-		string newLoanType = item->getLoanType();
-		string newRentalType = newValue;
-		int newNoOfCopy = item->getNoOfCopy();
-		double newFee = item->getFee();
 
 		switch (newValue)
 		{
