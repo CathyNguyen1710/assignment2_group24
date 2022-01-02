@@ -137,9 +137,10 @@ string ItemManager::getItemFile()
 	return this->itemFile;
 }
 
-// Setter
-void ItemManager::setItemList(vector<Item *> itemList)
-{
+//Setter
+
+
+void ItemManager::setItemList(vector<Item*> itemList) {
 	this->itemList = itemList;
 }
 void ItemManager::setNoOfItem(int noOfItem)
@@ -513,51 +514,116 @@ bool ItemManager::deleteItem(vector<Item *> &list, string id)
 	return false;
 }
 
-void ItemManager::displaySortedItemTitle()
-{
-	cout << "sort by title" << endl;
-}
-void ItemManager::displaySortedItemID()
-{
-	cout << "sort by id" << endl;
-}
-void ItemManager::getAllNoStock()
-{
-	cout << "sort by no of stock = 0" << endl;
-}
-void ItemManager::searchItem(string title)
-{
-	cout << "search by title" << endl;
-}
-void ItemManager::searchItem(char *id)
-{
-	cout << "search by id" << endl;
+void ItemManager::displaySortedItemTitle() {
+	//sort function by Title
+	for (int i = 0; i < this->getItemList().size(); i++ ){
+		for (int j = i+1; j < this->getItemList().size(); j++ ){
+			if (this->getItemList()[i]->getTitle()>this->getItemList()[j]->getTitle()){
+				string temp = this->getItemList()[i]->getTitle();
+				this->getItemList()[i]->getTitle() = this->getItemList()[j]->getTitle();
+				this->getItemList()[j]->getTitle() = temp;
+			}
+		}	
+	}
+	cout << "The item list sorted by Title is: ";
+	for (Item* item : this->getItemList()) {
+		cout << item->getTitle();
+	}
+
 }
 
-bool ItemManager::saveToFile()
+void ItemManager::displaySortedItemID() 
+{
+	//sort function by Title
+	for (int i = 0; i < this->getItemList().size(); i++ ){
+		for (int j = i+1; j < this->getItemList().size(); j++ ){
+			if (this->getItemList()[i]->getId()>this->getItemList()[j]->getId()){
+				string temp = this->getItemList()[i]->getId();
+				this->getItemList()[i]->getId() = this->getItemList()[j]->getId();
+				this->getItemList()[j]->getId() = temp;
+			}
+		}	
+	}
+	cout << "The item list sorted by ID is: ";
+	for (Item* item : this->getItemList()) {
+		cout << item->getId();
+	}
+}
+void ItemManager::getAllNoStock() 
+{
+
+	cout << "sort by no of stock = 0" << endl;
+}
+
+
+void ItemManager::searchItem(string title) 
+{
+	vector <string> titleSearchResult;
+	for (Item* item : this->getItemList()) 
+	{
+		if (item->getTitle().find(title))
+		{
+			titleSearchResult.push_back(item->getTitle());
+		}
+	}
+	cout << "The title search result is: " << endl;
+	for (auto titleResult: titleSearchResult)
+	{
+		cout << titleResult << endl;
+	}
+	
+}
+
+void ItemManager::searchItem(char* id) 
+{
+	vector<string> itemIDList;
+	vector<string> itemIDNumber;
+	vector<string> IDSearchResult;
+	
+	for (Item* item : this->getItemList()) 
+	{
+		itemIDList.push_back(item->getId());
+	}
+	for (auto ID: itemIDList){
+		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
+	}
+	cout << "The ID search result is: "<<endl;
+	for (auto ID: itemIDNumber){
+		if (ID.find(id)){
+			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;	
+		}
+	}
+	
+	
+}
+
+
+bool ItemManager::saveToFile() 
 {
 	ofstream outStream(this->itemFile);
 
-	for (Item *item : this->itemList)
+	for (Item* item : this->itemList) 
 	{
 		outStream << item->toString() << endl;
 	}
 	return true;
 }
 
-void ItemManager::displayAll()
+
+void ItemManager::displayAll() 
 {
-	for (Item *item : this->getItemList())
+	for (Item* item : this->getItemList()) 
 	{
 		item->print();
 	}
 }
 
-void ItemManager::getItemFromRental(string itemID)
+
+void ItemManager::getItemFromRental(string itemID) 
 {
-	for (Item *item : this->itemList)
+	for (Item* item : this->itemList) 
 	{
-		if (item->getId() == itemID)
+		if (item->getId() == itemID) 
 		{
 			item->print();
 		}
