@@ -13,7 +13,6 @@
 
 using namespace std;
 
-//Function for validate Item ID
 bool checkItemID(string input) {
     if (input.length() == 9) {
         for (int i = 0; i < input.length(); i++) {
@@ -44,7 +43,6 @@ bool checkItemID(string input) {
     }
 }
 
-//Function for validate Account ID
 bool checkAccountID(string input) {
     if (input.length() == 4) {
         for (int i = 0; i < input.length(); i++) {
@@ -69,7 +67,6 @@ bool checkAccountID(string input) {
     }
 }
 
-//Function to get Item ID
 string getItemID() {
     string input;
     string ask = "Please enter the item id: ";
@@ -88,7 +85,6 @@ string getItemID() {
     }
 }
 
-//Function to get Account ID
 string getAccountID() {
     string input;
     string ask = "Please enter the account id: ";
@@ -162,16 +158,10 @@ void customerSubMenu(AccountManager* accountList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-            accountList->addAccount();
+            cout << "Add a customer" << endl;
         }
         else if (input == "2") {
-            string id = getAccountID();
-
-            //trim string
-            input.erase(input.find_last_not_of(" ") + 1);
-            input.erase(0, input.find_first_not_of(" "));
-
-            accountList->updateAccount(id);
+            cout << "Update a customer" << endl;
         }
         else if (input == "3") {
             cout << "Exit" << endl;
@@ -189,8 +179,10 @@ void promoteCustomer(AccountManager* accountList) {
 }
 
 void rentItem(AccountManager* accountList, ItemManager* itemList) {
+    accountList->displayAll();
     string accountID = getAccountID();
 
+    accountList->displayAllAvailable(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -201,8 +193,10 @@ void rentItem(AccountManager* accountList, ItemManager* itemList) {
 }
 
 void returnItem(AccountManager* accountList, ItemManager* itemList) {
+    accountList->displayAll();
     string accountID = getAccountID();
 
+    accountList->displayAllRental(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -450,6 +444,7 @@ int main()
             searchCustomerSubMenu(accountList);
         }
         else if (input == "Exit") {
+            //cout << "Exit" << endl;
 
             //Printout team member
             cout << "\n\nASSIGNMENT 2 GROUP 24" << endl;
