@@ -159,10 +159,8 @@ void customerSubMenu(AccountManager* accountList) {
 
         if (input == "1") {
             accountList->addAccount();
-            accountList->saveToFile();
         }
         else if (input == "2") {
-            accountList->displayAll();
             string id = getAccountID();
 
             //trim string
@@ -170,7 +168,6 @@ void customerSubMenu(AccountManager* accountList) {
             input.erase(0, input.find_first_not_of(" "));
 
             accountList->updateAccount(id);
-            accountList->saveToFile();
         }
         else if (input == "3") {
             cout << "Exit" << endl;
@@ -188,10 +185,8 @@ void promoteCustomer(AccountManager* accountList) {
 }
 
 void rentItem(AccountManager* accountList, ItemManager* itemList) {
-    accountList->displayAll();
     string accountID = getAccountID();
 
-    accountList->displayAllAvailable(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -202,10 +197,8 @@ void rentItem(AccountManager* accountList, ItemManager* itemList) {
 }
 
 void returnItem(AccountManager* accountList, ItemManager* itemList) {
-    accountList->displayAll();
     string accountID = getAccountID();
 
-    accountList->displayAllRental(accountID, itemList);
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
