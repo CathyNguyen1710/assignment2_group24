@@ -145,7 +145,6 @@ void AccountManager::setCustomerFile(string customerFile) {
 //Other Function
 //Function used to promote an account when meet the requirement
 bool AccountManager::promoteAccount(string id) {
-	int pos = 0; //int to find the position of an item in the array
 	bool matched = false; //boolean to check if the vector have the account with the id input 
 
 	//Loop through the vector of accout to check for the account that match the id input
@@ -181,9 +180,6 @@ bool AccountManager::promoteAccount(string id) {
 					break;
 				}
 			}
-		}
-		else { //if the id is not matched
-			pos++; //increase the position
 		}
 	}
 
