@@ -13,6 +13,7 @@
 
 using namespace std;
 
+//Function for validate Item ID
 bool checkItemID(string input) {
     if (input.length() == 9) {
         for (int i = 0; i < input.length(); i++) {
@@ -43,6 +44,7 @@ bool checkItemID(string input) {
     }
 }
 
+//Function for validate Account ID
 bool checkAccountID(string input) {
     if (input.length() == 4) {
         for (int i = 0; i < input.length(); i++) {
@@ -67,6 +69,7 @@ bool checkAccountID(string input) {
     }
 }
 
+//Function to get Item ID
 string getItemID() {
     string input;
     string ask = "Please enter the item id: ";
@@ -85,6 +88,7 @@ string getItemID() {
     }
 }
 
+//Function to get Account ID
 string getAccountID() {
     string input;
     string ask = "Please enter the account id: ";
@@ -446,7 +450,6 @@ int main()
             searchCustomerSubMenu(accountList);
         }
         else if (input == "Exit") {
-            //cout << "Exit" << endl;
 
             //Printout team member
             cout << "\n\nASSIGNMENT 2 GROUP 24" << endl;
