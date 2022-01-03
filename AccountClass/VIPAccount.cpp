@@ -50,18 +50,12 @@ void VIPAccount::addRentalList(string id) {
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
-	cerr << "There is no item with matching id" << endl;
 	return false;
 }
 bool VIPAccount::returnItem(string id, ItemManager* itemList) {
-	cerr << "The item specified was not rented" << endl;
 	return false;
 }
 
-//
-/*void VIPAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-*/
 string VIPAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;

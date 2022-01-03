@@ -38,23 +38,15 @@ bool GuestAccount::promoteable() {
 void GuestAccount::addRentalList(string id) {
 	this->listOfRentals.push_back(id);
 
-	//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
-
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool GuestAccount::rentItem(string id, ItemManager* itemList) {
-	cerr << "There is no item with matching id" << endl;
 	return false;
 }
 bool GuestAccount::returnItem(string id, ItemManager* itemList) {
-	cerr << "The item specified was not rented" << endl;
 	return false;
 }
 
-//
-/*void GuestAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}*/
 string GuestAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;
