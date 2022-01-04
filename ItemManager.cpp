@@ -485,12 +485,13 @@ void ItemManager::displaySortedItemID()
 				this->getItemList()[i]->getId() = this->getItemList()[j]->getId();
 				this->getItemList()[j]->getId() = temp;
 			}
-		}	orted
+		}
 	}
 	for (Item* item : this->getItemList()) {
 		cout << item->getId();
 	}
 }
+
 void ItemManager::getAllNoStock() 
 {
 
