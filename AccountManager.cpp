@@ -407,13 +407,20 @@ bool AccountManager::updateAccount(string id) {
 }
 
 
+
 void AccountManager::displaySortedAccountName()
 {
-	
-	for (Account *accounts : accountList)
-	{
-		sort(accounts->getName().begin(), accounts->getName().end());
+	//sort function by Name
+	for (int i = 0; i < accountList.size(); i++ ){
+		for (int j = i+1; j < accountList.size(); j++ ){
+			if (accountList[i]->getName()>accountList[j]->getName()){
+				string temp = accountList[i]->getName();
+				accountList[i]->getName() = accountList[j]->getName();
+				accountList[j]->getName() = temp;
+			}
+		}	
 	}
+	
 	for (Account *ac : accountList)
 	{
 		cout << ac->toString();
@@ -422,10 +429,15 @@ void AccountManager::displaySortedAccountName()
 
 void AccountManager::displaySortedAccountID()
 {
-	
-	for (Account *accounts : accountList)
-	{
-		sort(accounts->getId().begin(), accounts->getId().end());
+	//sort function by ID
+	for (int i = 0; i < accountList.size(); i++ ){
+		for (int j = i+1; j < accountList.size(); j++ ){
+			if (accountList[i]->getId()>accountList[j]->getId()){
+				string temp = accountList[i]->getId();
+				accountList[i]->getId() = accountList[j]->getId();
+				accountList[j]->getId() = temp;
+			}
+		}	
 	}
 	for (Account *ac : accountList)
 	{
@@ -434,8 +446,13 @@ void AccountManager::displaySortedAccountID()
 }
 void AccountManager::getAccountByLevel(string level)
 {
-
-	cout << "find by level" << endl;
+	cout<< "All accounts of level "<<level <<"is: "<< endl;
+	for (Account *account : accountList)
+	{
+		if (account->getType()  == level){
+			cout<<account<<endl;
+		}
+	}
 }
 void AccountManager::searchAccount(string name)
 {
@@ -452,17 +469,26 @@ void AccountManager::searchAccount(string name)
 }
 void AccountManager::searchAccount(char *id)
 {
-
+	vector<string> itemIDList;
+	vector<string> itemIDNumber;
+	
 	for (Account *account : this->accountList)
 	{
-		if (account->getId() == id)
+		itemIDList.push_back(account->getId());
+	}
+	for (auto ID: itemIDList)
+	{
+		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
+	}
+	cout << "The ID search result is: "<<endl;
+	for (auto ID: itemIDNumber)
+	{
+		if (ID.find(id))
 		{
-			cout << account->toString();
-			break;
+			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;
 		}
 	}
 }
-
 
 //Function to save the accountList to a text file
 bool AccountManager::saveToFile() {
