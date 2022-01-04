@@ -256,7 +256,7 @@ bool AccountManager::addAccount() {
 	this->accountList.push_back(newAccount);
 	newAccount->print();
 
-	/*if (type == "Guest") {
+	if (type == "Guest") {
 		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
 		this->accountList.push_back(newAccount);
 		return true;
@@ -273,7 +273,7 @@ bool AccountManager::addAccount() {
 	}
 	else {
 		cerr << "error message" << endl;
-	}*/
+	}
 	return true;
 }
 bool AccountManager::updateAccount(string id) {
@@ -318,7 +318,7 @@ void AccountManager::displaySortedAccountID()
 }
 void AccountManager::getAccountByLevel(string level)
 {
-	cout<<"All accounts of level "<<level <<"is: "<< endl;
+	cout<< "All accounts of level "<<level <<"is: "<< endl;
 	for (Account *account : accountList)
 	{
 		if (account->getType()  == level){
