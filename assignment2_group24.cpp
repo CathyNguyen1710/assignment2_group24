@@ -230,11 +230,9 @@ void displayItemSubMenu(ItemManager* itemList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-            cout << "Sorted item by id" << endl;
             itemList->displaySortedItemID();
         }
         else if (input == "2") {
-            cout << "Sorted item by title" << endl;
             itemList->displaySortedItemTitle();
         }
         else if (input == "3") {
@@ -269,11 +267,9 @@ void displayCustomerSubMenu(AccountManager* accountList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-            cout << "Sorted customer by id" << endl;
             accountList->displaySortedAccountID();
         }
         else if (input == "2") {
-            cout << "Sorted customer by name" << endl;
             accountList->displaySortedAccountName();
         }
         else if (input == "3") {

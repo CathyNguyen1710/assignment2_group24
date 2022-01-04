@@ -494,49 +494,32 @@ void ItemManager::displaySortedItemID()
 
 void ItemManager::getAllNoStock() 
 {
-
 	cout << "sort by no of stock = 0" << endl;
 }
 
 
 void ItemManager::searchItem(string title) 
 {
-	vector <string> titleSearchResult;
-	for (Item* item : this->getItemList()) 
+	for (Item* item : this->itemList)
 	{
-		if (item->getTitle().find(title))
+		if (item->getTitle() == title)
 		{
-			titleSearchResult.push_back(item->getTitle());
+			cout << item->getTitle(); //mai day t sua lai tiep
+			break;
 		}
 	}
-	cout << "The title search result is: " << endl;
-	for (auto titleResult: titleSearchResult)
-	{
-		cout << titleResult << endl;
-	}
-	
 }
 
-void ItemManager::searchItem(char* id) 
+void ItemManager::searchItem(string id) 
 {
-	vector<string> itemIDList;
-	vector<string> itemIDNumber;
-	vector<string> IDSearchResult;
-	
-	for (Item* item : this->getItemList()) 
+	for (Item* item : this->itemList)
 	{
-		itemIDList.push_back(item->getId());
-	}
-	for (auto ID: itemIDList){
-		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
-	}
-	cout << "The ID search result is: "<<endl;
-	for (auto ID: itemIDNumber){
-		if (ID.find(id)){
-			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;	
+		if (item->getId() == id)
+		{
+			cout << item->getId(); //mai day t sua lai tiep
+			break;
 		}
 	}
-	
 	
 }
 

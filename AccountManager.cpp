@@ -456,7 +456,6 @@ void AccountManager::getAccountByLevel(string level)
 }
 void AccountManager::searchAccount(string name)
 {
-
 	for (Account *account : this->accountList)
 	{
 		if (account->getName() == name)
