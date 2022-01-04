@@ -457,59 +457,43 @@ bool ItemManager::deleteItem(string id)
 		}
 	}
 }
-bool mycomp(string a, string b){
-	//returns 1 if string a is alphabetically 
-	//less than string b
-	//quite similar to strcmp operation
-	return a<b;
-}
-
-vector<string> alphabeticallySort(vector<string> a){
-	int n=a.size();
-	//mycomp function is the defined function which 
-	//sorts the strings in alphabetical order
-	sort(a.begin(),a.end(),mycomp);
-	return a;
-}
-
-
 void ItemManager::displaySortedItemTitle() {
-	vector<string> itemNameList;
-	for (Item* item : this->getItemList()) 
-	{
-		itemNameList.push_back(item->getTitle());
+	//sort function by Title
+	for (int i = 0; i < this->getItemList().size(); i++ ){
+		for (int j = i+1; j < this->getItemList().size(); j++ ){
+			if (this->getItemList()[i]->getTitle()>this->getItemList()[j]->getTitle()){
+				string temp = this->getItemList()[i]->getTitle();
+
+				this->getItemList()[i]->getTitle() = this->getItemList()[j]->getTitle();
+				this->getItemList()[j]->getTitle() = temp;
+			}
+		}	
 	}
-	alphabeticallySort(itemNameList);
-	cout << "The item list is: ";
-	for (auto itemName: itemNameList){
-		cout << itemName;
+	for (Item* item : this->getItemList()) {
+		cout << item->getTitle();
 	}
-	cout << endl;
+
 }
 
-void ItemManager::displaySortedItemID() {
-	vector<string> itemIDList;
-	vector<int> itemIDNumber;
+void ItemManager::displaySortedItemID() 
+{
+	//sort function by Title
+	for (int i = 0; i < this->getItemList().size(); i++ ){
+		for (int j = i+1; j < this->getItemList().size(); j++ ){
+			if (this->getItemList()[i]->getId()>this->getItemList()[j]->getId()){
+				string temp = this->getItemList()[i]->getId();
+				this->getItemList()[i]->getId() = this->getItemList()[j]->getId();
+				this->getItemList()[j]->getId() = temp;
+			}
+		}	orted
+	}
 	for (Item* item : this->getItemList()) {
-		itemIDList.push_back(item->getId());
+		cout << item->getId();
 	}
-	
-	for (string ID: itemIDList){
-		string IDString = ID.substr(1,3)+ID.substr(5, 8);
-		int IDInt;
-		if (sscanf(IDString.c_str(), "%d", &IDInt) !=1)
-			itemIDNumber.push_back(IDInt);
-	}
-	sort(itemIDNumber.begin(), itemIDNumber.end());
-	for (auto ID: itemIDNumber)
-	{
-	cout << "I" << to_string(ID)[0] << to_string(ID)[1] << to_string(ID)[2]
-    << "-" << to_string(ID)[3] << to_string(ID)[4] << to_string(ID)[5] << to_string(ID)[6];
-	}
-	
 }
 void ItemManager::getAllNoStock() 
 {
+
 	cout << "sort by no of stock = 0" << endl;
 }
 
@@ -545,17 +529,28 @@ void ItemManager::searchItem(char* id)
 	for (auto ID: itemIDList){
 		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
 	}
-	
+	cout << "The ID search result is: "<<endl;
 	for (auto ID: itemIDNumber){
 		if (ID.find(id)){
-			IDSearchResult.push_back("I"+ ID.substr(0,2) + "-" +ID.substr(3,6));	
+			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;	
 		}
 	}
-	cout << "The ID search result is: "<<endl;
-	for (auto ID: IDSearchResult){
-		cout << ID << endl;
-	}
+	
+	
 }
+
+
+bool ItemManager::saveToFile() 
+{
+	ofstream outStream(this->itemFile);
+
+	for (Item* item : this->itemList) 
+	{
+		outStream << item->toString() << endl;
+	}
+	return true;
+}
+
 
 
 //Function to save the itemList to a text file
