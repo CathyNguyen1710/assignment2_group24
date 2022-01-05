@@ -503,8 +503,8 @@ void ItemManager::searchItem(string title)
 	for (Item* item : this->itemList)
 	{
 		if (item->getTitle() == title)
-		{
-			cout << item->getTitle(); //mai day t sua lai tiep
+		{	
+			cout << title;
 			break;
 		}
 	}
@@ -516,7 +516,7 @@ void ItemManager::searchItem(string id)
 	{
 		if (item->getId() == id)
 		{
-			cout << item->getId(); //mai day t sua lai tiep
+			cout << id;
 			break;
 		}
 	}

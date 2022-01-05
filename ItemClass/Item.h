@@ -38,7 +38,7 @@ public:
 	void setId(string id);
 	void setTitle(string title);
 	void setRentalType(string rentalType);
-	void setLoanType(string loadType);
+	void setLoanType(string loanType);
 	void setNoOfCopy(int noOfCopy);
 	void setFee(double fee);
 	void setNoRented(int noRented);

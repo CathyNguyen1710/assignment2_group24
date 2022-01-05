@@ -504,6 +504,7 @@ bool AccountManager::saveToFile() {
 	return true;
 }
 
+
 void AccountManager::print() {
 	cout << "print acc manager" << endl;
 }

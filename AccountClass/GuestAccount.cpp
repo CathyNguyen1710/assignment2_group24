@@ -41,7 +41,25 @@ void GuestAccount::addRentalList(string id) {
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool GuestAccount::rentItem(string id, ItemManager* itemList) {
-	return false;
+	
+	//will figure out how to change from ItemManager to Item later
+
+
+	if (this->listOfRentals.size() >= 2) {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
+		return false;
+	}
+	else if (itemList->getLoanType() == "2-day") {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
+		return false;
+	}
+	else if (itemList->getNoOfCopy() != 0) {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
+		return false;
+	} else {
+		this->addRentalList(id);
+		return true;
+	}
 }
 bool GuestAccount::returnItem(string id, ItemManager* itemList) {
 	return false;
