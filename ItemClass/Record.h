@@ -9,7 +9,7 @@ using namespace std;
 
 class Record :public Item
 {
-private:
+protected:
 	string genre;
 public:
 	//Constructor

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//Constructor
+// Constructor
 Item::Item() {
 
 }
@@ -21,7 +21,13 @@ Item::Item(string id, string title, string rentalType, string loanType, int noOf
 	this->noRented = 0;
 }
 
-//Getter
+// Destructor
+virtual Item::~Item()
+{
+     cout << "Deleted Item" << endl;
+}
+
+// Getter
 string Item::getId() {
 	return this->id;
 }
@@ -43,8 +49,11 @@ double Item::getFee() {
 int Item::getNoRented() {
 	return this->noRented;
 }
+string Item::getGenre(){
+    return string();
+}
 
-//Setter
+// Setter
 void Item::setId(string id) {
 	this->id = id;
 }
@@ -65,4 +74,15 @@ void Item::setFee(double fee) {
 }
 void Item::setNoRented(int noRented) {
 	this->noRented = noRented;
+}
+void Item::setGenre(string genre) {
+    return;
+}
+
+// Other functions
+void Item::print() {
+    return;
+}
+string toString() {
+    return string();
 }
