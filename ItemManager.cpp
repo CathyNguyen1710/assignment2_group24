@@ -154,16 +154,6 @@ void ItemManager::setItemFile(string itemFile)
 // Other function
 bool ItemManager::returnItem(string id)
 {
-	for (Item* item : this->getItemList())
-	{
-		if (item->getId() == id)
-		{
-			item->setNoOfCopy(item->getNoOfCopy() + 1);
-			item->setNoRented(item->getNoRented() - 1);
-			return true;
-		}
-	}
-
 	return false;
 }
 

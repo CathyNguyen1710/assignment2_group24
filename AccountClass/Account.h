@@ -51,8 +51,15 @@ public:
 	//void setTotalBorrowItem(int totalBorrowItem);
 	void setListOfRentals(vector<string>& listOfRentals);
 
+	//Other function
+	virtual bool rentItem(string id, ItemManager* itemList) = 0;
+	virtual bool returnItem(string id, ItemManager* itemList) = 0;
+	virtual void addRentalList(string id) = 0;
+	virtual bool promoteable() = 0;
+
 	//
 	void print();
+	virtual string toString() = 0;
 };
 
 #endif
