@@ -461,20 +461,18 @@ bool ItemManager::updateItem(string id)
 
 bool ItemManager::deleteItem(string id)
 {
-	for (Item *item : this->itemList)
+	for (int i = 0; i < this->itemList.size(); i++)
 	{
+		Item *item = this->itemList[i];
 		if (item->getId() == id)
 		{
-			this->itemList.erase(find(this->itemList.begin(), this->itemList.end(), item));
 			delete item;
+			this->itemList.erase(this->itemList.begin() + i);
 			return true;
 		}
-		else
-		{
-			cerr << "No matching ID found!" << endl;
-			return false;
-		}
 	}
+	cerr << "No matching ID found!" << endl;
+	return false;
 }
 
 void ItemManager::displaySortedItemTitle()
