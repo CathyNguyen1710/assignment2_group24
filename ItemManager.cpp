@@ -13,7 +13,7 @@ using namespace std;
 ItemManager::ItemManager()
 {
 	this->itemFile = "items.txt";
-	this->noOfCopy++;
+//	this->noOfCopy++;
 	this->noOfItem = 0;
 
 	ifstream inStream(itemFile);
@@ -65,7 +65,7 @@ ItemManager::ItemManager(string itemFile)
 {
 	this->itemFile = itemFile;
 	this->noOfItem = 0;
-	this->noOfCopy++;
+//	this->noOfCopy++;
 
 	ifstream inStream(itemFile);
 
@@ -167,6 +167,20 @@ bool ItemManager::returnItem(string id)
 	return false;
 }
 
+// helper
+
+// helper to check if year is a number
+bool isNumber(const string &str)
+{
+    size_t size = str.size();
+    for (size_t t = 0; t < size; t++)
+    {
+        if (!isdigit(str.at(t)))
+            return false;
+    }
+    return true;
+}
+
 bool ItemManager::addItem()
 {
 	this->noOfItem++;
@@ -176,23 +190,11 @@ bool ItemManager::addItem()
 	ostringstream streamID;
 	streamID << "I" << setw(3) << setfill('0') << this->noOfItem;
 	int code = stoi((this->itemList.back())->getId().substr(1, 3));
-	string id = code.str();
+    string id = to_string(code);
 
 	id.append("-");
 
 	string year = "";
-
-	// helper to check if year is a number
-	bool isNumber(const string &str)
-	{
-		size_t size = str.size();
-		for (size_t t = 0; t < size; t++)
-		{
-			if (!isDigit(str.at(t)))
-				return false;
-		}
-		return true;
-	}
 
 	// get year input
 	while (true)
@@ -294,31 +296,29 @@ bool ItemManager::addItem()
 		cin.ignore();
 		break;
 	}
-
-	switch (rentalType)
-	{
-	case "Game":
-		Item *newItem = new Game(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee));
-		this->itemList.push_back(newItem);
-		newItem->print();
-		return true;
-	case "Record":
-		Item *newItem = new Record(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
-		this->itemList.push_back(newItem);
-		return true;
-	case "DVD":
-		Item *newItem = new DVD(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
-		this->itemList.push_back(newItem);
-		return true;
-	default:
-		return false;
-	}
+    
+    if (rentalType == "Game") {
+        Item *newItem = new Game(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee));
+        this->itemList.push_back(newItem);
+        newItem->print();
+        return true;
+    } else if (rentalType == "Record") {
+        Item *newItem = new Record(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
+        this->itemList.push_back(newItem);
+        return true;
+    } else if (rentalType == "DVD") {
+        Item *newItem = new DVD(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
+        this->itemList.push_back(newItem);
+        return true;
+    } else {
+        return false;
+    }
 }
 
 bool ItemManager::updateItem(string id)
 {
 	char choice = 0;
-	Item *&item = new Item();
+	Item *item = new Item();
 	for (Item *i : this->getItemList())
 	{
 		if (i->getId() == id)
@@ -334,15 +334,13 @@ bool ItemManager::updateItem(string id)
 	cout << "\t - "
 		 << "Loan Type: enter '2'." << endl;
 	cout << "\t - "
-		 << "Rental Type: enter '3'." << endl;
+		 << "Genre: enter '3' (Only applied for Record and DVD)." << endl;
 	cout << "\t - "
-		 << "Genre: enter '4' (Only applied for Record and DVD)." << endl;
+		 << "Copies in stock: enter '4'." << endl;
 	cout << "\t - "
-		 << "Copies in stock: enter '5'." << endl;
+		 << "Rental fee: enter '5'." << endl;
 	cout << "\t - "
-		 << "Rental fee: enter '6'." << endl;
-	cout << "\t - "
-		 << "Enter '7' to exit!" << endl;
+		 << "Enter '6' to exit!" << endl;
 
 	// ask for user's choice, only break the loop if user enters correct letters
 	while (true)
@@ -353,14 +351,13 @@ bool ItemManager::updateItem(string id)
 
 		switch (choice)
 		{
-		case "1":
-		case "2":
-		case "3":
-		case "4":
-		case "5":
-		case "6":
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
 			break;
-		case "7":
+		case '6':
 			return false;
 		default:
 			cerr << "Invalid input! Please only enter: " << endl;
@@ -398,55 +395,18 @@ bool ItemManager::updateItem(string id)
 		item->setLoanType(newValue);
 		return true;
 	case '3':
-		cout << "\nEnter the new rental type: ";
-		cin >> newValue;
-		cin.ignore();
-
-		switch (newValue)
-		{
-		case "Game":
-			deleteItem(itemList, newId);
-			Item *newItem = new Game(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee);
-			this->itemList.push_back(newItem);
-			newItem->print();
-			return true;
-		case "Record":
-			string newGenre = item->getGenre();
-			if (!newGenre || newGenre.size() == 0)
-			{
-				cout << "\nEnter the new genre: ";
-				cin >> newGenre;
-				cin.ignore();
-				break;
-			}
-			deleteItem(itemList, newId);
-			Item *newItem = new Record(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee, newGenre);
-			this->itemList.push_back(newItem);
-			newItem->print();
-			return true;
-		case "DVD":
-			string newGenre = item->getGenre();
-			deleteItem(itemList, newId);
-			Item *newItem = new DVD(newId, newTitle, newRentalType, newLoanType, newNoOfCopy, newFee, newGenre);
-			this->itemList.push_back(newItem);
-			newItem->print();
-			return true;
-		default:
-			break;
-		}
-	case "4":
 		cout << "\nEnter the new genre: ";
 		cin >> newValue;
 		cin.ignore();
 		item->setGenre(newValue);
 		return true;
-	case '5':
+	case '4':
 		cout << "\nEnter the new number of copies in stock: ";
 		cin >> newValue;
 		cin.ignore();
 		item->setNoOfCopy(stoi(newValue));
 		return true;
-	case '6':
+	case '5':
 		cout << "\nEnter the new rental fee: ";
 		cin >> newValue;
 		cin.ignore();
