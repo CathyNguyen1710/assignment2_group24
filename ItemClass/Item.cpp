@@ -22,7 +22,7 @@ Item::Item(string id, string title, string rentalType, string loanType, int noOf
 }
 
 // Destructor
-virtual Item::~Item()
+Item::~Item()
 {
      cout << "Deleted Item" << endl;
 }
