@@ -38,70 +38,33 @@ bool GuestAccount::promoteable() {
 void GuestAccount::addRentalList(string id) {
 	this->listOfRentals.push_back(id);
 
-	//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
-
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool GuestAccount::rentItem(string id, ItemManager* itemList) {
-	if (this->getNoOfRentals() == 2) {
-		cout << "This account reached the maximum number of rentals allow" << endl;
+	
+	//will figure out how to change from ItemManager to Item later
+
+
+	if (this->listOfRentals.size() >= 2) {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
 		return false;
 	}
-
-	for (string rentItem : this->listOfRentals) {
-		if (rentItem == id) {
-			cerr << "This account has already rented this item" << endl;
-			return false;
-		}
+	else if (itemList->getLoanType() == "2-day") {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
+		return false;
 	}
-
-	for (Item* item : itemList->getItemList()) {
-		if (item->getId() == id) {
-			if (item->getLoanType() == "2-day") {
-				cout << "Guest account cannot borrow items with 2-day loan type" << endl;
-				return false;
-			}
-			else if (item->getNoOfCopy() == 0) {
-				cout << "Item is out of stock" << endl;
-				return false;
-			}
-			else {
-				item->setNoRented(item->getNoRented() + 1);
-				item->setNoOfCopy(item->getNoOfCopy() - 1);
-				this->addRentalList(id);
-				return true;
-			}
-		}
+	else if (itemList->getNoOfCopy() != 0) {
+		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
+		return false;
+	} else {
+		this->addRentalList(id);
+		return true;
 	}
-
-	cerr << "There is no item with matching id" << endl;
-	return false;
 }
 bool GuestAccount::returnItem(string id, ItemManager* itemList) {
-	int pos = 0;
-	for (string itemID : this->listOfRentals) {
-		if (itemID == id) {
-			if (itemList->returnItem(itemID) == true) {
-				this->setNoOfRentals(this->getNoOfRentals() - 1);
-				//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
-				this->setTotalReturnItem(this->getTotalReturnItem() + 1);
-				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
-				return true;
-			}
-		}
-		else {
-			pos++;
-		}
-	}
-
-	cerr << "The item specified was not rented" << endl;
 	return false;
 }
 
-//
-void GuestAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}
 string GuestAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;

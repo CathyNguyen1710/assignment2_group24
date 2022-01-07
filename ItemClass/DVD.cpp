@@ -7,25 +7,27 @@
 
 using namespace std;
 
+
 DVD::DVD() {
 
 }
+// Constructor
 DVD::DVD(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre):
 	Item(id, title, rentalType, loanType, noOfCopy, fee) {
 	this->genre = genre;
 }
 
-//Getter
+// Getter
 string DVD::getGenre() {
 	return this->genre;
 }
 
-//Setter
+// Setter
 void DVD::setGenre(string genre) {
 	this->genre = genre;
 }
 
-//Other function
+// Other functions
 void DVD::print() {
 	cout << this->getId() << " " << this->getTitle() << " " << this->getRentalType() << " " << this->getLoanType() << " " << this->getNoOfCopy() << " " << this->getFee() << " " << this->getGenre() << endl;
 }

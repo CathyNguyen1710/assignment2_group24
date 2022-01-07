@@ -36,7 +36,6 @@ public:
 	bool promoteable();
 
 	//
-	void print();
 	string toString();
 };
 

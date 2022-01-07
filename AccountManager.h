@@ -48,7 +48,7 @@ public:
 	void displaySortedAccountName();
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
-	void searchAccount(string name);
+	void searchAccount(string accountName);
 	void searchAccount(char* id);
 
 	bool saveToFile();
