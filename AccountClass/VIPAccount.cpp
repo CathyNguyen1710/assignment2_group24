@@ -50,6 +50,7 @@ void VIPAccount::addRentalList(string id) {
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
+
 	return false;
 }
 bool VIPAccount::returnItem(string id, ItemManager* itemList) {

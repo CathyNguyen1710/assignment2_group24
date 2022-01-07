@@ -53,10 +53,8 @@ public:
 
 	bool saveToFile();
 
-	void displayAll();
-
 	void getItemFromRental(string itemID);
-	
+
 	void print();
 };
 

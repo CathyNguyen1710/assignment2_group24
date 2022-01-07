@@ -53,10 +53,6 @@ public:
 
 	bool saveToFile();
 
-	void displayAll();
-	void displayAllRental(string accountID, ItemManager* itemList);
-	void displayAllAvailable(string accountID, ItemManager* itemList);
-
 	void print();
 };
 

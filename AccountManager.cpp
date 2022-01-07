@@ -156,7 +156,7 @@ bool AccountManager::promoteAccount(string id) {
 				if (account->getType() == "Guest") { //if the current account is type Guest -> promote to Regular
 					RegularAccount* promoteAcc = new RegularAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					remove(this->accountList.begin(), this->accountList.end(), account); //Remove the old account type from the vector
 
 					this->accountList.push_back(promoteAcc); //Add the promote account
 
@@ -169,7 +169,7 @@ bool AccountManager::promoteAccount(string id) {
 				else if (account->getType() == "Regular") { //if the current account is type Regular -> promote to VIP
 					VIPAccount* promoteAcc = new VIPAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					remove(this->accountList.begin(), this->accountList.end(), account); //Remove the old account type from the vector
 
 					this->accountList.push_back(promoteAcc); //Add the promote account
 
@@ -407,14 +407,21 @@ bool AccountManager::updateAccount(string id) {
 }
 
 
+
 void AccountManager::displaySortedAccountName()
 {
-	
-	for (Account *accounts : accountList)
-	{
-		sort(accounts->getName().begin(), accounts->getName().end());
+	//sort function by Name
+	for (int i = 0; i < accountList.size(); i++) {
+		for (int j = i + 1; j < accountList.size(); j++) {
+			if (accountList[i]->getName() > accountList[j]->getName()) {
+				string temp = accountList[i]->getName();
+				accountList[i]->getName() = accountList[j]->getName();
+				accountList[j]->getName() = temp;
+			}
+		}
 	}
-	for (Account *ac : accountList)
+
+	for (Account* ac : accountList)
 	{
 		cout << ac->toString();
 	}
@@ -422,25 +429,34 @@ void AccountManager::displaySortedAccountName()
 
 void AccountManager::displaySortedAccountID()
 {
-	
-	for (Account *accounts : accountList)
-	{
-		sort(accounts->getId().begin(), accounts->getId().end());
+	//sort function by ID
+	for (int i = 0; i < accountList.size(); i++) {
+		for (int j = i + 1; j < accountList.size(); j++) {
+			if (accountList[i]->getId() > accountList[j]->getId()) {
+				string temp = accountList[i]->getId();
+				accountList[i]->getId() = accountList[j]->getId();
+				accountList[j]->getId() = temp;
+			}
+		}
 	}
-	for (Account *ac : accountList)
+	for (Account* ac : accountList)
 	{
 		cout << ac->toString();
 	}
 }
 void AccountManager::getAccountByLevel(string level)
 {
-
-	cout << "find by level" << endl;
+	cout << "All accounts of level " << level << "is: " << endl;
+	for (Account* account : accountList)
+	{
+		if (account->getType() == level) {
+			cout << account << endl;
+		}
+	}
 }
 void AccountManager::searchAccount(string name)
 {
-
-	for (Account *account : this->accountList)
+	for (Account* account : this->accountList)
 	{
 		if (account->getName() == name)
 		{
@@ -450,19 +466,28 @@ void AccountManager::searchAccount(string name)
 	}
 	cout << "search by name" << name << endl;
 }
-void AccountManager::searchAccount(char *id)
+void AccountManager::searchAccount(char* id)
 {
+	vector<string> itemIDList;
+	vector<string> itemIDNumber;
 
-	for (Account *account : this->accountList)
+	for (Account* account : this->accountList)
 	{
-		if (account->getId() == id)
+		itemIDList.push_back(account->getId());
+	}
+	for (auto ID : itemIDList)
+	{
+		itemIDNumber.push_back(ID.substr(1, 3) + ID.substr(5, 8));
+	}
+	cout << "The ID search result is: " << endl;
+	for (auto ID : itemIDNumber)
+	{
+		if (ID.find(id))
 		{
-			cout << account->toString();
-			break;
+			cout << "I" + ID.substr(0, 2) + "-" + ID.substr(3, 6) << endl;
 		}
 	}
 }
-
 
 //Function to save the accountList to a text file
 bool AccountManager::saveToFile() {
@@ -478,6 +503,7 @@ bool AccountManager::saveToFile() {
 	}
 	return true;
 }
+
 
 void AccountManager::print() {
 	cout << "print acc manager" << endl;

@@ -7,9 +7,9 @@
 
 using namespace std;
 
-class DVD :public Item
+class DVD : public Item
 {
-private:
+protected:
 	string genre;
 public:
 	//Constructor
@@ -29,4 +29,3 @@ public:
 	void print();
 	string toString();
 };
-
