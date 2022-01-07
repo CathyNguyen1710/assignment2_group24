@@ -8,7 +8,7 @@ using namespace std;
 
 class Item
 {
-private:
+protected:
 	string id;
 	string title;
 	string rentalType;
@@ -18,14 +18,14 @@ private:
 	int noRented;
 
 public:
-	//Constructor
-	Item(); //default constructor
+	// Constructor
+	Item(); // default constructor
 	Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
-	//Destructor
+	// Destructor
 	~Item() {};
 
-	//Getter
+	// Getter
 	string getId();
 	string getTitle();
 	string getRentalType();
@@ -33,19 +33,21 @@ public:
 	int getNoOfCopy();
 	double getFee();
 	int getNoRented();
+    virtual string getGenre();
 
-	//Setter
+	// Setter
 	void setId(string id);
 	void setTitle(string title);
 	void setRentalType(string rentalType);
-	void setLoanType(string loanType);
+	void setLoanType(string loadType);
 	void setNoOfCopy(int noOfCopy);
 	void setFee(double fee);
 	void setNoRented(int noRented);
+    virtual void setGenre(string genre);
 
-	//Other function
-	virtual void print() = 0;
-	virtual string toString() = 0;
+	// Other functions
+	virtual void print();
+	virtual string toString();
 };
 
 #endif
