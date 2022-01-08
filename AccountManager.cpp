@@ -301,20 +301,31 @@ void AccountManager::displaySortedAccountName()
 
 void AccountManager::displaySortedAccountID()
 {
+	ifstream inStream(customerFile);
+	
+	if (!inStream) {
+		cerr << "Error !" << endl;
+	}
+	else
+	{
 	//sort function by ID
-	for (int i = 0; i < accountList.size(); i++ ){
-		for (int j = i+1; j < accountList.size(); j++ ){
-			if (accountList[i]->getId()>accountList[j]->getId()){
-				string temp = accountList[i]->getId();
-				accountList[i]->getId() = accountList[j]->getId();
-				accountList[j]->getId() = temp;
+
+		for (int i = 0; i < accountList.size(); i++ )
+		{
+			for (int j = i+1; j < accountList.size(); j++ )
+			{
+				if (accountList[i]->getId()>accountList[j]->getId())
+				{
+					string temp = accountList[i]->getId();
+					accountList[i]->getId() = accountList[j]->getId();
+					accountList[j]->getId() = temp;
+				}
 			}
 		}	
+
 	}
-	for (Account *ac : accountList)
-	{
-		cout << ac->toString();
-	}
+	
+	
 }
 void AccountManager::getAccountByLevel(string level)
 {
@@ -328,16 +339,18 @@ void AccountManager::getAccountByLevel(string level)
 }
 void AccountManager::searchAccount(string name)
 {
-
+	vector <string> accountSearchResult;
 	for (Account *account : this->accountList)
 	{
-		if (account->getName() == name)
+		if (account->getName().find(name))
 		{
-			cout << account->toString();
-			break;
+			accountSearchResult.push_back(account->getName());
 		}
 	}
 	cout << "search by name" << name << endl;
+	for (auto accountName: accountSearchResult){
+		cout << accountName << endl;
+	}
 }
 void AccountManager::searchAccount(char *id)
 {

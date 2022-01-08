@@ -210,6 +210,7 @@ void returnItem(AccountManager* accountList, ItemManager* itemList) {
             account->returnItem(itemID, itemList);
         }
     }
+    
 }
 
 void displayItemSubMenu(ItemManager* itemList) {

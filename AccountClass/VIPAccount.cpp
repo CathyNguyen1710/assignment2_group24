@@ -112,23 +112,36 @@ bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 	cerr << "There is no item with matching id" << endl;
 	return false;
 }
-bool VIPAccount::returnItem(string id, ItemManager* itemList) {
+bool VIPAccount::returnItem(string id, ItemManager* itemList) 
+{
 	int pos = 0;
-	for (string itemID : this->listOfRentals) {
-		if (itemID == id) {
-			if (itemList->returnItem(itemID) == true) {
-				this->setNoOfRentals(this->getNoOfRentals() - 1);
-				//this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
-				this->listOfRentals.erase(this->listOfRentals.begin() + pos);
-				return true;
+	bool Itemrented = false;
+	if (this->listOfRentals.empty())
+	{
+		cout << " You have not rented any item(s) " << endl;
+	}
+	else{
+		Itemrented = true;
+		if (Itemrented)
+		{
+		for (string itemID : this->listOfRentals)
+		{
+				if (itemID == id) 
+				{
+					if (itemList->returnItem(itemID) == true) 
+					{
+						this->setNoOfRentals(this->getNoOfRentals() - 1);
+						this->listOfRentals.erase(this->listOfRentals.begin() + pos);
+						cout << " Item returned " << endl;
+						return true;
+					}
+				}
+				else {
+					pos++;
+				}
 			}
 		}
-		else {
-			pos++;
-		}
 	}
-
-	cerr << "The item specified was not rented" << endl;
 	return false;
 }
 

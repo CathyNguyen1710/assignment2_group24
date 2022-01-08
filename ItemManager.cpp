@@ -513,7 +513,7 @@ void ItemManager::displaySortedItemID()
 }
 void ItemManager::getAllNoStock() 
 {
-
+	
 	cout << "sort by no of stock = 0" << endl;
 }
 
