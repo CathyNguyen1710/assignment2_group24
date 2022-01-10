@@ -7,18 +7,17 @@
 
 using namespace std;
 
-class Game: public Item
+class Game : public Item
 {
 public:
-	//Constructor
-	Game();
-	Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
+    // Constructor
+    Game();
+    Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
-	//Destructor
-	~Game() {};
+    // Destructor
+    ~Game();
 
-	//Other function
-	void print();
-	string toString();
+    // Other functions
+    void print();
+    string toString();
 };
-

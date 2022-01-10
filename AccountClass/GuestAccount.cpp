@@ -12,7 +12,6 @@ GuestAccount::GuestAccount() :Account() {
 }
 GuestAccount::GuestAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
-	//this->setTotalBorrowItem(0);
 	this->totalReturnItem = 0;
 }
 
@@ -20,11 +19,19 @@ GuestAccount::GuestAccount(string id, string name, string address, string phone,
 int GuestAccount::getTotalReturnItem() {
 	return this->totalReturnItem;
 }
-
 //Setter
 void GuestAccount::setTotalReturnItem(int totalReturnItem) {
 	this->totalReturnItem = totalReturnItem;
 }
+
+void GuestAccount::getTotalBorrowItem(){
+	return this->totalBorrowItem;
+}
+void GuestAccount::setTotalBorrowItem(int totalBorrowItem){
+	return this->totalBorrowItem = totalBorrowItem;
+}
+
+
 
 //Other function
 bool GuestAccount::promoteable() {
@@ -40,28 +47,78 @@ void GuestAccount::addRentalList(string id) {
 
 	this->setNoOfRentals(this->listOfRentals.size());
 }
+
+
 bool GuestAccount::rentItem(string id, ItemManager* itemList) {
+
+	//check the user's rent capacity
+	if (this->getNoOfRentals() == 2) {
+		cerr << "Error: Your rent capacity is reached." << endl;
+
+	//check if the user is currently renting the item
+	for (string rented : this->listOfRentals) {
+		if (rented == id) {
+			cerr << "Error: The item is already being rented by this account\n";
+			return false;
+		}
+	}
 	
-	//will figure out how to change from ItemManager to Item later
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
+			if (item->getNoOfCopy() == 0) {							//check if item is still on stock
+				cerr << "Error: the item is currently out of stock\n";
+				return false; 
+			}
+			else if (item->getLoanType() == "2-day") {				//check loan type to see if the user can rent it with current Account type
+				cerr << "Error: Guest account cannot borrow items with 2-day loan type\n";
+				return false;
+			}
+			else {													//add item to rental list then change item's properties accordingly
+				this->addRentalList(id);
+				item->setNoOfCopy(item->getNoOfCopy() - 1);
+				item->setNoRented(item->getNoRented() + 1);
+				return true;
+			}
+		}
+	}
 
-
-	if (this->listOfRentals.size() >= 2) {
-		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
-		return false;
-	}
-	else if (itemList->getLoanType() == "2-day") {
-		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
-		return false;
-	}
-	else if (itemList->getNoOfCopy() != 0) {
-		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
-		return false;
-	} else {
-		this->addRentalList(id);
-		return true;
-	}
+	//print out error if no item was found with the input id
+	cerr << "Error: No item in the system matches the requested id\n";
+	return false;
 }
-bool GuestAccount::returnItem(string id, ItemManager* itemList) {
+
+
+bool GuestAccount::returnItem(string id, ItemManager* itemList) 
+{
+	int pos = 0;
+	bool Itemrented = false;
+	if (this->listOfRentals.empty())
+	{
+		cout << " You have not rented any item(s) " << endl;
+	}
+	else{
+		Itemrented = true;
+		if (Itemrented)
+		{
+		for (string itemID : this->listOfRentals)
+		{
+				if (itemID == id) 
+				{
+					if (itemList->returnItem(itemID) == true) 
+					{
+						this->setNoOfRentals(this->getNoOfRentals() - 1);
+						this->listOfRentals.erase(this->listOfRentals.begin() + pos);
+						this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
+						cout << " Item returned " << endl;
+						return true;
+					}
+				}
+				else {
+					pos++;
+				}
+			}
+		}
+	}
 	return false;
 }
 
