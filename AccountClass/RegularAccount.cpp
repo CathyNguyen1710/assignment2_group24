@@ -52,8 +52,46 @@ void RegularAccount::addRentalList(string id) {
 bool RegularAccount::rentItem(string id, ItemManager* itemList) {
 	return false;
 }
+
 bool RegularAccount::returnItem(string id, ItemManager* itemList) {
 	return false;
+}
+
+bool RegularAccount::returnItem(string id, ItemManager* itemList) 
+{
+	int pos = 0;
+	bool Itemrented = false;
+	if (this->listOfRentals.empty())
+	{
+		cerr << " You have not rented any item(s) " << endl;
+	}
+	else{
+		Itemrented = true;
+		if (Itemrented)
+		{
+		for (string itemID : this->listOfRentals)
+		{
+				if (itemID == id) 
+				{
+					if (itemList->returnItem(itemID) == true) 
+					{
+						this->setNoOfRentals(this->getNoOfRentals() - 1);
+						this->listOfRentals.erase(this->listOfRentals.begin() + pos);
+						cout << " Item returned " << endl;
+						return true;
+					}
+				}
+				else {
+					pos++;
+				}
+			}
+		}
+	}
+	return false;
+}
+//
+void RegularAccount::print() {
+	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 
 string RegularAccount::toString() {
