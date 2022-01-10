@@ -411,7 +411,6 @@ bool ItemManager::updateItem(string id)
 					break;
 				}
 			}
-=======
 			break;
 		}
 	}

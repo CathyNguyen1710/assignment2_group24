@@ -1,24 +1,69 @@
-﻿  Account.cpp
-  GuestAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(41,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(52,21): error C2039: 'getLoanType': is not a member of 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(17): message : see declaration of 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(56,21): error C2039: 'getNoOfCopy': is not a member of 'ItemManager'
-D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(17): message : see declaration of 'ItemManager'
-  RegularAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  VIPAccount.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  AccountManager.cpp
-D:\RMIT\Courses\c++\assignment2_group24\AccountManager.cpp(159,65): error C2065: 'acc': undeclared identifier
-D:\RMIT\Courses\c++\assignment2_group24\AccountManager.cpp(172,65): error C2065: 'acc': undeclared identifier
-  assignment2_group24.cpp
-  DVD.cpp
-  Game.cpp
-  Item.cpp
-D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.cpp(26,1): error C2723: 'Item::~Item': 'virtual' specifier illegal on function definition
-D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.cpp(26,1): error C2084: function 'Item::~Item(void)' already has a body
-D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.h(26): message : see previous definition of '{dtor}'
-  Record.cpp
-  ItemManager.cpp
-  Generating Code...
+﻿  ItemManager.cpp
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(199,9): error C2374: 'id': redefinition; multiple initialization
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(197): message : see declaration of 'id'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(443,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(443,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(443,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(444,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(444,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(444,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(445,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(445,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(445,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(446,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(446,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(446,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(447,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(447,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(447,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(448,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(448,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(448,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(450,11): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(450,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(450,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(493,3): error C2450: a switch expression of type 'std::string' is not valid
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(492,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(494,14): error C2440: 'type cast': cannot convert from 'const char [5]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(494,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(494,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(495,30): error C2660: 'ItemManager::deleteItem': function does not take 2 arguments
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(46,7): message : see declaration of 'ItemManager::deleteItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(500,16): error C2440: 'type cast': cannot convert from 'const char [7]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(500,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(500,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(502,7): error C2678: binary '!': no operator found which takes a left-hand operand of type 'std::string' (or there is no acceptable conversion)
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(502,7): message : could be 'built-in C++ operator!(bool)'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(502,7): message : while trying to match the argument list '(std::string)'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(502,8): error C2088: '!': illegal for class
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(509,30): error C2660: 'ItemManager::deleteItem': function does not take 2 arguments
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(46,7): message : see declaration of 'ItemManager::deleteItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(510,10): error C2374: 'newItem': redefinition; multiple initialization
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(496): message : see declaration of 'newItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(514,13): error C2440: 'type cast': cannot convert from 'const char [4]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(514,8): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(514,3): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(515,11): error C2374: 'newGenre': redefinition; multiple initialization
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(501): message : see declaration of 'newGenre'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(516,30): error C2660: 'ItemManager::deleteItem': function does not take 2 arguments
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(46,7): message : see declaration of 'ItemManager::deleteItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(517,10): error C2374: 'newItem': redefinition; multiple initialization
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(496): message : see declaration of 'newItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(524,10): error C2440: 'type cast': cannot convert from 'const char [2]' to 'int'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(524,7): message : There is no context in which this conversion is possible
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(524,2): error C2046: illegal case
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(463,3): warning C4065: switch statement contains 'default' but no 'case' labels
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(521,3): error C2361: initialization of 'newItem' is skipped by 'default' label
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(517): message : see declaration of 'newItem'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(521,3): error C2361: initialization of 'newGenre' is skipped by 'default' label
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(515): message : see declaration of 'newGenre'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(523,3): warning C4065: switch statement contains 'default' but no 'case' labels
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(569,7): error C2143: syntax error: missing ';' before '<<'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(569,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(570,2): error C2059: syntax error: 'return'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(571,1): error C2059: syntax error: '}'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(571,1): error C2143: syntax error: missing ';' before '}'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(574,1): error C2143: syntax error: missing ';' before '{'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(574,1): error C2447: '{': missing function header (old-style formal list?)
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(618,5): error C2065: 'orted': undeclared identifier
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.cpp(619,2): error C2143: syntax error: missing ';' before '}'

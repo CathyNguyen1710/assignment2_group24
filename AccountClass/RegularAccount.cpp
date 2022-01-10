@@ -85,10 +85,6 @@ bool RegularAccount::returnItem(string id, ItemManager* itemList)
 	}
 	return false;
 }
-//
-void RegularAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}
 
 string RegularAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();

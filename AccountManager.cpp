@@ -142,9 +142,9 @@ void AccountManager::setCustomerFile(string customerFile) {
 	this->customerFile = customerFile;
 }
 
-//Other Function
 //Function used to promote an account when meet the requirement
 bool AccountManager::promoteAccount(string id) {
+	int pos = 0; //int to find the position of an item in the array
 	bool matched = false; //boolean to check if the vector have the account with the id input 
 
 	//Loop through the vector of accout to check for the account that match the id input
@@ -156,9 +156,9 @@ bool AccountManager::promoteAccount(string id) {
 				if (account->getType() == "Guest") { //if the current account is type Guest -> promote to Regular
 					RegularAccount* promoteAcc = new RegularAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to Regular Account\n" << endl;
 
@@ -169,9 +169,9 @@ bool AccountManager::promoteAccount(string id) {
 				else if (account->getType() == "Regular") { //if the current account is type Regular -> promote to VIP
 					VIPAccount* promoteAcc = new VIPAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to VIP Account\n" << endl;
 
@@ -180,6 +180,9 @@ bool AccountManager::promoteAccount(string id) {
 					break;
 				}
 			}
+		}
+		else { //if the id is not matched
+			pos++; //increase the position
 		}
 	}
 
@@ -272,134 +275,15 @@ bool AccountManager::addAccount() {
 	this->accountList.push_back(newAccount); //add the account to the vector
 	cout << "\nThe account " << newAccount->getId() << " with the information: \n\tName: " << newAccount->getName() << "\n\tAddress: " << newAccount->getAddress() << "\n\tPhone: " << newAccount->getPhone() << "\nhas been successfully added to the system\n";
 
-	if (type == "Guest") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "Regular") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "VIP") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else {
-		cerr << "error message" << endl;
-
 	return true;
 }
 //Function to update an existed account in the system
 bool AccountManager::updateAccount(string id) {
 
-
 	Account* updateAcc = nullptr; //create a temporary account 
 	string input, field, oldInfo;
 
 	bool accountFound = false; //boolean value to check if the account match the id input exist
-
-void AccountManager::displaySortedAccountName()
-{
-	//sort function by Name
-	for (int i = 0; i < accountList.size(); i++ ){
-		for (int j = i+1; j < accountList.size(); j++ ){
-			if (accountList[i]->getName()>accountList[j]->getName()){
-				string temp = accountList[i]->getName();
-				accountList[i]->getName() = accountList[j]->getName();
-				accountList[j]->getName() = temp;
-			}
-		}	
-	}
-	
-	for (Account *ac : accountList)
-	{
-		cout << ac->toString();
-	}
-}
-
-void AccountManager::displaySortedAccountID()
-{
-	ifstream inStream(customerFile);
-	
-	if (!inStream) {
-		cerr << "Error !" << endl;
-	}
-	else
-	{
-	//sort function by ID
-
-		for (int i = 0; i < accountList.size(); i++ )
-		{
-			for (int j = i+1; j < accountList.size(); j++ )
-			{
-				if (accountList[i]->getId()>accountList[j]->getId())
-				{
-					string temp = accountList[i]->getId();
-					accountList[i]->getId() = accountList[j]->getId();
-					accountList[j]->getId() = temp;
-				}
-			}
-		}	
-
-	}
-	
-	
-}
-void AccountManager::getAccountByLevel(string level)
-{
-	cout<< "All accounts of level "<<level <<"is: "<< endl;
-	for (Account *account : accountList)
-	{
-		if (account->getType()  == level){
-			cout<<account<<endl;
-		}
-	}
-}
-void AccountManager::searchAccount(string name)
-{
-	vector <string> accountSearchResult;
-	for (Account *account : this->accountList)
-	{
-		if (account->getName().find(name))
-		{
-			accountSearchResult.push_back(account->getName());
-		}
-	}
-	cout << "search by name" << name << endl;
-	for (auto accountName: accountSearchResult){
-		cout << accountName << endl;
-	}
-}
-void AccountManager::searchAccount(char *id)
-{
-	vector<string> itemIDList;
-	vector<string> itemIDNumber;
-	
-	for (Account *account : this->accountList)
-	{
-		itemIDList.push_back(account->getId());
-	}
-	for (auto ID: itemIDList)
-	{
-		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
-	}
-	cout << "The ID search result is: "<<endl;
-	for (auto ID: itemIDNumber)
-	{
-		if (ID.find(id))
-		{
-			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;
-		}
-	}
-}
-
-
-bool AccountManager::saveToFile() {
-	ofstream outStream(this->customerFile);
-
 
 	//For loop to find the account that match the id input
 	for (Account* acc : this->accountList) {
@@ -525,7 +409,16 @@ bool AccountManager::saveToFile() {
 	return true;
 }
 
-
+void AccountManager::getAccountByLevel(string level)
+{
+	cout<< "All accounts of level "<<level <<"is: "<< endl;
+	for (Account *account : accountList)
+	{
+		if (account->getType()  == level){
+			cout<<account<<endl;
+		}
+	}
+}
 
 void AccountManager::displaySortedAccountName()
 {
@@ -563,16 +456,7 @@ void AccountManager::displaySortedAccountID()
 		cout << ac->toString();
 	}
 }
-void AccountManager::getAccountByLevel(string level)
-{
-	cout<< "All accounts of level "<<level <<"is: "<< endl;
-	for (Account *account : accountList)
-	{
-		if (account->getType()  == level){
-			cout<<account<<endl;
-		}
-	}
-}
+
 void AccountManager::searchAccount(string name)
 {
 	for (Account *account : this->accountList)

@@ -44,7 +44,7 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 	//will figure out how to change from ItemManager to Item later
 
 
-	if (this->listOfRentals.size() >= 2) {
+	/*if (this->listOfRentals.size() >= 2) {
 		cout << "Your rent capacity limit is already reached, please return an item to rent more" << endl;
 		return false;
 	}
@@ -58,7 +58,9 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 	} else {
 		this->addRentalList(id);
 		return true;
-	}
+	}*/
+
+	return false;
 }
 
 
@@ -93,10 +95,6 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList)
 		}
 	}
 	return false;
-}
-//
-void GuestAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 
 string GuestAccount::toString() {
