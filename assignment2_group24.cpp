@@ -202,13 +202,14 @@ void rentItem(AccountManager* accountList, ItemManager* itemList) {
 
 void returnItem(AccountManager* accountList, ItemManager* itemList) {
     string accountID = getAccountID();
-
     string itemID = getItemID();
-
+    
     for (Account* account : accountList->getAccountList()) {
         if (account->getId() == accountID) {
             account->returnItem(itemID, itemList);
+
         }
+
     }
     
 }
