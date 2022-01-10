@@ -12,7 +12,6 @@ GuestAccount::GuestAccount() :Account() {
 }
 GuestAccount::GuestAccount(string id, string name, string address, string phone, int noOfRentals, string type) :
 	Account(id, name, address, phone, noOfRentals, type) {
-	//this->setTotalBorrowItem(0);
 	this->totalReturnItem = 0;
 }
 
@@ -45,8 +44,6 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 	//check the user's rent capacity
 	if (this->getNoOfRentals() == 2) {
 		cerr << "Error: Your rent capacity is reached." << endl;
-		return false;
-	}
 
 	//check if the user is currently renting the item
 	for (string rented : this->listOfRentals) {
@@ -55,7 +52,6 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 			return false;
 		}
 	}
-
 	
 	for (Item* item : itemList->getItemList()) {
 		if (item->getId() == id) {
@@ -76,12 +72,42 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 		}
 	}
 
-	
 	//print out error if no item was found with the input id
 	cerr << "Error: No item in the system matches the requested id\n";
 	return false;
 }
-bool GuestAccount::returnItem(string id, ItemManager* itemList) {
+
+
+bool GuestAccount::returnItem(string id, ItemManager* itemList) 
+{
+	int pos = 0;
+	bool Itemrented = false;
+	if (this->listOfRentals.empty())
+	{
+		cout << " You have not rented any item(s) " << endl;
+	}
+	else{
+		Itemrented = true;
+		if (Itemrented)
+		{
+		for (string itemID : this->listOfRentals)
+		{
+				if (itemID == id) 
+				{
+					if (itemList->returnItem(itemID) == true) 
+					{
+						this->setNoOfRentals(this->getNoOfRentals() - 1);
+						this->listOfRentals.erase(this->listOfRentals.begin() + pos);
+						cout << " Item returned " << endl;
+						return true;
+					}
+				}
+				else {
+					pos++;
+				}
+			}
+		}
+	}
 	return false;
 }
 

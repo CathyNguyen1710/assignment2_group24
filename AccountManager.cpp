@@ -142,9 +142,9 @@ void AccountManager::setCustomerFile(string customerFile) {
 	this->customerFile = customerFile;
 }
 
-//Other Function
 //Function used to promote an account when meet the requirement
 bool AccountManager::promoteAccount(string id) {
+	int pos = 0; //int to find the position of an item in the array
 	bool matched = false; //boolean to check if the vector have the account with the id input 
 
 	//Loop through the vector of accout to check for the account that match the id input
@@ -156,9 +156,9 @@ bool AccountManager::promoteAccount(string id) {
 				if (account->getType() == "Guest") { //if the current account is type Guest -> promote to Regular
 					RegularAccount* promoteAcc = new RegularAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to Regular Account\n" << endl;
 
@@ -169,9 +169,9 @@ bool AccountManager::promoteAccount(string id) {
 				else if (account->getType() == "Regular") { //if the current account is type Regular -> promote to VIP
 					VIPAccount* promoteAcc = new VIPAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to VIP Account\n" << endl;
 
@@ -180,6 +180,9 @@ bool AccountManager::promoteAccount(string id) {
 					break;
 				}
 			}
+		}
+		else { //if the id is not matched
+			pos++; //increase the position
 		}
 	}
 
@@ -406,7 +409,16 @@ bool AccountManager::updateAccount(string id) {
 	return true;
 }
 
-
+void AccountManager::getAccountByLevel(string level)
+{
+	cout<< "All accounts of level "<<level <<"is: "<< endl;
+	for (Account *account : accountList)
+	{
+		if (account->getType()  == level){
+			cout<<account<<endl;
+		}
+	}
+}
 
 void AccountManager::displaySortedAccountName()
 {
@@ -444,16 +456,7 @@ void AccountManager::displaySortedAccountID()
 		cout << ac->toString();
 	}
 }
-void AccountManager::getAccountByLevel(string level)
-{
-	cout<< "All accounts of level "<<level <<"is: "<< endl;
-	for (Account *account : accountList)
-	{
-		if (account->getType()  == level){
-			cout<<account<<endl;
-		}
-	}
-}
+
 void AccountManager::searchAccount(string name)
 {
 	for (Account *account : this->accountList)

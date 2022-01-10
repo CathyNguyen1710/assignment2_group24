@@ -10,4 +10,13 @@
         "string": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
+
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "xstring": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp"
+    }
+
 }
