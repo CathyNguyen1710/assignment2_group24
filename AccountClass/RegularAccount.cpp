@@ -50,9 +50,36 @@ void RegularAccount::addRentalList(string id) {
 	this->setNoOfRentals(this->listOfRentals.size());
 }
 bool RegularAccount::rentItem(string id, ItemManager* itemList) {
+
+	//check if the user is currently renting the item
+	for (string rented : this->listOfRentals) {
+		if (rented == id) {
+			cerr << "Error: The item is already being rented by this account\n";
+			return false;
+		}
+	}
+
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
+			if (item->getNoOfCopy() == 0) {									//check if item is still on stock
+				cerr << "Error: the item is currently out of stock\n";
+				return false;
+			}
+			else {															//add item to rental list then change item's properties accordingly
+				this->addRentalList(id);
+				item->setNoOfCopy(item->getNoOfCopy() - 1);
+				item->setNoRented(item->getNoRented() + 1);
+				return true;
+			}
+		}
+	}
+
+	//print out error if no item was found with the input id
+	cerr << "Error: No item in the system matches the requested id\n";
 	return false;
 }
 bool RegularAccount::returnItem(string id, ItemManager* itemList) {
+
 	return false;
 }
 

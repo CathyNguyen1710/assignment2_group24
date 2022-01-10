@@ -51,6 +51,68 @@ void VIPAccount::addRentalList(string id) {
 }
 bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 
+	//check if the user is currently renting the item
+	for (string rented : this->listOfRentals) {
+		if (rented == id) {
+			cerr << "Error: The item is already being rented by this account\n";
+			return false;
+		}
+	}
+
+	bool usedRewardPoint = false;
+
+
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
+			if (item->getNoOfCopy() == 0) {									//check if item is still on stock
+				cerr << "Error: the item is currently out of stock\n";
+				return false;
+			}
+			else {															////add item to rental list then change item's properties accordingly	
+				this->addRentalList(id);
+				this->setNoOfRentals(this->getNoOfRentals() + 1);
+				item->setNoOfCopy(item->getNoOfCopy() - 1);
+				item->setNoRented(item->getNoRented() + 1);
+
+				if (this->getRewardPoint() >= 100) {				//check if user has enough reward points to begind the process
+					string option;
+					for (;;) {		//set up infinite loop
+						// Guide user to use the reward point system
+						cout << "Your account currently has "<<this->getRewardPoint()<<" reward points. Do you want to use these reward points?\n1.Yes\n2.No\n";
+						cout << "Please select an option by typing in 1 or 2: ";
+						getline(cin, option);
+						cout << endl;
+
+						if (option == "1") {		//if user chosed Yes
+							this->setRewardPoint(this->getRewardPoint() - 100);
+							usedRewardPoint = true;
+							break;
+						}
+						else if (option == "2") {	//if user chosed No
+							usedRewardPoint = false;
+							break;
+						}
+						else {						//print out error and let customer retry when they typed in Invalid input
+							cerr << "Error: Invalid input, please choose again by typing ONLY 1 or 2 accordingly to your option" << endl;
+						}
+					}
+				}
+
+				//check if User used reward point
+				if (usedRewardPoint) {							
+					cout << "Your fee is: 0" << endl;
+				}
+				else {
+					cout << "Your Fee is: " << item->getFee() << endl;
+				}
+
+				return true;
+			}
+		}
+	}
+
+	//print out error if no item was found with the input id
+	cerr << "Error: No item in the system matches the requested id\n";
 	return false;
 }
 bool VIPAccount::returnItem(string id, ItemManager* itemList) {
