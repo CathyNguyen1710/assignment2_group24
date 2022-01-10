@@ -88,6 +88,11 @@ bool VIPAccount::returnItem(string id, ItemManager* itemList)
 	return false;
 }
 
+void VIPAccount::print() {
+	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
+}
+
+
 string VIPAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();
 	return toDB;
