@@ -118,14 +118,30 @@ bool RegularAccount::returnItem(string id, ItemManager* itemList)
 				else {
 					pos++;
 				}
+	}
+
+	for (Item* item : itemList->getItemList()) {
+		if (item->getId() == id) {
+			if (item->getNoOfCopy() == 0) {									//check if item is still on stock
+				cerr << "Error: the item is currently out of stock\n";
+				return false;
+			}
+			else {															//add item to rental list then change item's properties accordingly
+				this->addRentalList(id);
+				item->setNoOfCopy(item->getNoOfCopy() - 1);
+				item->setNoRented(item->getNoRented() + 1);
+				return true;
 			}
 		}
 	}
+
+	//print out error if no item was found with the input id
+	cerr << "Error: No item in the system matches the requested id\n";
 	return false;
 }
-//
-void RegularAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
+bool RegularAccount::returnItem(string id, ItemManager* itemList) {
+
+	return false;
 }
 
 string RegularAccount::toString() {

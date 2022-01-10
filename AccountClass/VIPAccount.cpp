@@ -127,46 +127,9 @@ bool VIPAccount::rentItem(string id, ItemManager* itemList) {
 	cerr << "Error: No item in the system matches the requested id\n";
 	return false;
 }
-
-
-bool VIPAccount::returnItem(string id, ItemManager* itemList) 
-{
-	int pos = 0;
-	bool Itemrented = false;
-	if (this->listOfRentals.empty())
-	{
-		cout << " You have not rented any item(s) " << endl;
-	}
-	else{
-		Itemrented = true;
-		if (Itemrented)
-		{
-		for (string itemID : this->listOfRentals)
-		{
-				if (itemID == id) 
-				{
-					if (itemList->returnItem(itemID) == true) 
-					{
-						this->setNoOfRentals(this->getNoOfRentals() - 1);
-						this->setTotalBorrowItem(this->getTotalBorrowItem() + 1);
-						this->listOfRentals.erase(this->listOfRentals.begin() + pos);
-						cout << " Item returned " << endl;
-						return true;
-					}
-				}
-				else {
-					pos++;
-				}
-			}
-		}
-	}
+bool VIPAccount::returnItem(string id, ItemManager* itemList) {
 	return false;
 }
-
-void VIPAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
-}
-
 
 string VIPAccount::toString() {
 	string toDB = this->getId() + "," + this->getName() + "," + this->getAddress() + "," + this->getPhone() + "," + to_string(this->getNoOfRentals()) + "," + this->getType();

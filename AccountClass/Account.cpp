@@ -65,4 +65,3 @@ void Account::setListOfRentals(vector<string>& listOfRentals) {
 void Account::print() {
     cout << this->getId() << " : " << this->getName() << " - " << this->getAddress() << " - " << this->getPhone() << " - " << this->getNoOfRentals() << " - " << this->getType() << endl;
 }
-

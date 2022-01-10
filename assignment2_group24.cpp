@@ -211,7 +211,6 @@ void returnItem(AccountManager* accountList, ItemManager* itemList) {
         }
 
     }
-    
 }
 
 void displayItemSubMenu(ItemManager* itemList) {
@@ -232,16 +231,9 @@ void displayItemSubMenu(ItemManager* itemList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-
             itemList->displaySortedItemID();
         }
         else if (input == "2") {
-
-            cout << "Sorted item by id" << endl;
-            itemList->displaySortedItemID();
-        }
-        else if (input == "2") {
-            cout << "Sorted item by title" << endl;
             itemList->displaySortedItemTitle();
         }
         else if (input == "3") {
@@ -276,17 +268,9 @@ void displayCustomerSubMenu(AccountManager* accountList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
-
             accountList->displaySortedAccountID();
         }
         else if (input == "2") {
-
-            cout << "Sorted customer by id" << endl;
-            accountList->displaySortedAccountID();
-        }
-        else if (input == "2") {
-            cout << "Sorted customer by name" << endl;
-
             accountList->displaySortedAccountName();
         }
         else if (input == "3") {
@@ -355,11 +339,9 @@ void searchItemSubMenu(ItemManager* itemList) {
 
         if (input == "1") {
             cout << "Search item by title" << endl;
-            itemList->searchItem(input);
         }
         else if (input == "2") {
             cout << "Search item by id" << endl;
-            itemList->searchItem(input);
         }
         else if (input == "3") {
             cout << "Exit" << endl;
@@ -390,11 +372,9 @@ void searchCustomerSubMenu(AccountManager* accountList) {
 
         if (input == "1") {
             cout << "Search customer by name" << endl;
-            accountList->searchAccount(input);
         }
         else if (input == "2") {
             cout << "Search customer by id" << endl;
-            accountList->searchAccount(input);
         }
         else if (input == "3") {
             cout << "Exit" << endl;
@@ -412,7 +392,7 @@ int main()
 
     AccountManager* accountList = new AccountManager();
 
-    cout << "Welcome to GenieÂ’s video store" << "\n\n";
+    cout << "Welcome to Genie’s video store" << "\n\n";
     string input;
 
     string option = "\nPlease choose from an option below:\n"

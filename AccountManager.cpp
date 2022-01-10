@@ -272,134 +272,15 @@ bool AccountManager::addAccount() {
 	this->accountList.push_back(newAccount); //add the account to the vector
 	cout << "\nThe account " << newAccount->getId() << " with the information: \n\tName: " << newAccount->getName() << "\n\tAddress: " << newAccount->getAddress() << "\n\tPhone: " << newAccount->getPhone() << "\nhas been successfully added to the system\n";
 
-	if (type == "Guest") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "Regular") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else if (type == "VIP") {
-		Account* newAccount = new GuestAccount(id, name, address, phone, 0, type);
-		this->accountList.push_back(newAccount);
-		return true;
-	}
-	else {
-		cerr << "error message" << endl;
-
 	return true;
 }
 //Function to update an existed account in the system
 bool AccountManager::updateAccount(string id) {
 
-
 	Account* updateAcc = nullptr; //create a temporary account 
 	string input, field, oldInfo;
 
 	bool accountFound = false; //boolean value to check if the account match the id input exist
-
-void AccountManager::displaySortedAccountName()
-{
-	//sort function by Name
-	for (int i = 0; i < accountList.size(); i++ ){
-		for (int j = i+1; j < accountList.size(); j++ ){
-			if (accountList[i]->getName()>accountList[j]->getName()){
-				string temp = accountList[i]->getName();
-				accountList[i]->getName() = accountList[j]->getName();
-				accountList[j]->getName() = temp;
-			}
-		}	
-	}
-	
-	for (Account *ac : accountList)
-	{
-		cout << ac->toString();
-	}
-}
-
-void AccountManager::displaySortedAccountID()
-{
-	ifstream inStream(customerFile);
-	
-	if (!inStream) {
-		cerr << "Error !" << endl;
-	}
-	else
-	{
-	//sort function by ID
-
-		for (int i = 0; i < accountList.size(); i++ )
-		{
-			for (int j = i+1; j < accountList.size(); j++ )
-			{
-				if (accountList[i]->getId()>accountList[j]->getId())
-				{
-					string temp = accountList[i]->getId();
-					accountList[i]->getId() = accountList[j]->getId();
-					accountList[j]->getId() = temp;
-				}
-			}
-		}	
-
-	}
-	
-	
-}
-void AccountManager::getAccountByLevel(string level)
-{
-	cout<< "All accounts of level "<<level <<"is: "<< endl;
-	for (Account *account : accountList)
-	{
-		if (account->getType()  == level){
-			cout<<account<<endl;
-		}
-	}
-}
-void AccountManager::searchAccount(string name)
-{
-	vector <string> accountSearchResult;
-	for (Account *account : this->accountList)
-	{
-		if (account->getName().find(name))
-		{
-			accountSearchResult.push_back(account->getName());
-		}
-	}
-	cout << "search by name" << name << endl;
-	for (auto accountName: accountSearchResult){
-		cout << accountName << endl;
-	}
-}
-void AccountManager::searchAccount(char *id)
-{
-	vector<string> itemIDList;
-	vector<string> itemIDNumber;
-	
-	for (Account *account : this->accountList)
-	{
-		itemIDList.push_back(account->getId());
-	}
-	for (auto ID: itemIDList)
-	{
-		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
-	}
-	cout << "The ID search result is: "<<endl;
-	for (auto ID: itemIDNumber)
-	{
-		if (ID.find(id))
-		{
-			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;
-		}
-	}
-}
-
-
-bool AccountManager::saveToFile() {
-	ofstream outStream(this->customerFile);
-
 
 	//For loop to find the account that match the id input
 	for (Account* acc : this->accountList) {

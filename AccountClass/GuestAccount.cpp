@@ -88,7 +88,6 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 }
 
 
-
 bool GuestAccount::returnItem(string id, ItemManager* itemList) 
 {
 	int pos = 0;
@@ -121,10 +120,6 @@ bool GuestAccount::returnItem(string id, ItemManager* itemList)
 		}
 	}
 	return false;
-}
-//
-void GuestAccount::print() {
-	cout << this->getId() << " " << this->getName() << " " << this->getAddress() << " " << this->getPhone() << " " << this->getNoOfRentals() << " " << this->getType() << endl;
 }
 
 string GuestAccount::toString() {
