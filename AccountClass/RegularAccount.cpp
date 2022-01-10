@@ -53,10 +53,6 @@ bool RegularAccount::rentItem(string id, ItemManager* itemList) {
 	return false;
 }
 
-bool RegularAccount::returnItem(string id, ItemManager* itemList) {
-	return false;
-}
-
 bool RegularAccount::returnItem(string id, ItemManager* itemList) 
 {
 	int pos = 0;
