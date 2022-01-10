@@ -61,9 +61,6 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 	}
 }
 
-bool GuestAccount::returnItem(string id, ItemManager* itemList) {
-	return false;
-}
 
 bool GuestAccount::returnItem(string id, ItemManager* itemList) 
 {

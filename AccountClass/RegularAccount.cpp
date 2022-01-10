@@ -49,13 +49,6 @@ void RegularAccount::addRentalList(string id) {
 
 	this->setNoOfRentals(this->listOfRentals.size());
 }
-bool RegularAccount::rentItem(string id, ItemManager* itemList) {
-	return false;
-}
-
-bool RegularAccount::returnItem(string id, ItemManager* itemList) {
-	return false;
-}
 
 bool RegularAccount::returnItem(string id, ItemManager* itemList) 
 {
