@@ -1,4 +1,24 @@
-﻿  AccountManager.cpp
+﻿  Account.cpp
+  GuestAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(41,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(52,21): error C2039: 'getLoanType': is not a member of 'ItemManager'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(17): message : see declaration of 'ItemManager'
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\GuestAccount.cpp(56,21): error C2039: 'getNoOfCopy': is not a member of 'ItemManager'
+D:\RMIT\Courses\c++\assignment2_group24\ItemManager.h(17): message : see declaration of 'ItemManager'
+  RegularAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\RegularAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  VIPAccount.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountClass\VIPAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  AccountManager.cpp
+D:\RMIT\Courses\c++\assignment2_group24\AccountManager.cpp(159,65): error C2065: 'acc': undeclared identifier
+D:\RMIT\Courses\c++\assignment2_group24\AccountManager.cpp(172,65): error C2065: 'acc': undeclared identifier
   assignment2_group24.cpp
+  DVD.cpp
+  Game.cpp
+  Item.cpp
+D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.cpp(26,1): error C2723: 'Item::~Item': 'virtual' specifier illegal on function definition
+D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.cpp(26,1): error C2084: function 'Item::~Item(void)' already has a body
+D:\RMIT\Courses\c++\assignment2_group24\ItemClass\Item.h(26): message : see previous definition of '{dtor}'
+  Record.cpp
+  ItemManager.cpp
   Generating Code...
-  assignment2_group24.vcxproj -> D:\RMIT\Courses\c++\assignment2_group24\x64\Debug\assignment2_group24.exe

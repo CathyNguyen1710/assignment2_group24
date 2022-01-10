@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Game:public Item
+class Game: public Item
 {
 public:
 	//Constructor

@@ -190,7 +190,7 @@ void promoteCustomer(AccountManager* accountList) {
 
 void rentItem(AccountManager* accountList, ItemManager* itemList) {
     string accountID = getAccountID();
-    
+
     string itemID = getItemID();
 
     for (Account* account : accountList->getAccountList()) {
@@ -231,6 +231,11 @@ void displayItemSubMenu(ItemManager* itemList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
+
+            itemList->displaySortedItemID();
+        }
+        else if (input == "2") {
+
             cout << "Sorted item by id" << endl;
             itemList->displaySortedItemID();
         }
@@ -270,11 +275,17 @@ void displayCustomerSubMenu(AccountManager* accountList) {
         input.erase(0, input.find_first_not_of(" "));
 
         if (input == "1") {
+
+            accountList->displaySortedAccountID();
+        }
+        else if (input == "2") {
+
             cout << "Sorted customer by id" << endl;
             accountList->displaySortedAccountID();
         }
         else if (input == "2") {
             cout << "Sorted customer by name" << endl;
+
             accountList->displaySortedAccountName();
         }
         else if (input == "3") {

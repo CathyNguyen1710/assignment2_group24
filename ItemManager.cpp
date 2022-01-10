@@ -13,7 +13,7 @@ using namespace std;
 ItemManager::ItemManager()
 {
 	this->itemFile = "items.txt";
-	this->noOfCopy++;
+	//	this->noOfCopy++;
 	this->noOfItem = 0;
 
 	ifstream inStream(itemFile);
@@ -65,7 +65,7 @@ ItemManager::ItemManager(string itemFile)
 {
 	this->itemFile = itemFile;
 	this->noOfItem = 0;
-	this->noOfCopy++;
+	//	this->noOfCopy++;
 
 	ifstream inStream(itemFile);
 
@@ -167,6 +167,23 @@ bool ItemManager::returnItem(string id)
 	return false;
 }
 
+//  Helper
+bool isDigit(const char &ch)
+{
+	return (ch >= '0' && ch <= '9');
+}
+
+bool isNumber(const string &str)
+{
+	size_t size = str.size();
+	for (size_t t = 0; t < size; t++)
+	{
+		if (!isDigit(str.at(t)))
+			return false;
+	}
+	return true;
+}
+
 bool ItemManager::addItem()
 {
 	this->noOfItem++;
@@ -175,24 +192,16 @@ bool ItemManager::addItem()
 	// generate item id - code part (3 digits)
 	ostringstream streamID;
 	streamID << "I" << setw(3) << setfill('0') << this->noOfItem;
-	int code = stoi((this->itemList.back())->getId().substr(1, 3));
+	//    cout << "Stream ID: " << streamID;
+	//    int code = stoi((this->itemList.back())->getId().substr(1, 3));
+	string id = streamID.str();
+  int code = stoi((this->itemList.back())->getId().substr(1, 3));
 	string id = code.str();
+
 
 	id.append("-");
 
 	string year = "";
-
-	// helper to check if year is a number
-	bool isNumber(const string &str)
-	{
-		size_t size = str.size();
-		for (size_t t = 0; t < size; t++)
-		{
-			if (!isDigit(str.at(t)))
-				return false;
-		}
-		return true;
-	}
 
 	// get year input
 	while (true)
@@ -211,6 +220,7 @@ bool ItemManager::addItem()
 		if (isNumber(year))
 		{
 			id += year;
+			cout << "Item's ID: " << id;
 			break;
 		}
 		else
@@ -295,22 +305,29 @@ bool ItemManager::addItem()
 		break;
 	}
 
-	switch (rentalType)
+	if (rentalType == "Game")
 	{
-	case "Game":
 		Item *newItem = new Game(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee));
 		this->itemList.push_back(newItem);
 		newItem->print();
 		return true;
-	case "Record":
+	}
+	else if (rentalType == "Record")
+	{
 		Item *newItem = new Record(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
 		this->itemList.push_back(newItem);
+		newItem->print();
 		return true;
-	case "DVD":
+	}
+	else if (rentalType == "DVD")
+	{
 		Item *newItem = new DVD(id, title, rentalType, loanType, stoi(noOfCopy), stod(fee), genre);
 		this->itemList.push_back(newItem);
+		newItem->print();
 		return true;
-	default:
+	}
+	else
+	{
 		return false;
 	}
 }
@@ -318,12 +335,83 @@ bool ItemManager::addItem()
 bool ItemManager::updateItem(string id)
 {
 	char choice = 0;
-	Item *&item = new Item();
+	Item *item = new Item();
 	for (Item *i : this->getItemList())
 	{
 		if (i->getId() == id)
 		{
 			item = i;
+
+			string newValue = "";
+			cout << "\nWhat do you want to update? (Note: you cannot change rental type!)" << endl;
+			cout << "\t - "
+				 << "Title: enter '1'." << endl;
+			cout << "\t - "
+				 << "Loan Type: enter '2'." << endl;
+			cout << "\t - "
+				 << "Genre: enter '3' (Only applied for Record and DVD)." << endl;
+			cout << "\t - "
+				 << "Copies in stock: enter '4'." << endl;
+			cout << "\t - "
+				 << "Rental fee: enter '5'." << endl;
+			cout << "\t - "
+				 << "Enter '6' to exit!" << endl;
+
+			// ask for user's choice, only break the loop if user enters correct letters
+			while (true)
+			{
+				cout << "\nEnter your choice: ";
+				cin >> choice;
+				cin.ignore();
+
+				switch (choice)
+				{
+				case '1':
+					cout << "Enter new title: ";
+					cin >> newValue;
+					cin.ignore();
+					item->setTitle(newValue);
+					return true;
+				case '2':
+					cout << "\nEnter the new loan type: ";
+					cin >> newValue;
+					cin.ignore();
+					item->setLoanType(newValue);
+					return true;
+				case '3':
+					cout << "\nEnter the new genre: ";
+					cin >> newValue;
+					cin.ignore();
+					item->setGenre(newValue);
+					return true;
+				case '4':
+					cout << "\nEnter the new number of copies in stock: ";
+					cin >> newValue;
+					cin.ignore();
+					item->setNoOfCopy(stoi(newValue));
+					return true;
+				case '5':
+					cout << "\nEnter the new rental fee: ";
+					cin >> newValue;
+					cin.ignore();
+					item->setFee(stod(newValue));
+					return true;
+				case '6':
+					return false;
+				default:
+					cerr << "Invalid input! Please only enter: " << endl;
+					// cerr << "'I' to update ID." << endl;
+					cerr << "'T' to update Title." << endl;
+					cerr << "'L' to update Loan type." << endl;
+					cerr << "'G' to update Genre." << endl;
+					cerr << "'C' to update Copies in stock." << endl;
+					cerr << "'F' to update Rental fee. " << endl;
+					cerr << "'E' to Exit! " << endl;
+					choice = 0;
+					break;
+				}
+			}
+=======
 			break;
 		}
 	}
@@ -473,8 +561,30 @@ bool ItemManager::deleteItem(string id)
 		{
 			cerr << "No matching ID found!" << endl;
 			return false;
+
 		}
 	}
+}
+
+
+	cerr << "No matching ID found!" << endl;
+	return false;
+}
+
+bool ItemManager::deleteItem(string id)
+{
+	for (int i = 0; i < this->itemList.size(); i++)
+	{
+		Item *item = this->itemList[i];
+		if (item->getId() == id)
+		{
+			delete item;
+			this->itemList.erase(this->itemList.begin() + i);
+			return true;
+		}
+	}
+	cerr << "No matching ID found!" << endl;
+	return false;
 }
 
 void ItemManager::displaySortedItemTitle() {
@@ -492,6 +602,7 @@ void ItemManager::displaySortedItemTitle() {
 	for (Item* item : this->getItemList()) {
 		cout << item->getTitle();
 	}
+
 
 }
 

@@ -1,5 +1,16 @@
 {
     "files.associations": {
+        "xstring": "cpp",
+        "xlocale": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp",
+        "xutility": "cpp",
+        "vector": "cpp",
+        "string": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+
         "iostream": "cpp",
         "algorithm": "cpp",
         "xstring": "cpp",
@@ -7,4 +18,5 @@
         "ostream": "cpp",
         "iosfwd": "cpp"
     }
+
 }
