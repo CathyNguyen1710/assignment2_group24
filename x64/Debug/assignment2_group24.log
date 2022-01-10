@@ -5,6 +5,8 @@ C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountClass\GuestAccount.cp
 C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountClass\RegularAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   VIPAccount.cpp
 C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountClass\VIPAccount.cpp(50,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountClass\VIPAccount.cpp(81,64): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountClass\VIPAccount.cpp(81,64): message : placeholders and their parameters expect 0 variadic arguments, but 2 were provided
   AccountManager.cpp
 C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountManager.cpp(159,65): error C2065: 'acc': undeclared identifier
 C:\Users\Admin\Documents\GitHub\assignment2_group24\AccountManager.cpp(172,65): error C2065: 'acc': undeclared identifier
@@ -115,8 +117,8 @@ C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(411): messag
 C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(415,3): error C2361: initialization of 'newGenre' is skipped by 'default' label
 C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(409): message : see declaration of 'newGenre'
 C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(417,3): warning C4065: switch statement contains 'default' but no 'case' labels
-C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(515,1): error C2084: function 'void ItemManager::searchItem(std::string)' already has a body
+C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(514,1): error C2084: function 'void ItemManager::searchItem(std::string)' already has a body
 C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(501): message : see previous definition of 'searchItem'
-C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(542,32): error C2084: function 'bool ItemManager::saveToFile(void)' already has a body
-C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(528): message : see previous definition of 'saveToFile'
+C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(541,32): error C2084: function 'bool ItemManager::saveToFile(void)' already has a body
+C:\Users\Admin\Documents\GitHub\assignment2_group24\ItemManager.cpp(527): message : see previous definition of 'saveToFile'
   Generating Code...

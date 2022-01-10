@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b32eb99-ed80-497d-ac3e-eaef9533b082" name="Changes" comment="" />
+    <list default="true" id="2b32eb99-ed80-497d-ac3e-eaef9533b082" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/1dda4746700017b3/ACCOUNTMANAGER.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Peer-Evaluation-form-c.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/AccountManager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/4adf9c8698688fad/VIPACCOUNT.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/4adf9c8698688fad/VIPACCOUNT.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/517354670d02bbd2/ITEMMANAGER.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/517354670d02bbd2/ITEMMANAGER.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/ba4bf65a43aa7c98/REGULARACCOUNT.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/ba4bf65a43aa7c98/REGULARACCOUNT.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/d9195cc9fc73ba4c/GUESTACCOUNT.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/d9195cc9fc73ba4c/GUESTACCOUNT.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/e33c0aaf3cbeab38/ACCOUNTMANAGER.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/e33c0aaf3cbeab38/ACCOUNTMANAGER.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/f665dc8db927aea/ITEM.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/assignment2_group24/v16/ipch/AutoPCH/f665dc8db927aea/ITEM.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountClass/Account.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AccountClass/Account.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountClass/Account.h" beforeDir="false" afterPath="$PROJECT_DIR$/AccountClass/Account.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountClass/GuestAccount.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AccountClass/GuestAccount.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountClass/RegularAccount.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AccountClass/RegularAccount.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountClass/VIPAccount.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AccountClass/VIPAccount.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AccountManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/DVD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/DVD.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/DVD.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/DVD.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Item.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Item.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Record.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Record.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemClass/Record.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemClass/Record.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment2_group24.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2_group24.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Account.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Account.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/DVD.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/DVD.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Game.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Game.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/GuestAccount.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/GuestAccount.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Record.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Record.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/RegularAccount.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/RegularAccount.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/VIPAccount.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/VIPAccount.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/assignment2_group24.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignme.a585435a.tlog/assignment2_group24.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignment2_group24.log" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignment2_group24.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/assignment2_group24.obj" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/assignment2_group24.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/vc142.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

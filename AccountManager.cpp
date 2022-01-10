@@ -450,7 +450,7 @@ void AccountManager::getAccountByLevel(string level)
 	for (Account *account : accountList)
 	{
 		if (account->getType()  == level){
-			cout<<account<<endl;
+			cout<< account<< endl;
 		}
 	}
 }
@@ -460,7 +460,7 @@ void AccountManager::searchAccount(string name)
 	{
 		if (account->getName() == name)
 		{
-			cout << account->toString();
+			cout << account-> toString();
 			break;
 		}
 	}
