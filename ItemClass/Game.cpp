@@ -7,26 +7,27 @@
 
 using namespace std;
 
-Game::Game() {
-
-}
-Game::Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee) :
-	Item(id, title, rentalType, loanType, noOfCopy, fee) {
+Game::Game()
+{
+    this->rentalType = "Game";
 }
 
-//Getter and setter
-string Game::getGenre() {
-	return "";
-}
-void Game::setGenre(string genre) {
-
+// Constructor
+Game::Game(string id, string title, string rentalType, string loanType, int noOfCopy, double fee) : Item(id, title, rentalType, loanType, noOfCopy, fee)
+{
 }
 
-//Other function
-void Game::print() {
-	cout << this->getId() << " : " << this->getTitle() << " - " << this->getRentalType() << " - " << this->getLoanType() << " - " << this->getNoOfCopy() << " - " << this->getFee() << endl;
+Game::~Game()
+{
 }
-string Game::toString() {
-	string toDB = this->getId() + "," + this->getTitle() + "," + this->getRentalType() + "," + this->getLoanType() + "," + to_string(this->getNoOfCopy()) + "," + to_string(this->getFee());
-	return toDB;
+
+// Other functions
+void Game::print()
+{
+    cout << this->getId() << " " << this->getTitle() << " " << this->getRentalType() << " " << this->getLoanType() << " " << this->getNoOfCopy() << " " << this->getFee() << endl;
+}
+string Game::toString()
+{
+    string toDB = this->getId() + "," + this->getTitle() + "," + this->getRentalType() + "," + this->getLoanType() + "," + to_string(this->getNoOfCopy()) + "," + to_string(this->getFee());
+    return toDB;
 }
