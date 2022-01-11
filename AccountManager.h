@@ -49,7 +49,7 @@ public:
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
 	void searchAccount(string name);
-	void searchAccount(char* id);
+	void searchAccount(const char* id);
 
 	bool saveToFile();
 

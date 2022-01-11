@@ -417,10 +417,10 @@ void AccountManager::displaySortedAccountName() {
 	//Sort the copied array and swap the value
 	for (int i = 0; i < accByName.size() - 1; i++) {
 		for (int j = i + 1; j < accByName.size(); j++) {
-			if (accByName[i]->getName() > accountList[j]->getName()) {
-				string temp = accByName[i]->getName();
-				accByName[i]->getName() = accByName[j]->getName();
-				accByName[j]->getName() = temp;
+			if (accByName[i]->getName() > accByName[j]->getName()) {
+				Account* temp = accByName[i];
+				accByName[i] = accByName[j];
+				accByName[j] = temp;
 			}
 		}
 	}
@@ -430,9 +430,6 @@ void AccountManager::displaySortedAccountName() {
 		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
 		for (Account* acc : accByName) {
 			acc->print();
-			for (string itemRented : acc->getListOfRentals()) {
-				cout << itemRented << endl;
-			}
 		}
 	}
 	else {
@@ -447,10 +444,10 @@ void AccountManager::displaySortedAccountID() {
 	//Sort the copied array and swap the value
 	for (int i = 0; i < accById.size() - 1; i++) {
 		for (int j = i + 1; j < accById.size(); j++) {
-			if (accById[i]->getId() > accountList[j]->getId()) {
-				string temp = accById[i]->getId();
-				accById[i]->getId() = accById[j]->getId();
-				accById[j]->getId() = temp;
+			if (accById[i]->getId() > accById[j]->getId()) {
+				Account* temp = accById[i];
+				accById[i] = accById[j];
+				accById[j] = temp;
 			}
 		}
 	}
@@ -460,9 +457,6 @@ void AccountManager::displaySortedAccountID() {
 		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
 		for (Account* acc : accById) {
 			acc->print();
-			for (string itemRented : acc->getListOfRentals()) {
-				cout << itemRented << endl;
-			}
 		}
 	}
 	else {
@@ -486,9 +480,6 @@ void AccountManager::getAccountByLevel(string level) {
 		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
 		for (Account* acc : accountLevel) {
 			acc->print();
-			for (string itemRented : acc->getListOfRentals()) {
-				cout << itemRented << endl;
-			}
 		}
 	}
 	else { //if the array is empty, prinout a message saying that the store currently have no account of that level
@@ -512,38 +503,13 @@ void AccountManager::searchAccount(string name) {
 		cout << "ID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
 		for (Account* acc : searchAccName) {
 			acc->print();
-			for (string itemRented : acc->getListOfRentals()) {
-				cout << itemRented << endl;
-			}
 		}
 	}
 	else { //if no account found, printout a message said that no account is found
 		cout << "Cannot find the specified account" << endl;
 	}
 }
-void AccountManager::searchAccount(char *id)
-{
-	vector<string> itemIDList;
-	vector<string> itemIDNumber;
-	
-	for (Account *account : this->accountList)
-	{
-		itemIDList.push_back(account->getId());
-	}
-	for (auto ID: itemIDList)
-	{
-		itemIDNumber.push_back(ID.substr(1,3)+ID.substr(5, 8));
-	}
-	cout << "The ID search result is: "<<endl;
-	for (auto ID: itemIDNumber)
-	{
-		if (ID.find(id))
-		{
-			cout << "I"+ ID.substr(0,2) + "-" +ID.substr(3,6) << endl;
-		}
-	}
-}
-/*//Function display an account with the id input
+//Function display an account with the id input
 void AccountManager::searchAccount(const char* id) {
 
 	bool accFound = false; //boolean value to check if the account in searching exist
@@ -563,12 +529,8 @@ void AccountManager::searchAccount(const char* id) {
 	else { //if found, prinout the account info
 		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
 		searchAccId->print();
-		for (string itemRented : searchAccId->getListOfRentals()) {
-			cout << itemRented << endl;
-		}
 	}
-}*/
-
+}
 //Function to save the accountList to a text file
 bool AccountManager::saveToFile() {
 	ofstream outStream(this->customerFile); //open the file used to get the information

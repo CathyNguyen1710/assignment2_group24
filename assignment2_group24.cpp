@@ -137,48 +137,50 @@ string getAccountID() {
     }
 }
 
-void itemSubMenu(ItemManager *itemList)
-{
+//Function for CRUD of item (add, update, delete)
+void itemSubMenu(ItemManager* itemList) {
     string input;
 
-    string option = "Choose one of the options below\n"
-                    "1. Add an item\n"
-                    "2. Update an item\n"
-                    "3. Delete an item\n"
-                    "4. Exit\n";
+    string option = "\nChoose one of the options below\n"
+        "1. Add an item\n"
+        "2. Update an item\n"
+        "3. Delete an item\n"
+        "4. Exit\n";
 
-    while (true)
-    {
+    //While loop that ask user what they want to do
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
+        if (input == "1") { //if user choose 1: call function to add new item and then save it to file
             itemList->addItem();
+            itemList->saveToFile();
         }
-        else if (input == "2")
-        {
-            string itemId = getItemID();
-            itemList->updateItem(itemId);
+        else if (input == "2") { //if user choose 2: call function to update exsited item and then save it to file
+            itemList->displaySortedItemID(); //display all items information
+            string id = getItemID(); //get user input for the item they want to update
+
+            itemList->updateItem(id);
+            itemList->saveToFile();
         }
-        else if (input == "3")
-        {
-            string itemId = getItemID();
-            itemList->deleteItem(itemId);
+        else if (input == "3") { //if user choose 3: call function to update delete item and then save it to file
+            itemList->displaySortedItemID(); //display all items information
+            string id = getItemID(); //get user input for the item they want to delete
+
+            itemList->deleteItem(id);
+            itemList->saveToFile();
         }
-        else if (input == "4")
-        {
-            cout << "Exit" << endl;
+        else if (input == "4") { //if user to 4: exit the CRUD sub menu
+            cout << "\nExit\n" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //prinout error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
@@ -384,207 +386,232 @@ bool returnItem(AccountManager* accountList, ItemManager* itemList) {
     return returnItemRec(accountList, accountID, itemList);
 }
 
-void displayItemSubMenu(ItemManager *itemList)
-{
+//Function for display sorted item sub menu
+void displayItemSubMenu(ItemManager* itemList) {
     string input;
 
-    string option = "Choose one of the options below\n"
-                    "1. Sorted item by id\n"
-                    "2. Sorted item by title\n"
-                    "3. Exit\n";
+    //available option
+    string option = "\nChoose one of the options below\n"
+        "1. Sorted item by id\n"
+        "2. Sorted item by title\n"
+        "3. Exit\n";
 
-    while (true)
-    {
+    //while loop that get user input and prinout accordingly
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
+        if (input == "1") { //if input = 1 --> display sorted item based on id
             itemList->displaySortedItemID();
         }
-        else if (input == "2")
-        {
+        else if (input == "2") { //if input = 2 --> display sorted item based on title
             itemList->displaySortedItemTitle();
         }
-        else if (input == "3")
-        {
-            cout << "Exit" << endl;
+        else if (input == "3") { //if input = 3 --> exit to main menu
+            cout << "\nExit\n" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //display error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
 
-void displayItemOutOfStock(ItemManager *itemList)
-{
-    cout << "7" << endl;
+//Function call the method to display all item that are out of stock
+void displayItemOutOfStock(ItemManager* itemList) {
+    itemList->getAllNoStock();
 }
 
-void displayCustomerSubMenu(AccountManager *accountList)
-{
+//Function for display sorted item sub menu
+void displayCustomerSubMenu(AccountManager* accountList) {
     string input;
 
-    string option = "Choose one of the options below\n"
-                    "1. Sorted customer by id\n"
-                    "2. Sorted customer by name\n"
-                    "3. Exit\n";
+    //available option
+    string option = "\nChoose one of the options below\n"
+        "1. Sorted customer by id\n"
+        "2. Sorted customer by name\n"
+        "3. Exit\n";
 
-    while (true)
-    {
+    //while loop that get user input and prinout accordingly
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
+        if (input == "1") { //if input = 1 --> display sorted account based on id
             accountList->displaySortedAccountID();
         }
-        else if (input == "2")
-        {
+        else if (input == "2") { //if input = 2 --> display sorted account based on name
             accountList->displaySortedAccountName();
         }
-        else if (input == "3")
-        {
+        else if (input == "3") { //if input = 3 --> exit to main menu
             cout << "Exit" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //display error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
 
-void displayCustomerByGroupSubMenu(AccountManager *accountList)
-{
+//Function that call method to display group of account with the same type/level
+void displayCustomerByGroupSubMenu(AccountManager* accountList) {
     string input;
 
-    string option = "Choose one of the option below\n"
-                    "1. Guest Accounts\n"
-                    "2. Regular Accounts\n"
-                    "3. VIP Accounts\n"
-                    "4. Exit\n";
+    //available option
+    string option = "\nChoose one of the option below\n"
+        "1. Guest Accounts\n"
+        "2. Regular Accounts\n"
+        "3. VIP Accounts\n"
+        "4. Exit\n";
 
-    while (true)
-    {
+    //while loop that get user input and prinout accordingly
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
-            cout << "Guest Accounts" << endl;
+        if (input == "1") { //if input = 1 --> display all Guest account
+            accountList->getAccountByLevel("Guest");
         }
-        else if (input == "2")
-        {
-            cout << "Regular Accounts" << endl;
+        else if (input == "2") { //if input = 2 --> display all Regular account
+            accountList->getAccountByLevel("Regular");
         }
-        else if (input == "3")
-        {
-            cout << "VIP Accounts" << endl;
+        else if (input == "3") { //if input = 3 --> display all VIP account
+            accountList->getAccountByLevel("VIP");
         }
-        else if (input == "4")
-        {
-            cout << "Exit" << endl;
+        else if (input == "4") { //if input = 4 --> exit to main menu
+            cout << "\nExit\n" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //display error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
 
-void searchItemSubMenu(ItemManager *itemList)
-{
+//Function for search item sub menu
+void searchItemSubMenu(ItemManager* itemList) {
     string input;
 
-    string option = "Choose one of the options below\n"
-                    "1. Search item by title\n"
-                    "2. Search item by id\n"
-                    "3. Exit\n";
+    //available option
+    string option = "\nChoose one of the options below\n"
+        "1. Search item by title\n"
+        "2. Search item by id\n"
+        "3. Exit\n";
 
-    while (true)
-    {
+    //while loop that get user input and prinout accordingly
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
-            cout << "Search item by title" << endl;
+        if (input == "1") { //if input = 1 --> call method to search for item by title
+            string title;
+            cout << "Please enter the name you want to find: ";
+
+            getline(cin, title); //get user input for title search
+
+            //trim string
+            title.erase(title.find_last_not_of(" ") + 1);
+            title.erase(0, title.find_first_not_of(" "));
+
+            if (title == "Exit") { //exit to the main menu
+                break;
+            }
+
+            itemList->searchItem(title); //call the search method
         }
-        else if (input == "2")
-        {
-            cout << "Search item by id" << endl;
+        else if (input == "2") { //if input = 2 --> call method to search for item by id
+            string itemID = getItemID(); //get user input for id search
+
+            if (itemID == "Exit") { //exit to the main menu
+                break;
+            }
+
+            const char* id = itemID.c_str();
+            itemList->searchItem(id); //call the search method
         }
-        else if (input == "3")
-        {
-            cout << "Exit" << endl;
+        else if (input == "3") { //if input = 3 --> exit to the main menu
+            cout << "\nExit\n\n" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //display error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
 
-void searchCustomerSubMenu(AccountManager *accountList)
-{
+//Function for search item sub menu
+void searchCustomerSubMenu(AccountManager* accountList) {
     string input;
 
-    string option = "Choose one of the options below\n"
-                    "1. Search customer by name\n"
-                    "2. Search customer by id\n"
-                    "3. Exit\n";
+    //available option
+    string option = "\nChoose one of the options below\n"
+        "1. Search customer by name\n"
+        "2. Search customer by id\n"
+        "3. Exit\n";
 
-    while (true)
-    {
+    //while loop that get user input and prinout accordingly
+    while (true) {
         cout << option << endl;
 
         getline(cin, input);
 
-        // trim string
+        //trim string
         input.erase(input.find_last_not_of(" ") + 1);
         input.erase(0, input.find_first_not_of(" "));
 
-        if (input == "1")
-        {
-            cout << "Search customer by name" << endl;
+        if (input == "1") { //if input = 1 --> call method to search for account by name
+            string name;
+            cout << "Please enter the name you want to find: ";
+
+            getline(cin, name); //get user input for name search
+
+            //trim string
+            name.erase(name.find_last_not_of(" ") + 1);
+            name.erase(0, name.find_first_not_of(" "));
+
+            if (name == "Exit") { //exit to the main menu
+                break;
+            }
+
+            accountList->searchAccount(name); //call the search method
+
         }
-        else if (input == "2")
-        {
-            cout << "Search customer by id" << endl;
+        else if (input == "2") { //if input = 2 --> call method to search for account by id
+            string accID = getAccountID(); //get user input for id search
+
+            if (accID == "Exit") { //exit to the main menu
+                break;
+            }
+
+            const char* id = accID.c_str();
+            accountList->searchAccount(id); //call the search method
         }
-        else if (input == "3")
-        {
-            cout << "Exit" << endl;
+        else if (input == "3") { //if input = 3 --> exit to the main menu
+            cout << "\nExit\n" << endl;
             break;
         }
-        else
-        {
-            cerr << "Error message" << endl;
+        else { //display error message if input is invalid
+            cerr << "\nInvalid input." << endl;
         }
     }
 }
@@ -671,9 +698,6 @@ int main()
             //Printout team member
             cout << "\n\nASSIGNMENT 2 GROUP 24" << endl;
             cout << "s3819293, s3819293@rmit.edu.vn, Thi Nha Uyen, Nguyen" << endl;
-            cout << "s3818221, s3818221@rmit.edu.vn, Khoi Nguyen, Truong" << endl;
-            cout << "s3877256, s3877256@rmit.edu.vn, Phuong Nam, Nguyen" << endl;
-            cout << "s3878451, s3878451@rmit.edu.vn, Hoang Long, Nguyen" << endl;
 
             break;
         }
@@ -684,4 +708,5 @@ int main()
     }
 
     return 0;
+
 }

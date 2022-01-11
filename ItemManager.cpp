@@ -11,16 +11,14 @@
 using namespace std;
 
 //Constructors (Read file)
-ItemManager::ItemManager()
-{
+ItemManager::ItemManager() {
 	this->itemFile = "items.txt"; //Default constructor will read the file items.txt
-	this->noOfItem = 0;			  //set the number of item to 0
+	this->noOfItem = 0; //set the number of item to 0
 
 	ifstream inStream(itemFile); //open file
 
 	//Check if the file exist
-	if (!inStream)
-	{
+	if (!inStream) {
 		cerr << "File not found" << endl;
 	}
 
@@ -28,33 +26,29 @@ ItemManager::ItemManager()
 	vector<string> itemListData; //vector list to store data fields
 
 	//While loop to read each line of data
-	while (getline(inStream, line))
-	{
+	while (getline(inStream, line)) {
 		istringstream stream(line);
 		string fields;
 
 		this->noOfItem++; //increase the size of array
 
 		//While loop that get data fields seperate by ',' from the line and but it in the vector
-		while (getline(stream, fields, ','))
-		{
+		while (getline(stream, fields, ',')) {
 			itemListData.push_back(fields);
 		}
 
 		//Check for the data Type to create the appropiate account and then push it inside the list of account
-		if (itemListData[2] == "Game")
-		{
-			Item *newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+		if (itemListData[2] == "Game") {
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+			this->itemList.push_back(newItem);
+
+		}
+		else if (itemListData[2] == "Record") {
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 			this->itemList.push_back(newItem);
 		}
-		else if (itemListData[2] == "Record")
-		{
-			Item *newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
-			this->itemList.push_back(newItem);
-		}
-		else if (itemListData[2] == "DVD")
-		{
-			Item *newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+		else if (itemListData[2] == "DVD") {
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 			this->itemList.push_back(newItem);
 		}
 
@@ -63,16 +57,14 @@ ItemManager::ItemManager()
 
 	inStream.close(); //close file after read
 }
-ItemManager::ItemManager(string itemFile)
-{
+ItemManager::ItemManager(string itemFile) {
 	this->itemFile = itemFile; //Read file base on the file name in param
-	this->noOfItem = 0;		   //set the number of item to 0
+	this->noOfItem = 0; //set the number of item to 0
 
 	ifstream inStream(itemFile); //open file
 
 	//Check if the file exist
-	if (!inStream)
-	{
+	if (!inStream) {
 		cerr << "File not found" << endl;
 	}
 
@@ -80,33 +72,29 @@ ItemManager::ItemManager(string itemFile)
 	vector<string> itemListData; //vector list to store data fields
 
 	//While loop to read each line of data
-	while (getline(inStream, line))
-	{
+	while (getline(inStream, line)) {
 		istringstream stream(line);
 		string fields;
 
 		this->noOfItem++; //increase the size of array
 
 		//While loop that get data fields seperate by ',' from the line and but it in the vector
-		while (getline(stream, fields, ','))
-		{
+		while (getline(stream, fields, ',')) {
 			itemListData.push_back(fields);
 		}
 
 		//Check for the data Type to create the appropiate account and then push it inside the list of account
-		if (itemListData[2] == "Game")
-		{
-			Item *newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+		if (itemListData[2] == "Game") {
+			Item* newItem = new Game(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]));
+			this->itemList.push_back(newItem);
+
+		}
+		else if (itemListData[2] == "Record") {
+			Item* newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 			this->itemList.push_back(newItem);
 		}
-		else if (itemListData[2] == "Record")
-		{
-			Item *newItem = new Record(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
-			this->itemList.push_back(newItem);
-		}
-		else if (itemListData[2] == "DVD")
-		{
-			Item *newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
+		else if (itemListData[2] == "DVD") {
+			Item* newItem = new DVD(itemListData[0], itemListData[1], itemListData[2], itemListData[3], stoi(itemListData[4]), stod(itemListData[5]), itemListData[6]);
 			this->itemList.push_back(newItem);
 		}
 
@@ -116,12 +104,10 @@ ItemManager::ItemManager(string itemFile)
 	inStream.close(); //close file after read
 }
 
-// destructor
-ItemManager::~ItemManager()
-{
-	for (Item *item : this->itemList)
-	{
-		// remove all dynamically allocated memory for item pointers
+//Destructor
+ItemManager::~ItemManager() {
+	for (Item* item : this->itemList) {
+		//remove all dynamically allocated memory for item pointers
 		delete item;
 	}
 }
@@ -174,14 +160,14 @@ bool ItemManager::returnItem(string id) {
 //  Helper
 bool isDigit(const char& ch)
 {
-	return (ch >= '0' && ch <= '9');
+	return (ch >= 48 && ch <= 57);
 }
 
 // helper to check if year is a number
 bool isNumber(const string& str)
 {
 	size_t size = str.size();
-	for (size_t t = 0; t < size; t++)
+	for (size_t t = 0; t < size - 1; t++)
 	{
 		if (!isdigit(str.at(t)))
 			return false;
@@ -197,9 +183,6 @@ bool ItemManager::addItem()
 	// generate item id - code part (3 digits)
 	ostringstream streamID;
 	streamID << "I" << setw(3) << setfill('0') << this->noOfItem;
-	string id = streamID.str();
-
-	id.append("-");
 
 	string year = "";
 
@@ -219,8 +202,7 @@ bool ItemManager::addItem()
 
 		if (isNumber(year))
 		{
-			id += year;
-			cout << "Item's ID: " << id;
+			streamID << "-" << year;
 			break;
 		}
 		else
@@ -228,7 +210,11 @@ bool ItemManager::addItem()
 			cerr << "Please only enter number for published year!" << endl;
 			year.clear();
 		}
+
 	}
+
+	string id = streamID.str();
+
 
 	// get item tile
 	while (true)
@@ -253,7 +239,7 @@ bool ItemManager::addItem()
 		else
 		{
 			cerr << "Please enter valid rental type!" << endl;
-			year.clear();
+			rentalType.clear();
 		}
 	}
 
@@ -272,10 +258,19 @@ bool ItemManager::addItem()
 	// get item loan type
 	while (true)
 	{
-		cout << "\nEnter the item's loan type: ";
+		cout << "\nEnter the item's loan type (2-day, 1-week): ";
 		cin >> loanType;
 		cin.ignore();
-		break;
+
+		if (loanType == "2-day" || loanType == "1-week")
+		{
+			break;
+		}
+		else
+		{
+			cerr << "Please enter valid loan type!" << endl;
+			loanType.clear();
+		}
 	}
 
 	// get item number of copy
@@ -575,9 +570,9 @@ void ItemManager::displaySortedItemTitle() {
 		{
 			if (itemByTitle[i]->getTitle() > itemByTitle[j]->getTitle())
 			{
-				string temp = itemByTitle[i]->getTitle();
-				itemByTitle[i]->getTitle() = itemByTitle[j]->getTitle();
-				itemByTitle[j]->getTitle() = temp;
+				Item* temp = itemByTitle[i];
+				itemByTitle[i] = itemByTitle[j];
+				itemByTitle[j] = temp;
 			}
 		}
 	}
@@ -605,9 +600,9 @@ void ItemManager::displaySortedItemID() {
 		{
 			if (itemById[i]->getId() > itemById[j]->getId())
 			{
-				string temp = itemById[i]->getId();
-				itemById[i]->getId() = itemById[j]->getId();
-				itemById[j]->getId() = temp;
+				Item* temp = itemById[i];
+				itemById[i] = itemById[j];
+				itemById[j] = temp;
 			}
 		}
 	}

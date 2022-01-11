@@ -66,4 +66,12 @@ void Account::setListOfRentals(vector<string>& listOfRentals) {
 //Function to printout the program in the format ID : name - address - phone number - amount rental - account type
 void Account::print() {
     cout << this->getId() << " : " << this->getName() << " - " << this->getAddress() << " - " << this->getPhone() << " - " << this->getNoOfRentals() << " - " << this->getType() << endl;
+    
+    if (this->listOfRentals.size() > 0) {
+        cout << "       List of rental item id by this account:\n";
+        for (string rented : this->listOfRentals) {
+            cout << "\t" << rented << endl;
+        }
+    }
+    
 }
