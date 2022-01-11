@@ -49,15 +49,11 @@ public:
 	void displaySortedItemID();
 	void getAllNoStock();
 	void searchItem(string title);
-	void searchItem(char* id);
+	void searchItem(const char* id);
 
 	bool saveToFile();
 
-	void displayAll();
-
-	void getItemFromRental(string itemID);
-	
-	void print();
+	Item* getItemFromRental(string itemID);
 };
 
 #endif

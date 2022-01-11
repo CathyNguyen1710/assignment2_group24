@@ -7,26 +7,26 @@
 
 using namespace std;
 
-class DVD : public Item
+class DVD :public Item
 {
-protected:
-    string genre;
-
+private:
+	string genre;
 public:
-    // Constructor
-    DVD();
-    DVD(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
+	//Constructor
+	DVD();
+	DVD(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
 
-    // Destructor
-    ~DVD();
+	//Destructor
+	~DVD() {};
 
-    // Getter
-    string getGenre();
+	//Getter
+	string getGenre();
 
-    // Setter
-    void setGenre(string genre);
+	//Setter
+	void setGenre(string genre);
 
-    // Other functions
-    void print();
-    string toString();
+	//Other function
+	void print();
+	string toString();
 };
+

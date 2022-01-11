@@ -8,46 +8,47 @@ using namespace std;
 
 class Item
 {
-protected:
-    string id;
-    string title;
-    string rentalType;
-    string loanType;
-    int noOfCopy;
-    double fee;
-    int noRented;
+private:
+	string id;
+	string title;
+	string rentalType;
+	string loanType;
+	int noOfCopy;
+	double fee;
+	int noRented;
+	//string genre;
 
 public:
-    // Constructor
-    Item(); // default constructor
-    Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
+	//Constructor
+	Item(); //default constructor
+	Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee);
 
-    // Destructor
-    virtual ~Item();
+	//Destructor
+	~Item() {};
 
-    // Getter
-    string getId();
-    string getTitle();
-    string getRentalType();
-    string getLoanType();
-    int getNoOfCopy();
-    double getFee();
-    int getNoRented();
-    virtual string getGenre();
+	//Getter
+	string getId();
+	string getTitle();
+	string getRentalType();
+	string getLoanType();
+	int getNoOfCopy();
+	double getFee();
+	int getNoRented();
+	virtual string getGenre() = 0;
 
-    // Setter
-    void setId(string id);
-    void setTitle(string title);
-    void setRentalType(string rentalType);
-    void setLoanType(string loadType);
-    void setNoOfCopy(int noOfCopy);
-    void setFee(double fee);
-    void setNoRented(int noRented);
-    virtual void setGenre(string genre);
+	//Setter
+	void setId(string id);
+	void setTitle(string title);
+	void setRentalType(string rentalType);
+	void setLoanType(string loadType);
+	void setNoOfCopy(int noOfCopy);
+	void setFee(double fee);
+	void setNoRented(int noRented);
+	virtual void setGenre(string genre) = 0;
 
-    // Other functions
-    virtual void print();
-    virtual string toString();
+	//Other function
+	virtual void print() = 0;
+	virtual string toString() = 0;
 };
 
 #endif

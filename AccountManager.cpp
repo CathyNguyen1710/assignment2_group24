@@ -142,9 +142,9 @@ void AccountManager::setCustomerFile(string customerFile) {
 	this->customerFile = customerFile;
 }
 
-//Other Function
 //Function used to promote an account when meet the requirement
 bool AccountManager::promoteAccount(string id) {
+	int pos = 0; //int to find the position of an item in the array
 	bool matched = false; //boolean to check if the vector have the account with the id input 
 
 	//Loop through the vector of accout to check for the account that match the id input
@@ -156,9 +156,9 @@ bool AccountManager::promoteAccount(string id) {
 				if (account->getType() == "Guest") { //if the current account is type Guest -> promote to Regular
 					RegularAccount* promoteAcc = new RegularAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to Regular Account\n" << endl;
 
@@ -169,9 +169,9 @@ bool AccountManager::promoteAccount(string id) {
 				else if (account->getType() == "Regular") { //if the current account is type Regular -> promote to VIP
 					VIPAccount* promoteAcc = new VIPAccount(account); //Create a new Regular account based on the info
 
-					remove(this->accountList.begin(), this->accountList.end(), acc); //Remove the old account type from the vector
+					this->accountList.erase(this->accountList.begin() + pos); //Remove the old account type from the vector
 
-					this->accountList.push_back(promoteAcc); //Add the promote account
+					this->accountList.insert(this->accountList.begin() + pos, promoteAcc); //Add the promote account
 
 					cout << "\nAccount with id " << id << " is successfully promoted to VIP Account\n" << endl;
 
@@ -180,6 +180,9 @@ bool AccountManager::promoteAccount(string id) {
 					break;
 				}
 			}
+		}
+		else { //if the id is not matched
+			pos++; //increase the position
 		}
 	}
 
@@ -406,65 +409,117 @@ bool AccountManager::updateAccount(string id) {
 	return true;
 }
 
+//Function display list of account sorted by name in alphabetical order
+void AccountManager::displaySortedAccountName() {
 
+	vector<Account*> accByName = this->accountList; //created a copy vector of the accountList
 
-void AccountManager::displaySortedAccountName()
-{
-	//sort function by Name
-	for (int i = 0; i < accountList.size(); i++ ){
-		for (int j = i+1; j < accountList.size(); j++ ){
-			if (accountList[i]->getName()>accountList[j]->getName()){
-				string temp = accountList[i]->getName();
-				accountList[i]->getName() = accountList[j]->getName();
-				accountList[j]->getName() = temp;
+	//Sort the copied array and swap the value
+	for (int i = 0; i < accByName.size() - 1; i++) {
+		for (int j = i + 1; j < accByName.size(); j++) {
+			if (accByName[i]->getName() > accountList[j]->getName()) {
+				string temp = accByName[i]->getName();
+				accByName[i]->getName() = accByName[j]->getName();
+				accByName[j]->getName() = temp;
 			}
-		}	
-	}
-	
-	for (Account *ac : accountList)
-	{
-		cout << ac->toString();
-	}
-}
-
-void AccountManager::displaySortedAccountID()
-{
-	//sort function by ID
-	for (int i = 0; i < accountList.size(); i++ ){
-		for (int j = i+1; j < accountList.size(); j++ ){
-			if (accountList[i]->getId()>accountList[j]->getId()){
-				string temp = accountList[i]->getId();
-				accountList[i]->getId() = accountList[j]->getId();
-				accountList[j]->getId() = temp;
-			}
-		}	
-	}
-	for (Account *ac : accountList)
-	{
-		cout << ac->toString();
-	}
-}
-void AccountManager::getAccountByLevel(string level)
-{
-	cout<< "All accounts of level "<<level <<"is: "<< endl;
-	for (Account *account : accountList)
-	{
-		if (account->getType()  == level){
-			cout<< account<< endl;
 		}
 	}
-}
-void AccountManager::searchAccount(string name)
-{
-	for (Account *account : this->accountList)
-	{
-		if (account->getName() == name)
-		{
-			cout << account-> toString();
-			break;
+
+	//Printout the array
+	if (accByName.size() > 0) {
+		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		for (Account* acc : accByName) {
+			acc->print();
+			for (string itemRented : acc->getListOfRentals()) {
+				cout << itemRented << endl;
+			}
 		}
 	}
-	cout << "search by name" << name << endl;
+	else {
+		cerr << "The store currently have no customer" << endl;
+	}
+}
+//Function display list of account sorted by id in ascending order
+void AccountManager::displaySortedAccountID() {
+
+	vector<Account*> accById = this->accountList; //created a copy vector of the accountList
+
+	//Sort the copied array and swap the value
+	for (int i = 0; i < accById.size() - 1; i++) {
+		for (int j = i + 1; j < accById.size(); j++) {
+			if (accById[i]->getId() > accountList[j]->getId()) {
+				string temp = accById[i]->getId();
+				accById[i]->getId() = accById[j]->getId();
+				accById[j]->getId() = temp;
+			}
+		}
+	}
+
+	//Printout the array
+	if (accById.size() > 0) {
+		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		for (Account* acc : accById) {
+			acc->print();
+			for (string itemRented : acc->getListOfRentals()) {
+				cout << itemRented << endl;
+			}
+		}
+	}
+	else {
+		cerr << "The store currently have no customer" << endl;
+	}
+}
+//Function display list of account sorted with the same level (same type)
+void AccountManager::getAccountByLevel(string level) {
+
+	vector<Account*> accountLevel; //created a temporary array to contain the account
+
+	//Check the account is of the same type with the input level. If so, add the item to the temporary array
+	for (Account* acc : this->accountList) {
+		if (acc->getType() == level) {
+			accountLevel.push_back(acc);
+		}
+	}
+
+	//if the array is not empty then prinout the array
+	if (accountLevel.size() > 0) {
+		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		for (Account* acc : accountLevel) {
+			acc->print();
+			for (string itemRented : acc->getListOfRentals()) {
+				cout << itemRented << endl;
+			}
+		}
+	}
+	else { //if the array is empty, prinout a message saying that the store currently have no account of that level
+		cerr << "The store currently have no customer of type " << level << endl;
+	}
+}
+//Function display list of account that contain the name in searching
+void AccountManager::searchAccount(string name) {
+
+	vector<Account*> searchAccName;  //created a temporary array to contain the account
+
+	//loop through the array and find the account that contain the string that user want to find
+	for (Account* acc : this->accountList) {
+		if (acc->getName().find(name) != string::npos) {
+			searchAccName.push_back(acc);
+		}
+	}
+
+	//if the array is not empty then prinout the array
+	if (searchAccName.size() > 0) {
+		cout << "ID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		for (Account* acc : searchAccName) {
+			acc->print();
+			for (string itemRented : acc->getListOfRentals()) {
+				cout << itemRented << endl;
+			}
+		}
+	}
+	else { //if no account found, printout a message said that no account is found
+		cout << "Cannot find the specified account" << endl;
+	}
 }
 void AccountManager::searchAccount(char *id)
 {
@@ -488,6 +543,31 @@ void AccountManager::searchAccount(char *id)
 		}
 	}
 }
+/*//Function display an account with the id input
+void AccountManager::searchAccount(const char* id) {
+
+	bool accFound = false; //boolean value to check if the account in searching exist
+	Account* searchAccId = nullptr; //create a temporary account
+
+	for (Account* acc : this->accountList) { //loop through the array to find the account that match the id input
+		if (strcmp(acc->getId().c_str(), id) == 0) { //if found, set the temporary Accounnt as the acc, and set the found value to true
+			searchAccId = acc;
+			accFound = true;
+			break;
+		}
+	}
+
+	if (accFound == false) { //if no account found, prinout a message saying no account match the input
+		cout << "Cannot find the specified account" << endl;
+	}
+	else { //if found, prinout the account info
+		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		searchAccId->print();
+		for (string itemRented : searchAccId->getListOfRentals()) {
+			cout << itemRented << endl;
+		}
+	}
+}*/
 
 //Function to save the accountList to a text file
 bool AccountManager::saveToFile() {
@@ -504,7 +584,73 @@ bool AccountManager::saveToFile() {
 	return true;
 }
 
+//Function to display list of item in rental of 1 account
+vector<Item*> AccountManager::displayAllRental(string accountID, ItemManager* itemList) {
 
-void AccountManager::print() {
-	cout << "print acc manager" << endl;
+	vector<Item*> listOfItem; //created a temporary array to contain the item information
+
+	cout << "\nID        : Title - Rental Type - Loan Duration - Available Copy - Rental Fee - Genre (for Record and DVD)\n";
+	for (Account* account : this->accountList) { //loop through the account list to find the account that currently returning the item
+		if (account->getId() == accountID) { //if found, get the account list of rental item and get each item information
+			for (string itemID : account->getListOfRentals()) {
+				listOfItem.push_back(itemList->getItemFromRental(itemID));
+			}
+		}
+	}
+
+	return listOfItem;
 }
+//Function to display list of item that is available for rent of 1 account
+vector<Item*> AccountManager::displayAllAvailable(string accountID, ItemManager* itemList) {
+
+	vector<Item*> availableItem = itemList->getItemList(); //created a temporary array that is a copy of the itemList
+
+	for (Account* account : this->accountList) { //loop through the account list to find the account that currently renting the item
+		if (account->getId() == accountID) { //if found, get the account list of rental item then compare the item in the rental list with the temp list
+			for (string itemID : account->getListOfRentals()) {
+				for (Item* item : availableItem) {
+					if (item->getId() == itemID || item->getId().substr(0, 4) == itemID || item->getId().substr(0, 4) == itemID.substr(0, 4) || item->getNoOfCopy() == 0) { //if the item have the same id with the one in rental or is out of stock
+						remove(availableItem.begin(), availableItem.end(), item); //remove the item from the temp array
+						availableItem.resize(availableItem.size() - 1); //resize the array
+					}
+				}
+			}
+			break;
+		}
+	}
+
+	//prinout the item available for renting
+	cout << "\nID        : Title - Rental Type - Loan Duration - Available Copy - Rental Fee - Genre (for Record and DVD)\n";
+	for (Item* item : availableItem) {
+		item->print();
+	}
+
+	return availableItem;
+}
+//Function to display the account that have meet the requirement for promotion
+vector<Account*> AccountManager::displayPromotableAccount() {
+
+	vector<Account*> promatableAcc; //created a temporary array to contain the account that eligible for promotion
+	bool promotable;
+
+	for (Account* account : this->accountList) {
+		promotable = account->promoteable(); //check if the account is promotable
+		if (promotable) { //if so, add the info into the temprary list
+			promatableAcc.push_back(account);
+		}
+	}
+
+	//prinout the account that can be promote
+	if (promatableAcc.size() > 0) {
+		cout << "\nID   : Name - Address - Phone Number - Number of Rental - Account Type\n";
+		for (Account* account : promatableAcc) {
+			account->print();
+		}
+	}
+	else {
+		cout << "\nThere are currently no account that have meet the requirement for promotion\n";
+	}
+
+	return promatableAcc;
+}
+

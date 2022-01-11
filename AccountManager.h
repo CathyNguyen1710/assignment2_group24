@@ -48,16 +48,16 @@ public:
 	void displaySortedAccountName();
 	void displaySortedAccountID();
 	void getAccountByLevel(string level);
-	void searchAccount(string accountName);
+	void searchAccount(string name);
 	void searchAccount(char* id);
 
 	bool saveToFile();
 
-	void displayAll();
-	void displayAllRental(string accountID, ItemManager* itemList);
-	void displayAllAvailable(string accountID, ItemManager* itemList);
+	vector<Item*> displayAllRental(string accountID, ItemManager* itemList);
+	vector<Item*> displayAllAvailable(string accountID, ItemManager* itemList);
+	vector<Account*> displayPromotableAccount();
 
-	void print();
+	//void displayAll();
 };
 
 #endif

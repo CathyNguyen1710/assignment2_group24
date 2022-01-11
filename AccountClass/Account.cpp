@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Constructors
 Account::Account() {
 }
 
@@ -62,6 +63,7 @@ void Account::setListOfRentals(vector<string>& listOfRentals) {
     this->listOfRentals = listOfRentals;
 }
 
+//Function to printout the program in the format ID : name - address - phone number - amount rental - account type
 void Account::print() {
     cout << this->getId() << " : " << this->getName() << " - " << this->getAddress() << " - " << this->getPhone() << " - " << this->getNoOfRentals() << " - " << this->getType() << endl;
 }

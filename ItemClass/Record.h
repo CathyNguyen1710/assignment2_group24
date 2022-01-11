@@ -7,26 +7,26 @@
 
 using namespace std;
 
-class Record : public Item
+class Record :public Item
 {
-protected:
-    string genre;
-
+private:
+	string genre;
 public:
-    // Constructor
-    Record();
-    Record(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
+	//Constructor
+	Record();
+	Record(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
 
-    // Destructor
-    ~Record();
+	//Destructor
+	~Record() {};
 
-    // Getter
-    string getGenre();
+	//Getter
+	string getGenre();
 
-    // Setter
-    void setGenre(string genre);
+	//Setter
+	void setGenre(string genre);
 
-    // Other functions
-    void print();
-    string toString();
+	//Other function
+	void print();
+	string toString();
 };
+
