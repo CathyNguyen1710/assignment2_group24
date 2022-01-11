@@ -1,32 +1,29 @@
 #pragma once
 
+#include <stdio.h>
 #include "Item.h"
-
-#include <iostream>
-#include <string>
 
 using namespace std;
 
-class DVD :public Item
+class DVD: public Item
 {
-private:
-	string genre;
+protected:
+    string genre;
 public:
-	//Constructor
-	DVD();
-	DVD(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
-
-	//Destructor
-	~DVD() {};
-
-	//Getter
-	string getGenre();
-
-	//Setter
-	void setGenre(string genre);
-
-	//Other function
-	void print();
-	string toString();
+    // Constructor
+    DVD();
+    DVD(string id, string title, string rentalType, string loanType, int noOfCopy, double fee, string genre);
+    
+    // Destructor
+    ~DVD();
+    
+    // Getter
+    string getGenre();
+    
+    // Setter
+    void setGenre(string genre);
+    
+    // Other functions
+    void print();
+    string toString();
 };
-

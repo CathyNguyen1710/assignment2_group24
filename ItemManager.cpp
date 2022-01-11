@@ -331,7 +331,7 @@ bool ItemManager::updateItem(string id)
 {
 	//create a temporary account 
 	Item* updateItem = nullptr;
-	string field;
+	string field = "";
 
 	int pos = 0; //int value for the position of the update item in the list
 	bool itemFound = false; //boolean value to check if the item match the id input exist
