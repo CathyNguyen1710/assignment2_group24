@@ -67,7 +67,8 @@ bool GuestAccount::rentItem(string id, ItemManager* itemList) {
 
 	//Check if the item is in the list of item
 	for (Item* item : itemList->getItemList()) {
-		if (item->getId() == id) {
+		string itemID = item->getId();
+		if (itemID == id || itemID.substr(0, 4) == id || itemID.substr(0, 4) == id.substr(0, 4)) {
 			//Check if the item is of 2-day loan type
 			if (item->getLoanType() == "2-day") {
 				cout << "\nGuest account cannot borrow items of 2-day loan type" << endl;

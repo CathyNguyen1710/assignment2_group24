@@ -331,7 +331,7 @@ bool ItemManager::updateItem(string id)
 {
 	//create a temporary account 
 	Item* updateItem = nullptr;
-	string field = "";
+	string field;
 
 	int pos = 0; //int value for the position of the update item in the list
 	bool itemFound = false; //boolean value to check if the item match the id input exist
@@ -357,25 +357,27 @@ bool ItemManager::updateItem(string id)
 	char choice = '0';
 	
 	string newValue = "";
-	cout << "\nWhat do you want to update? (Note: you cannot change rental type!)" << endl;
-	cout << "\t - "
-		<< "Title: enter '1'." << endl;
-	cout << "\t - "
-		<< "Loan Type: enter '2'." << endl;
-	cout << "\t - "
-		<< "Genre: enter '3' (Only applied for Record and DVD)." << endl;
-	cout << "\t - "
-		<< "Copies in stock: enter '4'." << endl;
-	cout << "\t - "
-		<< "Rental fee: enter '5'." << endl;
-	cout << "\t - "
-		<< "Rental type: enter '6'." << endl;
-	cout << "\t - "
-		<< "Enter '7' to exit!" << endl;
-
+	
 	// ask for user's choice, only break the loop if user enters correct letters
 	while (true)
 	{
+		cout << "\nWhat do you want to update?" << endl;
+		cout << "\t - "
+			<< "Title: enter '1'." << endl;
+		cout << "\t - "
+			<< "Loan Type: enter '2'." << endl;
+		cout << "\t - "
+			<< "Genre: enter '3' (Only applied for Record and DVD)." << endl;
+		cout << "\t - "
+			<< "Copies in stock: enter '4'." << endl;
+		cout << "\t - "
+			<< "Rental fee: enter '5'." << endl;
+		cout << "\t - "
+			<< "Rental type: enter '6'." << endl;
+		cout << "\t - "
+			<< "Enter '7' to exit!" << endl;
+
+
 		cout << "\nEnter your choice: ";
 		cin >> choice;
 		cin.ignore();
@@ -391,7 +393,7 @@ bool ItemManager::updateItem(string id)
 				string oldTitle = updateItem->getTitle();
 				updateItem->setTitle(newValue);
 				cout << "\nThe title of the item " << updateItem->getId() << " had been succesfully change from " << oldTitle << " to " << updateItem->getTitle() << endl;
-				return true;
+				break;
 			}
 		case '2':
 			cout << "\nEnter the new loan type (2-day, 1-week): ";
@@ -403,31 +405,37 @@ bool ItemManager::updateItem(string id)
 				if (newValue == "2-day") {
 					updateItem->setLoanType("2-day");
 					cout << "\nThe type of loan of the item " << updateItem->getId() << " had been succesfully change from " << oldLoanType << " to " << updateItem->getLoanType() << endl;
-					return true;
+					break;
 				}
 				else if (newValue == "1-week") {
 					updateItem->setLoanType("1-week");
 					cout << "\nThe type of loan of the item " << updateItem->getId() << " had been succesfully change from " << oldLoanType << " to " << updateItem->getLoanType() << endl;
-					return true;
+					break;
 				}
 				else {
 					cerr << "\nInvalid input." << endl; //prinout error message if the input is invalid
 				}
 			}
+			else {
+				cerr << "Please enter valid loan type!" << endl;
+				newValue.clear();
+			}
 		case '3':
-			cout << "\nEnter the new genre: ";
-			cin >> newValue;
-			cin.ignore();
-			
 			if (updateItem->getRentalType() == "Game") { //If the updated item is of Game type, prinout message warn user that Game dont have a genre
 				cout << "\nThis item is of type Game and have no genre for it\n" << endl;
-				return false;
+				break;
 			}
 			else {
-				string oldGenre = updateItem->getGenre();
-				updateItem->setGenre(newValue);
-				cout << "\nThe genre of the item " << updateItem->getId() << " had been succesfully change from " << oldGenre << " to " << updateItem->getGenre() << endl;
-				return true;
+				cout << "\nEnter the new genre: ";
+				cin >> newValue;
+				cin.ignore();
+
+				if (!newValue.empty()) {
+					string oldGenre = updateItem->getGenre();
+					updateItem->setGenre(newValue);
+					cout << "\nThe genre of the item " << updateItem->getId() << " had been succesfully change from " << oldGenre << " to " << updateItem->getGenre() << endl;
+					break;
+				}
 			}
 		case '4':
 			cout << "\nEnter the new number of copies in stock: ";
@@ -437,18 +445,17 @@ bool ItemManager::updateItem(string id)
 				int oldNoOfCopy = updateItem->getNoOfCopy();
 				updateItem->setNoOfCopy(stoi(newValue));
 				cout << "\nThe title of the item " << updateItem->getId() << " had been succesfully change from " << oldNoOfCopy << " to " << updateItem->getNoOfCopy() << endl;
-				return true;
+				break;
 			}
 		case '5':
 			cout << "\nEnter the new rental fee: ";
 			cin >> newValue;
 			cin.ignore();
-			return true;
 			if (!newValue.empty()) {
 				double oldRentalFee = updateItem->getFee();
 				updateItem->setFee(stod(newValue));
 				cout << "\nThe title of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalFee << " to " << updateItem->getFee() << endl;
-				return true;
+				break;
 			}
 		case '6':
 			cout << "\nEnter the new rental type (Game, Record, DVD): ";
@@ -466,9 +473,9 @@ bool ItemManager::updateItem(string id)
 					update = new Game(updateItem->getId(), updateItem->getTitle(), "Game", updateItem->getLoanType(), updateItem->getNoOfCopy(), updateItem->getFee());
 					this->itemList.erase(this->itemList.begin() + pos);
 					this->itemList.insert(this->itemList.begin() + pos, update);
-					cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << updateItem->getRentalType() << endl;
+					cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << "Game" << endl;
 					updateItem = update;
-					return true;
+					break;
 				}
 				else if (newValue == "Record" || newValue == "DVD") {
 					string inputForGenre, genre;
@@ -504,23 +511,27 @@ bool ItemManager::updateItem(string id)
 						update = new Record(updateItem->getId(), updateItem->getTitle(), "Record", updateItem->getLoanType(), updateItem->getNoOfCopy(), updateItem->getFee(), genre);
 						this->itemList.erase(this->itemList.begin() + pos);
 						this->itemList.insert(this->itemList.begin() + pos, update);
-						cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << updateItem->getRentalType() << endl;
+						cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << "Record" << endl;
 						updateItem = update;
-						return true;
+						break;
 					}
 					else if (newValue == "DVD") {
 						update = new DVD(updateItem->getId(), updateItem->getTitle(), "DVD", updateItem->getLoanType(), updateItem->getNoOfCopy(), updateItem->getFee(), genre);
 						this->itemList.erase(this->itemList.begin() + pos);
 						this->itemList.insert(this->itemList.begin() + pos, update);
-						cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << updateItem->getRentalType() << endl;
+						cout << "\nThe type of rental of the item " << updateItem->getId() << " had been succesfully change from " << oldRentalType << " to " << "DVD" << endl;
 						updateItem = update;
-						return true;
+						break;
 					}
 					break;
 				}
 				else {
 					cerr << "\nInvalid input." << endl; //prinout error message if the input is invalid
 				}
+			}
+			else {
+				cerr << "Please enter valid rental type!" << endl;
+				newValue.clear();
 			}
 		case '7':
 			return false;
@@ -544,18 +555,33 @@ bool ItemManager::updateItem(string id)
 
 bool ItemManager::deleteItem(string id)
 {
+	int pos = 0; //int value for the position of the update item in the list
+	bool itemFound = false; //boolean value to check if the item match the id input exist
+
+	Item* item = nullptr;
+
 	for (int i = 0; i < this->itemList.size(); i++)
 	{
-		Item *item = this->itemList[i];
-		if (item->getId() == id)
+		item = this->itemList[i];
+		if (item->getId() == id || item->getId().substr(0, 4) == id)
 		{
-			delete item;
-			this->itemList.erase(this->itemList.begin() + i);
-			return true;
+			itemFound = true;
+			break;
+		}
+		else {
+			pos++;
 		}
 	}
-	cerr << "No matching ID found!" << endl;
-	return false;
+
+	if (!itemFound) {
+		cerr << "\nNo matching ID found!" << endl;
+		return false;
+	}
+
+	cout << "\nThe item " << item->getId() << " had been successfully deleted\n";
+	delete item;
+	this->itemList.erase(this->itemList.begin() + pos);
+	return true;
 }
 
 //Function display list of item sorted by title in alphabetical order

@@ -21,9 +21,9 @@ Game::~Game() {
 
 // Other functions
 void Game::print() {
-    cout << this->getId() << " " << this->getTitle() << " " << this->getRentalType() << " " << this->getLoanType() << " " << this->getNoOfCopy() << " " << this->getFee() << endl;
+	cout << this->getId() << " : " << this->getTitle() << " - " << this->getRentalType() << " - " << this->getLoanType() << " - " << this->getNoOfCopy() << " - " << this->getFee() << endl;
 }
 string Game::toString() {
-   string toDB = this->getId() + "," + this->getTitle() + "," + this->getRentalType() + "," + this->getLoanType() + "," + to_string(this->getNoOfCopy()) + "," + to_string(this->getFee()) + "," + this->getGenre();
-   return toDB;
+	string toDB = this->getId() + "," + this->getTitle() + "," + this->getRentalType() + "," + this->getLoanType() + "," + to_string(this->getNoOfCopy()) + "," + to_string(this->getFee());
+	return toDB;
 }

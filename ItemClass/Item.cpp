@@ -18,7 +18,7 @@ Item::Item() {
 Item::Item(string id, string title, string rentalType, string loanType, int noOfCopy, double fee) {
     this->id = id;
     this->title = title;
-    //    this->rentalType = rentalType;
+    this->rentalType = rentalType;
     this->loanType = loanType;
     this->noOfCopy = noOfCopy;
     this->fee = fee;

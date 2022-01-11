@@ -7,9 +7,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <iomanip>
+//#include <iomanip>
 
-#include <utility>
+//#include <utility>
 
 using namespace std;
 
@@ -165,15 +165,20 @@ void itemSubMenu(ItemManager* itemList) {
             itemList->displaySortedItemID(); //display all items information
             string id = getItemID(); //get user input for the item they want to update
 
-            itemList->updateItem(id);
-            itemList->saveToFile();
+            if (id != "Exit") {
+                itemList->updateItem(id);
+                itemList->saveToFile();
+            }
+
         }
         else if (input == "3") { //if user choose 3: call function to update delete item and then save it to file
             itemList->displaySortedItemID(); //display all items information
             string id = getItemID(); //get user input for the item they want to delete
 
-            itemList->deleteItem(id);
-            itemList->saveToFile();
+            if (id != "Exit") {
+                itemList->deleteItem(id);
+                itemList->saveToFile();
+            }
         }
         else if (input == "4") { //if user to 4: exit the CRUD sub menu
             cout << "\nExit\n" << endl;
@@ -212,8 +217,10 @@ void customerSubMenu(AccountManager* accountList) {
             accountList->displaySortedAccountID(); //display all accounts information
             string id = getAccountID(); //get user input for the account they want to delete
 
-            accountList->updateAccount(id);
-            accountList->saveToFile();
+            if (id != "Exit") {
+                accountList->updateAccount(id);
+                accountList->saveToFile();
+            }
         }
         else if (input == "3") { //if user to 3: exit the CRUD sub menu
             cout << "\nExit\n" << endl;
@@ -617,11 +624,26 @@ void searchCustomerSubMenu(AccountManager* accountList) {
 }
 
 //Main Function
-int main()
+int main(int argc, char* argv[])
 {
-    ItemManager* itemList = new ItemManager(); //read file and create an array of all Item
+    ItemManager* itemList = nullptr; //read file and create an array of all Item
 
-    AccountManager* accountList = new AccountManager(); //read file and create an array of all Account
+    AccountManager* accountList = nullptr; //read file and create an array of all Account
+
+    if (argc == 1) {
+        itemList = new ItemManager(); //read file and create an array of all Item
+
+        accountList = new AccountManager(); //read file and create an array of all Account
+    }
+    else if (argc == 3) {
+        itemList = new ItemManager(argv[1]); //read file and create an array of all Item
+
+        accountList = new AccountManager(argv[2]); //read file and create an array of all Account
+    }
+    else {
+        cout << "Please enter either\n 1/Only enter the the mainFileName.exe\n 2/Or mainFileName.exe itemFileName.txt customerFileName.txt\n";
+        return 0;
+    }
 
     cout << "\nWelcome to Genie’s video store\n";
     string input;
@@ -698,6 +720,9 @@ int main()
             //Printout team member
             cout << "\n\nASSIGNMENT 2 GROUP 24" << endl;
             cout << "s3819293, s3819293@rmit.edu.vn, Thi Nha Uyen, Nguyen" << endl;
+            cout << "s3818221, s3818221@rmit.edu.vn, Khoi Nguyen, Truong" << endl;
+            cout << "s3877256, s3877256@rmit.edu.vn, Phuong Nam, Nguyen" << endl;
+            cout << "s3878451, s3878451@rmit.edu.vn, Hoang Long, Nguyen" << endl;
 
             break;
         }
